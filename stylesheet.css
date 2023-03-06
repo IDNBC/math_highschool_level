@@ -1,6 +1,6 @@
-.h1{
+h1{
     color: blue;
 }
-.nav.h2{
-    font-size: 40px;
+h2{
+    color: red;
 }
