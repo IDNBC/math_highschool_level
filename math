@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="robots" content="noindex,nofollow">
-    <!--name属性にrobotsを指定することで検索エンジンのクローラーによるWebページのインデックスを拒否したり、Webページ内のリンク先を探索されないようにできる -->   
-    <link rel="stylesheet" href="https://nobuchiyo.github.io/sample/css/styleshhet.css" />
+    
     <head>
         <title>数学の窓</title>
+        <meta charset="utf-8"> 
+        <link rel="stylesheet" href="https://nobuchiyo.github.io/sample/css/styleshhet.css" />
     </head>
     <body>
             <header>
-                <h1>数学を眺めてみよう</h1>
-                <p><a href="https://arxiv.org">arXiv</a>にはAPIが用意されているらしく、それを使えば自動でプレプリントをダウンロードしたりできるそう。</p>
-                <p>でもわたしの力量ではやり方が分からなかったのでまだ実現できていません。ホームページの作り方の練習でこのページ作成しています。</p>
+                <h1>数学書を読んでみようh1>
             </header>
 
             <main></main>
                
             <footer>
                 <address>
-                    著者:<a href="https://arxiv.org/">数学の窓</a>
+                    著者:数学の窓
                 </address>
             </footer>
         
