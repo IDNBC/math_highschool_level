@@ -1,16 +1,11 @@
 h1{
     color: green;
 }
-h2{
-    color: red;
-}
 
-
-input, textarea {
-  width: 400px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  padding: 20px;
-  font-size: 18px;
-  border: 1px solid #dee7ec;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 20px 10px 0 10px;
 }
