@@ -1,6 +1,18 @@
 h1 {
   color: blue;
 }
-li {
-  color: red;
+
+nav {
+    background: #000000;
+    border-bottom: 5px solid #37a29B;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 20px 10px 0 10px;
+    font-size: 14px;
+    color: #ffffff;
 }
