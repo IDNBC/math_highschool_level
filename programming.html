@@ -37,10 +37,8 @@
                 # arXiv APIのURLと検索クエリを設定する<br>
                 arxiv_url = "http://export.arxiv.org/api/query"<br>
                 query = "search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=10&date-range=2023-01-01%3A2023-12-31"<br>
-
                 # 論文を取得する<br>
                 response = requests.get(arxiv_url, params=query)<br>
-
                 # 取得した論文をパースして情報を抽出する<br>
                 feed = feedparser.parse(response.text)<br>
                 for entry in feed.entries:<br>
