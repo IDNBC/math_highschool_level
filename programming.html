@@ -22,6 +22,38 @@
             <main>
               <h2>XAMPPとMAMP</h2>
               <p>XAMPPもMAMPもともにPHPを動かす環境を提供してくれるようですが、プログラミングの書籍に書いてあるままに両方インストールしてしまいました。自分はWindowsなのでXAMPPがいいようです。MacだとMAMPがよいらしい。</p>
+                <h2>arXivから論文の概要を取得するコード</h2>
+                <p>
+                import feedparser<br>
+                import requests<br>
+
+                # arXiv APIのURLと検索クエリを設定する<br>
+                arxiv_url = "http://export.arxiv.org/api/query"<br>
+                query = "search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=10&date-range=2023-01-01%3A2023-12-31"<br>
+
+                # 論文を取得する<br>
+                response = requests.get(arxiv_url, params=query)<br>
+
+                # 取得した論文をパースして情報を抽出する<br>
+                feed = feedparser.parse(response.text)<br>
+                for entry in feed.entries:<br>
+                # 論文情報を取得する<br>
+                title = entry.title<br>
+                authors = ", ".join(author.name for author in entry.authors)<br>
+                abstract = entry.summary<br>
+                published = entry.published<br>
+
+                # 結果を出力する<br>
+                print(f"Title: {title}")<br>
+                print(f"Authors: {authors}")<br>
+                print(f"Abstract: {abstract}")<br>
+                print(f"Published: {published}")<br>
+                print()<br>
+                </p>
+                
+                
+                
+                
             </main>
       <footer>
 
