@@ -20,49 +20,38 @@
             </header>
 
             <main>
-                <h2>Progate</h2>
-                <p>学び始めはProgateを使いました。youtubeでプログラミングと検索して動画を見ていたらProgateが紹介されていたからです。無料のところだけやってて有料プランはやっていません。</p>
-                
-                
-              <h2>XAMPPとMAMP</h2>
-              <p>XAMPPもMAMPもともにPHPを動かす環境を提供してくれるようですが、プログラミングの書籍に書いてあるままに両方インストールしてしまいました。自分はWindowsなのでXAMPPがいいようです。MacだとMAMPがよいらしい。</p>
-                
-                
-                
-                <h2>Django</h2>
-                <p>Djangoの使い方の初歩をネットで学びました。まずはコマンドプロンプトを開き作成したenv1というフォルダにcdコマンドで移動します。cd desktop\python\env1といった要領でデスクトップに作成したフォルダへ移動して、env1へ行く。Script￥activateで仮想環境を有効にする。調べたサイトの記述をもとにhttp://http://127.0.0.1:8000/で開発環境を作ることができました。</p>
-                
-                <h2>Dockerを使う準備</h2>
-                <p>動画でdockerのインストールの方法を学びましたが、WSLを1から2に変更することができずいろんな情報源を当たったところ、ubuntuのwslを1から2にするにはwindows powershellでwsl --set-version Ubuntu 2　と入力してやればよいとのことでした。この問題の解決に丸一日かかりました。独学エンジニアというサイトの動画についていくために苦労しましたが、docker-composeコマンドで起動させたり、ターミナルにPHPのファイルに書いたHiを表示させたりもできた。ここまでやるのに丸二日かかりました。疲れた。</p>
-                
-                
+               
                 <h2>arXivから論文の概要を取得するコード</h2>
-                <p>chatGPTに教えてもらったコードです。queryの行ではAIに関する2023年の論文を取得するように指定しています。少しいじくれば条件を変えて取得することもできます。<br>
-                import feedparser<br>
-                import requests<br>
-
-                # arXiv APIのURLと検索クエリを設定する<br>
-                arxiv_url = "http://export.arxiv.org/api/query"<br>
-                query = "search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=10&date-range=2023-01-01%3A2023-12-31"<br>
-                # 論文を取得する<br>
-                response = requests.get(arxiv_url, params=query)<br>
-                # 取得した論文をパースして情報を抽出する<br>
-                feed = feedparser.parse(response.text)<br>
-                for entry in feed.entries:<br>
-                # 論文情報を取得する<br>
-                title = entry.title<br>
-                authors = ", ".join(author.name for author in entry.authors)<br>
-                abstract = entry.summary<br>
-                published = entry.published<br>
-
-                # 結果を出力する<br>
-                print(f"Title: {title}")<br>
-                print(f"Authors: {authors}")<br>
-                print(f"Abstract: {abstract}")<br>
-                print(f"Published: {published}")<br>
-                print()<br>
-                </p>
+                <p>chatGPTに教えてもらったコードです。queryの行ではAIに関する2023年の論文を取得するように指定しています。少しいじくれば条件を変えて取得することもできます。</p>
                 
+                <pre>
+                <code>
+                import feedparser
+                import requests
+
+                # arXiv APIのURLと検索クエリを設定する
+                arxiv_url = "http://export.arxiv.org/api/query"
+                query = "search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=10&date-range=2023-01-01%3A2023-12-31"
+                # 論文を取得する
+                response = requests.get(arxiv_url, params=query)
+                # 取得した論文をパースして情報を抽出する
+                feed = feedparser.parse(response.text)
+                for entry in feed.entries:
+                # 論文情報を取得する
+                title = entry.title
+                authors = ", ".join(author.name for author in entry.authors)
+                abstract = entry.summary
+                published = entry.published
+
+                # 結果を出力する
+                print(f"Title: {title}")
+                print(f"Authors: {authors}")
+                print(f"Abstract: {abstract}")
+                print(f"Published: {published}")
+                print()
+                
+                </code>
+                </pre>
                 
                 
                 
