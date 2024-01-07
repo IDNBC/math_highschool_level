@@ -1,111 +1,81 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8">  
-    <link rel="stylesheet" href="https://nobuchiyo.github.io/sample/stylesheet.css" />
-    <title>数学の犬</title>
-    <link rel="shortcut icon" href="1766069200_1girl, solo, crossed legs, from above, purple hair, grey eyes, smile, overalls, slippers, lace trim, forest_0.png" type="image/vnd.microsoft.icon">
-    </head>
-            <header>
-                <h1>プログラミング全般について</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="math.html">学習歴</a></li>
-                        <li><a href="programming.html">プログラミング</a></li>
-                        <li><a　href="">YouTube</a></li>
-                        <li><a>お問い合わせ</a></li>
-                    </ul>
-                </nav>
-            </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリストッフェル記号の計算例</title>
+    <!-- MathJaxのCDNを読み込む -->
+    <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script async id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
 
-            <main>
-               
-               <h2>python動画で勉強用に紹介されていたコード</h2>
-               <pre>
-               <code>
-                import tkinter
+<h2>クリストッフェル記号の計算例</h2>
 
+<p>2次元平面上の極座標系でのクリストッフェル記号の計算例を示します。</p>
 
-                class Application(tkinter.Frame):
-                 def __init__(self, root=None):
-                     super().__init__(root, width=380, height=280,
-                         borderwidth=4, relief='groove')
-                    self.root = root
-                    self.pack()
-                    self.pack_propagate(0)
-                    self.create_widgets()
+<!-- ここにコードが入ります -->
+<pre id="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;クリストッフェル記号の計算例&lt;/title&gt;
+    &lt;!-- MathJaxのCDNを読み込む --&gt;
+    &lt;script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"&gt;&lt;/script&gt;
+    &lt;script async id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-                　def create_widgets(self):
-                     quit_btn = tkinter.Button(self)
-                     quit_btn['text'] = '閉じる'
-                     quit_btn['command'] = self.root.destroy
-                     quit_btn.pack(side='bottom')
-                     # テキストボックス
-                     self.text_box = tkinter.Entry(self)
-                     self.text_box['width'] = 10
-                     self.text_box.pack()
-                     # 実行
-                     submit_btn = tkinter.Button(self)
-                     submit_btn['text'] = '実行'
-                     submit_btn['command'] = \
-                     self.input_handler
-                     submit_btn.pack()
-                     # メッセージ
-                     self.message = tkinter.Message(self)
-                     self.message.pack()
-        
-                     def input_handler(self):
-                        text = self.text_box.get()
-                        self.message['text'] = text + '!!'
+&lt;h2&gt;クリストッフェル記号の計算例&lt;/h2&gt;
 
-                root = tkinter.Tk()
-                root.title('サンプルアプリ')
-                root.geometry('400x300')
-                app = Application(root=root)
-                app.mainloop()
-               
-               </code>
-               </pre>
-               
-               
-                <h2>arXivから論文の概要を取得するコード</h2>
-                <p>chatGPTに教えてもらったコードです。queryの行ではAIに関する2023年の論文を取得するように指定しています。少しいじくれば条件を変えて取得することもできます。</p>
-                
-                <pre>
-                <code>
-                import feedparser
-                import requests
+&lt;p&gt;2次元平面上の極座標系でのクリストッフェル記号の計算例を示します。&lt;/p&gt;
 
-                # arXiv APIのURLと検索クエリを設定する
-                arxiv_url = "http://export.arxiv.org/api/query"
-                query = "search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=10&date-range=2023-01-01%3A2023-12-31"
-                # 論文を取得する
-                response = requests.get(arxiv_url, params=query)
-                # 取得した論文をパースして情報を抽出する
-                feed = feedparser.parse(response.text)
-                for entry in feed.entries:
-                # 論文情報を取得する
-                title = entry.title
-                authors = ", ".join(author.name for author in entry.authors)
-                abstract = entry.summary
-                published = entry.published
+&lt;!-- ここにコードが入ります --&gt;
+&lt;pre id="code"&gt;
+<!-- ここにコードが入ります -->
+&lt;/pre&gt;
 
-                # 結果を出力する
-                print(f"Title: {title}")
-                print(f"Authors: {authors}")
-                print(f"Abstract: {abstract}")
-                print(f"Published: {published}")
-                print()
-                
-                </code>
-                </pre>
-                
-                
-                
-            </main>
-      <footer>
+&lt;!-- コピーボタン --&gt;
+&lt;button onclick="copyCodeToClipboard()"&gt;コードをコピー&lt;/button&gt;
 
-      </footer>
-        
+&lt;script&gt;
+    function copyCodeToClipboard() {
+        const codeElement = document.getElementById('code');
+        const codeText = codeElement.innerText;
+
+        navigator.clipboard.writeText(codeText)
+            .then(() =&gt; {
+                alert('コードがクリップボードにコピーされました！');
+            })
+            .catch(err =&gt; {
+                console.error('コードのコピーに失敗しました:', err);
+            });
+    }
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<!-- コピーボタン -->
+<button onclick="copyCodeToClipboard()">コードをコピー</button>
+
+<script>
+    function copyCodeToClipboard() {
+        const codeElement = document.getElementById('code');
+        const codeText = codeElement.innerText;
+
+        navigator.clipboard.writeText(codeText)
+            .then(() => {
+                alert('コードがクリップボードにコピーされました！');
+            })
+            .catch(err => {
+                console.error('コードのコピーに失敗しました:', err);
+            });
+    }
+</script>
+
+</body>
 </html>
