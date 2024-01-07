@@ -50,8 +50,30 @@
 </ul>
 
 <p>クリストッフェル記号は、座標系に依存する量であり、共変微分や曲率テンソルの計算に利用されます。</p>
+<h2>クリストッフェル記号の計算例</h2>
+
+<p>2次元平面上の極座標系でのクリストッフェル記号の計算例を示します。</p>
+
+<p>座標系の変換は以下の通りです：</p>
+\[ x = r \cos(\theta) \]
+\[ y = r \sin(\theta) \]
+
+<p>メトリックテンソル \( g_{ij} \) は極座標系の場合：</p>
+\[ g_{ij} = \begin{bmatrix} 1 & 0 \\ 0 & r^2 \end{bmatrix} \]
+
+<p>逆行列 \( g^{km} \) は：</p>
+\[ g^{km} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1}{r^2} \end{bmatrix} \]
+
+<p>クリストッフェル記号 \( \Gamma_{ij}^k \) の計算式を用いて計算します：</p>
+\[ \Gamma_{ij}^k = \frac{1}{2} g^{km} \left( \frac{\partial g_{mi}}{\partial x^j} + \frac{\partial g_{mj}}{\partial x^i} - \frac{\partial g_{ij}}{\partial x^m} \right) \]
+
+<p>例えば、 \( \Gamma_{\theta\theta}^r \) の計算：</p>
+\[ \Gamma_{\theta\theta}^r = \frac{1}{2} g^{rr} \left( \frac{\partial g_{r\theta}}{\partial \theta} + \frac{\partial g_{r\theta}}{\partial \theta} - \frac{\partial g_{\theta\theta}}{\partial r} \right) \]
+
+<p>計算結果：</p>
+\[ \Gamma_{\theta\theta}^r = -r \]
 
 
-                  
+
     </body>
 </html>
