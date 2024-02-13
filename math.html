@@ -29,8 +29,56 @@
 \[ A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \]
 \[ B = \begin{bmatrix} e & f \\ g & h \end{bmatrix} \]
 \[ A \times B = \begin{bmatrix} (a \cdot e + b \cdot g) & (a \cdot f + b \cdot h) \\ (c \cdot e + d \cdot g) & (c \cdot f + d \cdot h) \end{bmatrix} \]
+                  
+
+<h1>線形代数の基礎</h1>
+
+<h2>ベクトル</h2>
+<p>ベクトルは、大きさと向きを持つ量を表現する数学的な概念です。</p>
+<p>一般的に、ベクトルは次のように表現されます。</p>
+<code>[x1, x2, x3, ..., xn]</code>
+<p>ここで、<code>x1, x2, ..., xn</code> はベクトルの成分を表します。</p>
+
+<h2>行列</h2>
+<p>行列は、複数の数値を格子状に並べたものです。</p>
+<p>一般的に、行列は次のように表現されます。</p>
+<pre>
+[ a11  a12  a13  ...  a1n ]
+[ a21  a22  a23  ...  a2n ]
+[  .    .    .   .     .  ]
+[  .    .    .    .    .  ]
+[ am1  am2  am3  ...  amn ]
+</pre>
+<p>ここで、<code>aij</code> は行列の <code>i</code> 行 <code>j</code> 列の要素を表します。</p>
+
+<h2>行列の基本的な操作</h2>
+<h3>行列の和</h3>
+<p>同じ次元の行列同士は、対応する要素ごとに加算されます。</p>
+<p>例えば、行列 <code>A</code> と行列 <code>B</code> の和は次のように計算されます。</p>
+<pre>
+A = [ a11  a12 ]    B = [ b11  b12 ]
+    [ a21  a22 ]        [ b21  b22 ]
+
+A + B = [ a11+b11  a12+b12 ]
+        [ a21+b21  a22+b22 ]
+</pre>
+
+<h3>行列の積</h3>
+<p>行列の積は、左側の行列の各行と右側の行列の各列の内積の和です。</p>
+<p>例えば、行列 <code>A</code> と行列 <code>B</code> の積は次のように計算されます。</p>
+<pre>
+A = [ a11  a12 ]    B = [ b11  b12 ]
+    [ a21  a22 ]        [ b21  b22 ]
+
+A * B = [ a11*b11+a12*b21  a11*b12+a12*b22 ]
+        [ a21*b11+a22*b21  a21*b12+a22*b22 ]
+</pre>
 
 
+
+
+                  
+                  
 
 
    
