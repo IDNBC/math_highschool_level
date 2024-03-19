@@ -16,8 +16,3 @@ nav ul {
     font-size: 14px;
     color: #ffffff;
 }
-header {
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-}
