@@ -3,7 +3,7 @@ h1{
 }
 
 nav {
-    background: #ffffff;
+    background: #000000;
     border-bottom: 5px solid #37a29B;
 }
 
@@ -14,5 +14,5 @@ nav ul {
     margin: 0;
     padding: 20px 10px 0 10px;
     font-size: 14px;
-    color: #101010;
+    color: #ffffff;
 }
