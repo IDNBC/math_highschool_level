@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数学の森</title>
-    <link rel="shortcut icon" href="1766069200_1girl, solo, crossed legs, from above, purple hair, grey eyes, smile, overalls, slippers, lace trim, forest_0.png" type="image/vnd.microsoft.icon">
     <title>指数の法則</title>
     <style>
         body {
@@ -15,14 +13,28 @@
             font-size: 1.2em;
             margin: 20px 0;
         }
-        .example {
+        .example, .problem, .answer {
             background-color: #f4f4f4;
             padding: 10px;
             border-left: 4px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .answer {
+            display: none; /* Initially hide the answers */
         }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>指数の法則</h1>
@@ -76,6 +88,48 @@
     <div class="example">
         <em>例:</em> \( 2^{-3} = \frac{1}{2^3} = \frac{1}{8} \)
     </div>
+
+    <h2>指数の問題</h2>
+    
+    <div class="problem">
+        <strong>問題 1:</strong> \( 3^2 \times 3^4 \) の値を求めなさい。
+    </div>
+    <div class="answer" id="answer1">
+        <strong>解答:</strong> \( 3^2 \times 3^4 = 3^{2+4} = 3^6 = 729 \)
+    </div>
+    <button onclick="toggleAnswer('answer1')">解答を表示/隠す</button>
+    
+    <div class="problem">
+        <strong>問題 2:</strong> \( \frac{7^5}{7^2} \) の値を求めなさい。
+    </div>
+    <div class="answer" id="answer2">
+        <strong>解答:</strong> \( \frac{7^5}{7^2} = 7^{5-2} = 7^3 = 343 \)
+    </div>
+    <button onclick="toggleAnswer('answer2')">解答を表示/隠す</button>
+    
+    <div class="problem">
+        <strong>問題 3:</strong> \( (2^3)^2 \) の値を求めなさい。
+    </div>
+    <div class="answer" id="answer3">
+        <strong>解答:</strong> \( (2^3)^2 = 2^{3 \cdot 2} = 2^6 = 64 \)
+    </div>
+    <button onclick="toggleAnswer('answer3')">解答を表示/隠す</button>
+    
+    <div class="problem">
+        <strong>問題 4:</strong> \( (5 \cdot 4)^2 \) の値を求めなさい。
+    </div>
+    <div class="answer" id="answer4">
+        <strong>解答:</strong> \( (5 \cdot 4)^2 = 5^2 \cdot 4^2 = 25 \cdot 16 = 400 \)
+    </div>
+    <button onclick="toggleAnswer('answer4')">解答を表示/隠す</button>
+    
+    <div class="problem">
+        <strong>問題 5:</strong> \( \left( \frac{8}{2} \right)^3 \) の値を求めなさい。
+    </div>
+    <div class="answer" id="answer5">
+        <strong>解答:</strong> \( \left( \frac{8}{2} \right)^3 = \frac{8^3}{2^3} = \frac{512}{8} = 64 \)
+    </div>
+    <button onclick="toggleAnswer('answer5')">解答を表示/隠す</button>
 
 </body>
 </html>
