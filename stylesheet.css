@@ -1,4 +1,4 @@
-h1{
+h1 {
     color: green;
 }
 
@@ -15,6 +15,11 @@ nav ul {
     padding: 20px 10px 0 10px;
     font-size: 14px;
     color: #ffffff;
+}
+
+.breadcrumb-container {
+    background: none; /* 背景色をなくす */
+    padding: 10px; /* 必要に応じてパディングを追加 */
 }
 
 .breadcrumb {
