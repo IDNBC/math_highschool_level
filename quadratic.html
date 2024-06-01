@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>2次方程式の解き方</title> 
+    <style> 
+      body { font-family: Arial, sans-serif; margin: 20px; } 
+      h1, h2, h3 { color: #333; } 
+      .example, 
+      .exercise { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; } 
+      .answer { background-color: #f9f9f9; padding: 10px; border: 1px solid #eee; border-radius: 5px; display: none; } 
+      .toggle-button { margin-top: 10px; cursor: pointer; color: #007BFF; } 
+    </style> 
+    <script> 
+      function toggleAnswer(id) { var answer = document.getElementById(id);
+                                 if (answer.style.display === "none") { answer.style.display = "block"; } 
+                                 else { answer.style.display = "none"; } } 
+    </script> 
+  </head> 
+  <body> 
+    <h1>2次方程式の解き方</h1>
+
+
+<h2>1. 平方根を使って解く方法</h2>
+<p>2次方程式の形が \( ax^2 + c = 0 \) の場合、平方根を使って解くことができます。</p>
+<p>解き方:</p>
+<ul>
+    <li>\( ax^2 = -c \)</li>
+    <li>\( x^2 = \frac{-c}{a} \)</li>
+    <li>\( x = \pm \sqrt{\frac{-c}{a}} \)</li>
+</ul>
+
+<div class="example">
+    <h3>例題</h3>
+    <p>\( 2x^2 - 8 = 0 \)</p>
+    <p>\( 2x^2 = 8 \)</p>
+    <p>\( x^2 = 4 \)</p>
+    <p>\( x = \pm 2 \)</p>
+</div>
+
+<h2>2. 平方完成して解く方法</h2>
+<p>平方完成を使用して2次方程式を解く手順:</p>
+<ul>
+    <li>方程式を \( ax^2 + bx + c = 0 \) の形にする。</li>
+    <li>右辺を0にするために必要な定数を加え、平方完成を行う。</li>
+    <li>平方根を取って x を求める。</li>
+</ul>
+
+<div class="example">
+    <h3>例題</h3>
+    <p>\( x^2 + 6x + 5 = 0 \)</p>
+    <p>\( x^2 + 6x = -5 \)</p>
+    <p>\( x^2 + 6x + 9 = 4 \) （両辺に 9 を加える）</p>
+    <p>\((x + 3)^2 = 4 \)</p>
+    <p>\( x + 3 = \pm 2 \)</p>
+    <p>\( x = -1 \ または \ x = -5 \)（解： \( x = -1 \) と \( x = -5 \)</p>
+</div>
+
+<h2>3. 因数分解を使う方法</h2>
+<p>2次方程式を因数分解して解く手順:</p>
+<ul>
+    <li>\( ax^2 + bx + c = 0 \) の形にする。</li>
+    <li>因数分解可能な項に分解する。</li>
+    <li>各因数を0と置いて解く。</li>
+</ul>
+
+<div class="example">
+    <h3>例題</h3>
+    <p>\( x^2 - 5x + 6 = 0 \)</p>
+    <p>\( (x - 2)(x - 3) = 0 \)</p>
+    <p>\( x - 2 = 0 または x - 3 = 0 \)</p>
+    <p>\( x = 2 または x = 3 \)</p>
+</div>
+
+<h2>4. 解の公式を使う方法</h2>
+<p>2次方程式の一般的な解法として、以下の公式を使用します。</p>
+<p>\( ax^2 + bx + c = 0 \)</p>
+<p>解の公式: \( x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \)</p>
+
+<div class="example">
+    <h3>例題</h3>
+    <p>\( 2x^2 + 3x - 2 = 0 \)</p>
+    <p>\( a = 2 \), \( b = 3 \), \( c = -2 \)</p>
+    <p>\( x = \frac{-3 \pm \sqrt{3^2 - 4 \cdot 2 \cdot (-2)}}{2 \cdot 2} \)</p>
+    <p>\( x = \frac{-3 \pm \sqrt{9 + 16}}{4} \)</p>
+    <p>\( x = \frac{-3 \pm 5}{4} \)</p>
+    <p>\( x = \frac{2}{4} = \frac{1}{2} \)</p>
+    <p>\( x = \frac{-8}{4} = -2 \)</p>
+</div>
+
+<h2>練習問題</h2>
+<div class="exercise">
+    <h3>問題 1: 平方根を使って解く</h3>
+    <p>a. \( x^2 - 16 = 0 \)</p>
+    <p>b. \( 3x^2 - 27 = 0 \)</p>
+    <div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+    <div class="answer" id="answer1">
+        <h3>解答</h3>
+        <p>a. \( x^2 - 16 = 0 \)</p>
+        <p>\( x^2 = 16 \)</p>
+        <p>\( x = \pm 4 \)</p>
+        <p>b. \( 3x^2 - 27 = 0 \)</p>
+        <p>\( 3x^2 = 27 \)</p>
+        <p>\( x^2 = 9 \)</p>
+        <p>\( x = \pm 3 \)</p>
+    </div>
+</div>
+
+<div class="exercise">
+    <h3>問題 2: 平方完成を使って解く</h3>
+    <p>a. \( x^2 + 4x + 4 = 0 \)</p>
+    <p>b. \( x^2 + 2x - 3 = 0 \)</p>
+    <div class="toggle-button" onclick="toggleAnswer('answer2')">解答を表示/非表示</div>
+    <div class="answer" id="answer2">
+        <h3>解答</h3>
+        <p>a. \( x^2 + 4x + 4 = 0 \)</p>
+        <p>\( (x + 2)^2 = 0 \)</p>
+        <p>\( x = -2 \)</p>
+        <p>b. \( x^2 + 2x - 3 = 0 \)</p>
+        <p>\( x^2 + 2x + 1 = 4 \)</p>
+        <p>\((x + 1)^2 = 4 \)</p>
+        <p>\( x + 1 = \pm 2 \)</p>
+        <p>\( x = 1 \ または x = -3 \)</p>
+    </div>
+</div>
+
+<div class="exercise">
+    <h3>問題 3: 因数分解を使って解く</h3>
+    <p>a. \( x^2 - 9x + 20 = 0 \)</p>
+    <p>b. \( x^2 - 4x + 4 = 0 \)</p>
+    <div class="toggle-button" onclick="toggleAnswer('answer3')">解答を表示/非表示</div>
+    <div class="answer" id="answer3">
+        <h3>解答</h3>
+        <p>a. \( x^2 - 9x + 20 = 0 \)</p>
+        <p>\( (x - 4)(x - 5) = 0 \)</p>
+        <p>\( x = 4 \ または x = 5 \)</p>
+        <p>b. \( x^2 - 4x + 4 = 0 \)</p>
+        <p>\( (x - 2)(x - 2) = 0 \)</p>
+        <p>\( x = 2 \)</p>
+    </div>
+</div>
+
+<div class="exercise">
+    <h3>問題 4: 解の公式を使って解く</h3>
+    <p>a. \( 2x^2 + 3x - 5 = 0 \)</p>
+    <p>b. \( x^2 - 6x + 9 = 0 \)</p>
+    <div class="toggle-button" onclick="toggleAnswer('answer4')">解答を表示/非表示</div>
+    <div class="answer" id="answer4">
+        <h3>解答</h3>
+        <p>a. \( 2x^2 + 3x - 5 = 0 \)</p>
+        <p>\( x = \frac{-3 \pm \sqrt{3^2 - 4 \cdot 2 \cdot (-5)}}{2 \cdot 2} \)</p>
+        <p>\( x = \frac{-3 \pm \sqrt{9 + 40}}{4} \)</p>
+        <p>\( x = \frac{-3 \pm 7}{4} \)</p>
+        <p>\( x = \frac{4}{4} = 1 \) または \( x = \frac{-10}{4} = -2.5 \)</p>
+        <p>b. \( x^2 - 6x + 9 = 0 \)</p>
+        <p>\( x = \frac{6 \pm \sqrt{6^2 - 4 \cdot 1 \cdot 9}}{2 \cdot 1} \)</p>
+        <p>\( x = \frac{6 \pm \sqrt{36 - 36}}{2} \)</p>
+        <p>\( x = \frac{6 \pm 0}{2} \)</p>
+        <p>\( x = 3 \)</p>
+    </div>
+</div>
