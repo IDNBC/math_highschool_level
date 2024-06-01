@@ -17,17 +17,22 @@ nav ul {
     color: #ffffff;
 }
 
-nav[aria-label="breadcrumb"] ol {
+.breadcrumb {
     list-style: none;
     padding: 0;
     display: flex;
 }
 
-nav[aria-label="breadcrumb"] li {
+.breadcrumb li {
     margin-right: 5px;
 }
 
-nav[aria-label="breadcrumb"] li+li:before {
+.breadcrumb li+li:before {
     content: ">";
     margin-right: 5px;
+}
+
+.breadcrumb li a {
+    text-decoration: none;
+    color: inherit;
 }
