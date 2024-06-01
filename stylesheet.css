@@ -16,3 +16,18 @@ nav ul {
     font-size: 14px;
     color: #ffffff;
 }
+
+nav[aria-label="breadcrumb"] ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav[aria-label="breadcrumb"] li {
+    margin-right: 5px;
+}
+
+nav[aria-label="breadcrumb"] li+li:before {
+    content: ">";
+    margin-right: 5px;
+}
