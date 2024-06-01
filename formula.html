@@ -105,7 +105,26 @@
         </div>
     </div>
 
-    <h2>5. 練習問題</h2>
+    <h2>5. 次数、係数、定数項</h2>
+    <p>次数、係数、定数項について説明します。</p>
+    <ul>
+        <li><strong>次数 (Degree)</strong>: 多項式の中で最も高いべきの指数です。例えば、多項式 \( 3x^2 + 2x + 1 \) の次数は 2 です。</li>
+        <li><strong>係数 (Coefficient)</strong>: 各項に付いている数です。例えば、項 \( 3x^2 \) の係数は 3 です。</li>
+        <li><strong>定数項 (Constant Term)</strong>: 変数を含まない項です。例えば、\( 3x^2 + 2x + 1 \) における定数項は 1 です。</li>
+    </ul>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の多項式 \( 4x^3 + 3x^2 - 2x + 5 \) の次数、係数、定数項を求めてください。</p>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer5')">回答を表示/非表示</button>
+        <div id="exampleAnswer5" class="answer">
+            <p>次数: 3</p>
+            <p>係数: 4（\( x^3 \) の係数）、3（\( x^2 \) の係数）、-2（\( x \) の係数）</p>
+            <p>定数項: 5</p>
+        </div>
+    </div>
+
+    <h2>6. 練習問題</h2>
     <div class="exercise">
         <p>次の問題に挑戦してください。</p>
         <p>問題1: 次の中から単項式を選んでください。</p>
@@ -129,6 +148,14 @@
         <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer3')">回答を表示/非表示</button>
         <div id="exerciseAnswer3" class="answer">
             <p>\( 3(x - 4) = 3x - 12 \)</p>
+        </div>
+
+        <p>問題4: 次の多項式 \( 5x^4 - 3x^3 + 7x - 2 \) の次数、係数、定数項を求めてください。</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer4')">回答を表示/非表示</button>
+        <div id="exerciseAnswer4" class="answer">
+            <p>次数: 4</p>
+            <p>係数: 5（\( x^4 \) の係数）、-3（\( x^3 \) の係数）、7（\( x \) の係数）</p>
+            <p>定数項: -2</p>
         </div>
     </div>
 </body>
