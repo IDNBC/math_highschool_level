@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <title>2次関数の解説</title> 
+    <style> 
+      body { font-family: Arial, sans-serif; margin: 20px; } 
+      h1, h2, h3 { color: #333; } 
+      .example, .exercise { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; } 
+      .answer { background-color: #f9f9f9; padding: 10px; border: 1px solid #eee; border-radius: 5px; display: none; } 
+      .toggle-button { margin-top: 10px; cursor: pointer; color: #007BFF; } 
+      .graph { text-align: center; } 
+    </style> 
+    <script> 
+      function toggleAnswer(id) { var answer = document.getElementById(id); 
+                                 if (answer.style.display === "none") { answer.style.display = "block"; } else { answer.style.display = "none"; } } 
+    </script> 
+  </head> 
+  <body> 
+    <h1>2次関数の解説</h1>
+
+<h2>1. 2次関数とは</h2>
+<p>2次関数は \( y = ax^2 + bx + c \) の形の関数です。ここで、a, b, c は定数であり、a ≠ 0 です。</p>
+<p>グラフは放物線の形をしており、a の符号によって開く方向が決まります。a > 0 の場合は上に開き、a < 0 の場合は下に開きます。</p>
+
+<h2>2. 定義域について</h2>
+<p>2次関数の定義域は通常、すべての実数 (\(-∞, ∞\)) です。また、グラフの頂点や軸についても理解する必要があります。</p>
+
+<h2>3. 2次関数のグラフ</h2>
+<p>以下に一般的な2次関数 \( y = x^2 \) のグラフを示します。</p>
+<div class="graph">
+    <img src="https://www.desmos.com/calculator/8dbwnv1kuw.png" alt="y = x^2 のグラフ"/>
+</div>
+
+<h2>4. 例題</h2>
+<div class="example">
+    <h3>例題 1</h3>
+    <p>関数 \( y = 2x^2 + 3x - 2 \) のグラフを描いてみましょう。</p>
+    <p>頂点は以下の方法で求められます:</p>
+    <ul>
+        <li>頂点の x 座標は \( x = -\frac{b}{2a} \).</li>
+        <li>この場合は \( x = -\frac{3}{2 \cdot 2} = -\frac{3}{4} \).</li>
+        <li>y 座標は関数に x を代入して求めます: \( y = 2(-\frac{3}{4})^2 + 3(-\frac{3}{4}) - 2 \)</li>
+        <li>= \( 2 \cdot\frac{9}{16} - \frac{9}{4} - 2 = \frac{9}{8} - \frac{27}{8} - \frac{16}{8} = -\frac{34}{8} = -\frac{17}{4} \).</li>
+        <li>従って、頂点は \( \left(-\frac{3}{4}, -\frac{17}{4} \right) \) </li>
+    </ul>
+
+    <div class="graph">
+        <img src="https://www.desmos.com/calculator/8dbwnv1kuw.png" alt="y = 2x^2 + 3x - 2 のグラフ" />
+    </div>
+</div>
+
+<h2>5. 練習問題</h2>
+<div class="exercise">
+    <h3>問題 1</h3>
+    <p>関数 \( y = x^2 - 4x + 4 \) のグラフを描いて、頂点を求めなさい。</p>
+    <div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+    <div class="answer" id="answer1">
+        <h3>解答</h3>
+        <p>\( y = x^2 - 4x + 4 \)</p>
+        <p>頂点の x 座標は \( x = -\frac{-4}{2 \cdot 1} = 2 \).</p>
+        <p>y 座標は \( 2 \) を代入して \( y = (2)^2 - 4(2) + 4 = 4 - 8 + 4 = 0 \).</p>
+        <p>従って、頂点は \( (2, 0) \).</p>
+        <div class="graph">
+            <img src="https://www.desmos.com/calculator/8dbwnv1kuw.png" alt="y = x^2 - 4x + 4 のグラフ" />
+        </div>
+    </div>
+</div>
+
+<div class="exercise">
+    <h3>問題 2</h3>
+    <p>関数 \( y = -x^2 + 2x - 1 \) のグラフを描いて、頂点を求めなさい。</p>
+    <div class="toggle-button" onclick="toggleAnswer('answer2')">解答を表示/非表示</div>
+    <div class="answer" id="answer2">
+        <h3>解答</h3>
+        <p>\( y = -x^2 + 2x - 1 \)</p>
+        <p>頂点の x 座標は \( x = -\frac{2}{2 \cdot (-1)} = 1 \).</p>
+        <p>y 座標は \( 1 \) を代入して \( y = -(1)^2 + 2(1) - 1 = -1 + 2 - 1 = 0 \).</p>
+        <p>従って、頂点は \( (1, 0) \).</p>
+        <div class="graph">
+            <img src="https://www.desmos.com/calculator/8dbwnv1kuw.png" alt="y = -x^2 + 2x - 1 のグラフ" />
+        </div>
+    </div>
+</div>
+
+<div class="exercise">
+    <h3>問題 3</h3>
+    <p>関数 \( y = 3x^2 - 6x + 2 \) のグラフを描いて、頂点を求めなさい。</p>
+    <div class="toggle-button" onclick="toggleAnswer('answer3')">解答を表示/非表示</div>
+    <div class="answer" id="answer3">
+        <h3>解答</h3>
+        <p>\( y = 3x^2 - 6x + 2 \)</p>
+        <p>頂点の x 座標は \( x = -\frac{-6}{2 \cdot 3} = 1 \).</p>
+        <p>y 座標は \( 1 \) を代入して \( y = 3(1)^2 - 6(1) + 2 = 3 - 6 + 2 = -1 \).</p>
+        <p>従って、頂点は \( (1, -1) \).</p>
+        <div class="graph">
+            <img src="https://www.desmos.com/calculator/8dbwnv1kuw.png" alt="y = 3x^2 - 6x + 2 のグラフ" />
+        </div>
+    </div>
+</div>
+</body> 
+</html>
