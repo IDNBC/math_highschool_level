@@ -17,27 +17,3 @@ nav ul {
     color: #ffffff;
 }
 
-.breadcrumb-container {
-    background: none; /* 背景色をなくす */
-    padding: 10px; /* 必要に応じてパディングを追加 */
-}
-
-.breadcrumb {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-.breadcrumb li {
-    margin-right: 5px;
-}
-
-.breadcrumb li+li:before {
-    content: ">";
-    margin-right: 5px;
-}
-
-.breadcrumb li a {
-    text-decoration: none;
-    color: inherit;
-}
