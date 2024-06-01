@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>式の計算の基本概念</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .example, .exercise {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .answer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            display: none;
+        }
+        .toggle-button {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>式の計算の基本概念</h1>
+
+    <h2>1. 単項式</h2>
+    <p>単項式とは、数、変数、またはその積で構成される一つの項からなる式です。例えば、\( 3x \)、\( -2y^2 \)、\( 5 \) などがあります。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の中から単項式を選んでください。</p>
+        <ul>
+            <li>\( 4x \)</li>
+            <li>\( 3x + 2 \)</li>
+            <li>\( -7y^3 \)</li>
+        </ul>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer1')">回答を表示/非表示</button>
+        <div id="exampleAnswer1" class="answer">
+            <p>単項式は \( 4x \) と \( -7y^3 \) です。</p>
+        </div>
+    </div>
+
+    <h2>2. 多項式</h2>
+    <p>多項式は、複数の単項式の和で構成される式です。例えば、\( 2x^2 + 3x + 1 \) や \( -x^3 + 4x - 5 \) などがあります。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の中から多項式を選んでください。</p>
+        <ul>
+            <li>\( 5 \)</li>
+            <li>\( x^2 - 3x + 4 \)</li>
+            <li>\( 7y \)</li>
+        </ul>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer2')">回答を表示/非表示</button>
+        <div id="exampleAnswer2" class="answer">
+            <p>多項式は \( x^2 - 3x + 4 \) です。</p>
+        </div>
+    </div>
+
+    <h2>3. 同類項</h2>
+    <p>同類項とは、同じ変数とその指数を持つ項を指します。同類項は加減できます。例えば、\( 3x \) と \( -5x \) は同類項です。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の式を簡単にしてください: \( 4x + 3x - 2x \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer3')">回答を表示/非表示</button>
+        <div id="exampleAnswer3" class="answer">
+            <p>\( 4x + 3x - 2x = (4 + 3 - 2)x = 5x \)</p>
+        </div>
+    </div>
+
+    <h2>4. 分配法則</h2>
+    <p>分配法則とは、式 \( a(b + c) \) を \( ab + ac \) に展開する法則です。これは乗法と加法の間の関係を示しています。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の式を展開してください: \( 2(x + 3) \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer4')">回答を表示/非表示</button>
+        <div id="exampleAnswer4" class="answer">
+            <p>\( 2(x + 3) = 2x + 6 \)</p>
+        </div>
+    </div>
+
+    <h2>5. 練習問題</h2>
+    <div class="exercise">
+        <p>次の問題に挑戦してください。</p>
+        <p>問題1: 次の中から単項式を選んでください。</p>
+        <ul>
+            <li>\( 6y \)</li>
+            <li>\( x^2 - 4 \)</li>
+            <li>\( -5 \)</li>
+        </ul>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer1')">回答を表示/非表示</button>
+        <div id="exerciseAnswer1" class="answer">
+            <p>単項式は \( 6y \) と \( -5 \) です。</p>
+        </div>
+
+        <p>問題2: 次の式を簡単にしてください: \( 7a - 3a + 2a \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer2')">回答を表示/非表示</button>
+        <div id="exerciseAnswer2" class="answer">
+            <p>\( 7a - 3a + 2a = (7 - 3 + 2)a = 6a \)</p>
+        </div>
+
+        <p>問題3: 次の式を展開してください: \( 3(x - 4) \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer3')">回答を表示/非表示</button>
+        <div id="exerciseAnswer3" class="answer">
+            <p>\( 3(x - 4) = 3x - 12 \)</p>
+        </div>
+    </div>
+</body>
+</html>
