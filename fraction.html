@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分数と逆数の計算の法則</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .example, .exercise {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .answer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            display: none;
+        }
+        .toggle-button {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>分数と逆数の計算の法則</h1>
+    
+    <h2>1. 分数の加法と減法</h2>
+    <p>分母が同じ分数同士は、分子を加減する:</p>
+    <ul>
+        <li>分母が同じ場合: 分子同士を加減 (例: \(\frac{3}{4} + \frac{2}{4} = \frac{5}{4}\))</li>
+        <li>分母が異なる場合: 公倍数を使って通分する (例: \(\frac{1}{3} + \frac{1}{6} = \frac{2}{6} + \frac{1}{6} = \frac{3}{6} = \frac{1}{2}\))</li>
+    </ul>
+    
+    <div class="example">
+        <h3>例題</h3>
+        <p>\(\frac{5}{8} + \frac{3}{8} = \frac{8}{8} = 1\)</p>
+        <p>\(\frac{2}{5} - \frac{1}{5} = \frac{1}{5}\)</p>
+        <p>\(\frac{1}{4} + \frac{1}{2} = \frac{1}{4} + \frac{2}{4} = \frac{3}{4}\)</p>
+    </div>
+    
+    <h2>2. 分数の乗法</h2>
+    <p>分数同士の掛け算は、分子同士、分母同士を掛ける:</p>
+    <ul>
+        <li>\(\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d}\) (例: \(\frac{2}{3} \times \frac{4}{5} = \frac{2 \times 4}{3 \times 5} = \frac{8}{15}\))</li>
+    </ul>
+    
+    <div class="example">
+        <h3>例題</h3>
+        <p>\(\frac{3}{7} \times \frac{2}{5} = \frac{6}{35}\)</p>
+        <p>\(\frac{4}{9} \times \frac{3}{8} = \frac{12}{72} = \frac{1}{6}\)</p>
+        <p>\(\frac{5}{6} \times \frac{6}{5} = 1\)</p>
+    </div>
+    
+    <h2>3. 分数の除法</h2>
+    <p>分数同士の割り算は、割る数の逆数を掛ける:</p>
+    <ul>
+        <li>\(\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}\) (例: \(\frac{3}{4} \div \frac{2}{5} = \frac{3}{4} \times \frac{5}{2} = \frac{15}{8}\))</li>
+    </ul>
+    
+    <div class="example">
+        <h3>例題</h3>
+        <p>\(\frac{7}{9} \div \frac{2}{3} = \frac{7}{9} \times \frac{3}{2} = \frac{21}{18} = \frac{7}{6}\)</p>
+        <p>\(\frac{5}{8} \div \frac{1}{4} = \frac{5}{8} \times 4 = \frac{20}{8} = \frac{5}{2}\)</p>
+        <p>\(\frac{9}{10} \div \frac{3}{5} = \frac{9}{10} \times \frac{5}{3} = \frac{45}{30} = \frac{3}{2}\)</p>
+    </div>
+    
+    <h2>4. 逆数の計算</h2>
+    <p>ある数 \(a\) の逆数は \(\frac{1}{a}\) であり、逆数同士を掛けると 1 になる:</p>
+    <ul>
+        <li>例: \(5\) の逆数は \(\frac{1}{5}\)、 \(\frac{3}{4}\) の逆数は \(\frac{4}{3}\)</li>
+        <li>\(a \times \frac{1}{a} = 1\) (例: \(7 \times \frac{1}{7} = 1\))</li>
+    </ul>
+    
+    <div class="example">
+        <h3>例題</h3>
+        <p>\(4\) の逆数は \(\frac{1}{4}\)</p>
+        <p>\(\frac{2}{5}\) の逆数は \(\frac{5}{2}\)</p>
+        <p>\(8 \times \frac{1}{8} = 1\)</p>
+    </div>
+    
+    <h2>練習問題</h2>
+    <div class="exercise">
+        <h3>問題 1: 分数の加法と減法</h3>
+        <p>a. \(\frac{2}{3} + \frac{1}{6} = ?\)</p>
+        <p>b. \(\frac{5}{8} - \frac{1}{4} = ?\)</p>
+        <p>c. \(\frac{3}{5} + \frac{2}{5} = ?\)</p>
+        <div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+        <div class="answer" id="answer1">
+            <h3>解答</h3>
+            <p>a. \(\frac{2}{3} + \frac{1}{6} = \frac{4}{6} + \frac{1}{6} = \frac{5}{6}\)</p>
+            <p>b. \(\frac{5}{8} - \frac{1}{4} = \frac{5}{8} - \frac{2}{8} = \frac{3}{8}\)</p>
+            <p>c. \(\frac{3}{5} + \frac{2}{5} = \frac{5}{5} = 1\)</p>
+        </div>
+    </div>
+    
+    <div class="exercise">
+        <h3>問題 2: 分数の乗法</h3>
+        <p>a. \(\frac{3}{7} \times \frac{2}{5} = ?\)</p>
+        <p>b. \(\frac{4}{9} \times \frac{3}{8} = ?\)</p>
+        <p>c. \(\frac{5}{6} \times \frac{6}{5} = ?\)</p>
+        <div class="toggle-button" onclick="toggleAnswer('answer2')">解答を表示/非表示</div>
+        <div class="answer" id="answer2">
+            <h3>解答</h3>
+            <p>a. \(\frac{3}{7} \times \frac{2}{5} = \frac{6}{35}\)</p>
+            <p>b. \(\frac{4}{9} \times \frac{3}{8} = \frac{12}{72} = \frac{1}{6}\)</p>
+            <p>c. \(\frac{5}{6} \times \frac{6}{5} = 1\)</p>
+        </div>
+    </div>
+    
+    <div class="exercise">
+        <h3>問題 3: 分数の除法</h3>
+        <p>a. \(\frac{8}{9} \div \frac{2}{3} = ?\)</p>
+        <p>b. \(\frac{7}{10} \div \frac{1}{2} = ?\)</p>
+        <p>c. \(\frac{4}{5} \div \frac{2}{3} = ?\)</p>
+        <div class="toggle-button" onclick="toggleAnswer('answer3')">解答を表示/非表示</div>
+        <div class="answer" id="answer3">
+            <h3>解答</h3>
+            <p>a. \(\frac{8}{9} \div \frac{2}{3} = \frac{8}{9} \times \frac{3}{2} = \frac{24}{18} = \frac{4}{3}\)</p>
+            <p>b. \(\frac{7}{10} \div \frac{1}{2} = \frac{7}{10} \times 2 = \frac{14}{10} = \frac{7}{5}\)</p>
+            <p>c. \(\frac{4}{5} \div \frac{2}{3} = \frac{4}{5} \times \frac{3}{2} = \frac{12}{10} = \frac{6}{5}\)</p>
+        </div>
+    </div>
+    
+    <div class="exercise">
+        <h3>問題 4: 逆数</h3>
+        <p>a. \(7\) の逆数は？</p>
+        <p>b. \(\frac{4}{7}\) の逆数は？</p>
+        <p>c. \(6 \times \frac{1}{6} = ?\)</p>
+        <div class="toggle-button" onclick="toggleAnswer('answer4')">解答を表示/非表示</div>
+        <div class="answer" id="answer4">
+            <h3>解答</h3>
+            <p>a. \(7\) の逆数は \(\frac{1}{7}\)</p>
+            <p>b. \(\frac{4}{7}\) の逆数は \(\frac{7}{4}\)</p>
+            <p>c. \(6 \times \frac{1}{6} = 1\)</p>
+        </div>
+    </div>
+    
+</body>
+</html>
