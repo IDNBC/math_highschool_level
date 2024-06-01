@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>三平方の定理の解説</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      h1, h2, h3 { color: #333; }
+      .example, .exercise { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+      .answer { background-color: #f9f9f9; padding: 10px; border: 1px solid #eee; border-radius: 5px; display: none; }
+      .toggle-button { margin-top: 10px; cursor: pointer; color: #007BFF; }
+      .graph { text-align: center; }
+      .graph div { width: 100%; height: 300px; }
+    </style>
+    <script>
+      function toggleAnswer(id) { 
+        var answer = document.getElementById(id); 
+        if (answer.style.display === "none") { 
+          answer.style.display = "block"; 
+        } else { 
+          answer.style.display = "none"; 
+        } 
+      }
+
+      function plotRightTriangle(id, a, b, c) {
+        var x = [0, a, a, 0];
+        var y = [0, 0, b, 0];
+        
+        var data = [{
+          x: x,
+          y: y,
+          type: 'scatter',
+          mode: 'lines+text',
+          text: ['(0,0)', `(${a},0)`, `(${a},${b})`, '(0,0)'],
+          textposition: 'top center'
+        }];
+        
+        Plotly.newPlot(id, data);
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        plotRightTriangle('exampleGraph', 3, 4, 5);
+        plotRightTriangle('exercise1Graph', 5, 12, 13);
+        plotRightTriangle('exercise2Graph', 6, 8, 10);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>三平方の定理の解説</h1>
+
+    <h2>1. 三平方の定理とは</h2>
+    <p>三平方の定理（ピタゴラスの定理）は、直角三角形の三辺の長さの関係を示す定理です。直角三角形では、斜辺の長さの2乗が他の二辺の長さの2乗の和に等しいと述べています。</p>
+    <p>公式は次のとおりです。<br>
+    \[ c^2 = a^2 + b^2 \]</p>
+
+    <h2>2. 例題</h2>
+    <div class="example">
+      <h3>例題 1</h3>
+      <p>直角三角形の二辺の長さがそれぞれ3と4であるとき、斜辺の長さを求めなさい。</p>
+      <p>解答:</p>
+      <ul>
+        <li>斜辺の長さを \( c \) とします。</li>
+        <li>三平方の定理を適用すると、 \( c^2 = 3^2 + 4^2 \)</li>
+        <li>= \( 9 + 16 = 25 \)</li>
+        <li>従って、 \( c = \sqrt{25} = 5 \)</li>
+      </ul>
+
+      <div class="graph" id="exampleGraph"></div>
+    </div>
+
+    <h2>3. 練習問題</h2>
+    <div class="exercise">
+      <h3>問題 1</h3>
+      <p>直角三角形の二辺の長さがそれぞれ5と12であるとき、斜辺の長さを求めなさい。</p>
+      <div class="toggle-button" onclick="toggleAnswer('exercise1Answer')">解答を表示/非表示</div>
+      <div class="answer" id="exercise1Answer">
+        <h3>解答</h3>
+        <p>斜辺の長さを \( c \) とします。</p>
+        <p>三平方の定理を適用すると、 \( c^2 = 5^2 + 12^2 \)</p>
+        <p>= \( 25 + 144 = 169 \)</p>
+        <p>従って、 \( c = \sqrt{169} = 13 \)</p>
+        <div class="graph" id="exercise1Graph"></div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h3>問題 2</h3>
+      <p>直角三角形の斜辺の長さが10であり、1つの辺の長さが6であるとき、もう一方の辺の長さを求めなさい。</p>
+      <div class="toggle-button" onclick="toggleAnswer('exercise2Answer')">解答を表示/非表示</div>
+      <div class="answer" id="exercise2Answer">
+        <h3>解答</h3>
+        <p>もう一方の辺の長さを \( b \) とします。</p>
+        <p>三平方の定理を適用すると、 \( 10^2 = 6^2 + b^2 \)</p>
+        <p>= \( 100 = 36 + b^2 \)</p>
+        <p>= \( b^2 = 100 - 36 = 64 \)</p>
+        <p>従って、 \( b = \sqrt{64} = 8 \)</p>
+        <div class="graph" id="exercise2Graph"></div>
+      </div>
+    </div>
+  </body>
+</html>
