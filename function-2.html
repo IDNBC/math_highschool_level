@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双曲線（反比例）の説明</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .example, .exercise {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .answer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            display: none;
+        }
+        .toggle-button {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+
+        window.onload = function(){
+            drawGraph();
+        }
+
+        function drawGraph() {
+            var canvas = document.getElementById('graph-canvas');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                
+                // 座標軸を描画
+                ctx.beginPath();
+                ctx.moveTo(0, canvas.height / 2);
+                ctx.lineTo(canvas.width, canvas.height / 2);
+                ctx.moveTo(canvas.width / 2, 0);
+                ctx.lineTo(canvas.width / 2, canvas.height);
+                ctx.stroke();
+                
+                // 双曲線のグラフを描画 (例: y = 4 / x)
+                ctx.beginPath();
+                ctx.strokeStyle = 'blue';
+                for (var x = -10; x <= -0.1; x += 0.1) {
+                    var y = 4 / x;
+                    var cx = canvas.width / 2 + x * 10; // スケーリング
+                    var cy = canvas.height / 2 - y * 10; // スケーリング
+                    if (x === -10) {
+                        ctx.moveTo(cx, cy);
+                    } else {
+                        ctx.lineTo(cx, cy);
+                    }
+                }
+                ctx.stroke();
+
+                ctx.beginPath();
+                for (var x = 0.1; x <= 10; x += 0.1) {
+                    var y = 4 / x;
+                    var cx = canvas.width / 2 + x * 10;
+                    var cy = canvas.height / 2 - y * 10;
+                    if (x === 0.1) {
+                        ctx.moveTo(cx, cy);
+                    } else {
+                        ctx.lineTo(cx, cy);
+                    }
+                }
+                ctx.stroke();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>双曲線（反比例）の説明</h1>
+    
+    <h2>1. 双曲線とは</h2>
+    <p>双曲線（反比例）は次の形で表されます:</p>
+    <p>\( y = \frac{k}{x} \)</p>
+    <ul>
+        <li>\( k \): 比例定数</li>
+    </ul>
+    
+    <h2>2. 双曲線の性質</h2>
+    <p>双曲線の特徴:</p>
+    <ul>
+        <li> \( x \) が正の場合、 \( y \) も正</li>
+        <li> \( x \) が負の場合、 \( y \) も負</li>
+        <li> \( x \) がゼロに近づくと、 \( y \) は無限大に近づく（垂直漸近線）</li>
+        <li> \( y \) がゼロに近づくと、 \( x \) は無限大に近づく（水平漸近線）</li>
+    </ul>
+    
+    <div class="example">
+        <h3>例題</h3>
+        <p>双曲線の例として \( y = \frac{4}{x} \) を考えます。この場合、比例定数 \( k = 4 \) です。</p>
+        <canvas id="graph-canvas" width="400" height="400"></canvas>
+    </div>
+    
+    <h2>3. 練習問題</h2>
+    <div class="exercise">
+        <p>次の双曲線の比例定数を求め、グラフがどのように変化するか考えてみましょう:</p>
+        <ol>
+            <li>\( y = \frac{6}{x} \)</li>
+            <li>\( y = \frac{-3}{x} \)</li>
+            <li>\( y = \frac{8}{x} \)</li>
+        </ol>
+        <p class="toggle-button" onclick="toggleAnswer('answer1')">解答を見る</p>
+        <div class="answer" id="answer1">
+            <ol>
+                <li>比例定数: 6, グラフは \( y = \frac{4}{x} \) と同じ形で、\( k \) が大きいので \( y \) の値も大きくなる。</li>
+                <li>比例定数: -3, グラフは \( y = \frac{4}{x} \) と同じ形だが、 \( y \) が負の値を取る。</li>
+                <li>比例定数: 8, グラフは \( y = \frac{4}{x} \) と同じ形で、 \( k \) がさらに大きいので \( y \) の値も大きくなる。</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
