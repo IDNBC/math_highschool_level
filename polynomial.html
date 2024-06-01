@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多項式の基本概念</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .example, .exercise {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .answer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            display: none;
+        }
+        .toggle-button {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>多項式の基本概念</h1>
+
+    <h2>1. 単項式と多項式</h2>
+    <p>単項式とは、一つの項で構成される式です。例えば、\( 3x \)、\( -2y^2 \)、\( 7 \) などがあります。</p>
+    <p>それに対して、多項式とは、複数の単項式の和で構成される式です。例えば、\( 2x^2 + 3x + 1 \) や \( -x^3 + 4x - 5 \) などがあります。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の中から多項式を選んでください。</p>
+        <ul>
+            <li>\( 5 \)</li>
+            <li>\( x^2 - 3x + 4 \)</li>
+            <li>\( 7y \)</li>
+        </ul>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer1')">回答を表示/非表示</button>
+        <div id="exampleAnswer1" class="answer">
+            <p>多項式は \( x^2 - 3x + 4 \) です。</p>
+        </div>
+    </div>
+
+    <h2>2. 多項式と多項式のかけ算</h2>
+    <p>多項式どうしのかけ算は、それぞれの項を展開して計算します。例えば、\( (x + 2)(x - 3) \) を考えてみましょう。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の多項式を展開してください。</p>
+        <p>\( (x + 2)(x - 3) \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer2')">回答を表示/非表示</button>
+        <div id="exampleAnswer2" class="answer">
+            <p>\( (x + 2)(x - 3) = x(x - 3) + 2(x - 3) \)</p>
+            <p>\( = x^2 - 3x + 2x - 6 \)</p>
+            <p>\( = x^2 - x - 6 \)</p>
+        </div>
+    </div>
+
+    <h2>3. 多項式と多項式の割り算</h2>
+    <p>多項式の割り算は、まず被除数を除数で割り、その結果を次の項に適用していく方法です。ここでは簡単な例を見てみましょう。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の割り算を行ってください。</p>
+        <p>\( (x^2 - 3x + 2) \div (x - 1) \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer3')">回答を表示/非表示</button>
+        <div id="exampleAnswer3" class="answer">
+            <p>最初の項より：</p>
+            <p>\( \frac{x^2}{x} = x \)</p>
+            <p>\( x \times (x - 1) = x^2 - x \)</p>
+            <p>\( x^2 - 3x + 2 - (x^2 - x) = -3x + 2 + x = -2x + 2 \)</p>
+            <p>次の項より：</p>
+            <p>\( \frac{-2x}{x} = -2 \)</p>
+            <p>\( -2 \times (x - 1) = -2x + 2 \)</p>
+            <p>\( -2x + 2 - (-2x + 2) = 0 \)</p>
+            <p>したがって、商は \( x - 2 \) です。</p>
+        </div>
+    </div>
+
+    <h2>4. 練習問題</h2>
+    <div class="exercise">
+        <p>次の問題に挑戦してください。</p>
+        <p>問題1: 次の多項式を展開してください。</p>
+        <p>\( (x + 3)(x - 4) \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer1')">回答を表示/非表示</button>
+        <div id="exerciseAnswer1" class="answer">
+            <p>\( (x + 3)(x - 4) = x(x - 4) + 3(x - 4) \)</p>
+            <p>\( = x^2 - 4x + 3x - 12 \)</p>
+            <p>\( = x^2 - x - 12 \)</p>
+        </div>
+
+        <p>問題2: 次の割り算を行ってください。</p>
+        <p>\( (x^2 - 4x + 4) \div (x - 2) \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer2')">回答を表示/非表示</button>
+        <div id="exerciseAnswer2" class="answer">
+            <p>最初の項より：</p>
+            <p>\( \frac{x^2}{x} = x \)</p>
+            <p>\( x \times (x - 2) = x^2 - 2x \)</p>
+            <p>\( x^2 - 4x + 4 - (x^2 - 2x) = -4x + 4 + 2x = -2x + 4 \)</p>
+            <p>次の項より：</p>
+            <p>\( \frac{-2x}{x} = -2 \)</p>
+            <p>\( -2 \times (x - 2) = -2x + 4 \)</p>
+            <p>\( -2x + 4 - (-2x + 4) = 0 \)</p>
+            <p>したがって、商は \( x - 2 \) です。</p>
+        </div>
+    </div>
+</body>
+</html>
