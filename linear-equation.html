@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一次方程式について</title>
+    <style>
+        .solution {
+            display: none;
+            margin-top: 10px;
+        }
+        .show {
+            display: block;
+        }
+        .button {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function toggleSolution(id) {
+            const solutionElement = document.getElementById(id);
+            if (solutionElement.classList.contains('show')) {
+                solutionElement.classList.remove('show');
+            } else {
+                solutionElement.classList.add('show');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>一次方程式について</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h2>一次方程式とは</h2>
+                <p>一次方程式とは、変数（例えば \(x\) ）の最高次数が1の方程式のことです。一般的な形は次のようになります：</p>
+                <p><strong>ax + b = 0</strong></p>
+                <p>ここで、<strong>a</strong> と <strong>b</strong> は実数で、<strong>a ≠ 0</strong> です。</p>
+            </article>
+            <article>
+                <h2>具体例</h2>
+                <h3>例1: 3x + 2 = 0 の解き方</h3>
+                <p>1. まず、定数項を移項する：</p>
+                <p><strong>3x + 2 = 0</strong></p>
+                <p><strong>3x = -2</strong></p>
+                <p>2. 両辺を係数 <strong>3</strong> で割る：</p>
+                <p><strong>x = -2 / 3</strong></p>
+                <p>したがって、<strong>x = -2/3</strong> です。</p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>練習問題</h2>
+                <div>
+                    <h3>問題1: 2x - 5 = 0 の解を求めなさい。</h3>
+                    <button class="button" onclick="toggleSolution('solution1')">解答を表示/非表示</button>
+                    <div id="solution1" class="solution">
+                        <p>1. 定数項を移項する：</p>
+                        <p><strong>2x - 5 = 0</strong></p>
+                        <p><strong>2x = 5</strong></p>
+                        <p>2. 両辺を係数 <strong>2</strong> で割る：</p>
+                        <p><strong>x = 5 / 2</strong></p>
+                        <p>したがって、<strong>x = 5/2</strong> または <strong>x = 2.5</strong> です。</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>問題2: 4x + 3 = 0 の解を求めなさい。</h3>
+                    <button class="button" onclick="toggleSolution('solution2')">解答を表示/非表示</button>
+                    <div id="solution2" class="solution">
+                        <p>1. 定数項を移項する：</p>
+                        <p><strong>4x + 3 = 0</strong></p>
+                        <p><strong>4x = -3</strong></p>
+                        <p>2. 両辺を係数 <strong>4</strong> で割る：</p>
+                        <p><strong>x = -3 / 4</strong></p>
+                        <p>したがって、<strong>x = -3/4</strong> または <strong>x = -0.75</strong> です。</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
