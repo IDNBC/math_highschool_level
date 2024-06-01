@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平方根の説明</title>
+    <style>
+        .answer {
+            display: none;
+        }
+
+        .toggle-button {
+            margin-top: 10px;
+            display: inline-block;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>平方根についての説明</h1>
+    <p>
+        平方根（へいほうこん、square root）は、ある数を2乗（つまり自分自身を掛ける）したときに元の数になる数のことです。平方根は、正の数に対しては常に2つ存在し、一つは正の平方根、もう一つは負の平方根です。たとえば、4の平方根は2と-2です。
+    </p>
+
+    <h2>簡単な例題</h2>
+    <p>
+        例えば、9の平方根を求めるとします。
+        <div>
+            \[
+            \sqrt{9} = 3 \quad \text{および} \quad \sqrt{9} = -3
+            \]
+        </div>
+    </p>
+
+    <h2>分母の有理化</h2>
+    <p>
+        分母に平方根がある場合、それを有理化（分母から平方根を取り除くこと）する必要があります。例えば、
+        \[
+        \frac{1}{\sqrt{2}}
+        \]
+        この場合、分子と分母に \(\sqrt{2}\) を掛けることで有理化します。
+        <div>
+            \[
+            \frac{1}{\sqrt{2}} \times \frac{\sqrt{2}}{\sqrt{2}} = \frac{\sqrt{2}}{2}
+            \]
+        </div>
+    </p>
+
+    <h2>平方根の四則演算の法則</h2>
+    <p>
+        平方根には以下のような四則演算の法則があります:
+    </p>
+    <ul>
+        <li>
+            <strong>加法</strong>:
+            \[
+            \sqrt{a} + \sqrt{b} \neq \sqrt{a + b}
+            \]
+            <br>
+            例えば、
+            \[
+            \sqrt{4} + \sqrt{9} = 2 + 3 = 5, \quad しかし \quad \sqrt{4 + 9} = \sqrt{13} \neq 5
+            \]
+        </li>
+        <li>
+            <strong>減法</strong>:
+            \[
+            \sqrt{a} - \sqrt{b} \neq \sqrt{a - b}
+            \]
+            <br>
+            例えば、
+            \[
+            \sqrt{9} - \sqrt{4} = 3 - 2 = 1, \quad しかし \quad \sqrt{9 - 4} = \sqrt{5} \neq 1
+            </p>
+        </li>
+        <li>
+            <strong>乗法</strong>:
+            \[
+            \sqrt{a} \times \sqrt{b} = \sqrt{a \times b}
+            \]
+            <br>
+            例えば、
+            \[
+            \sqrt{2} \times \sqrt{8} = \sqrt{16} = 4
+            </li>
+        <li>
+            <strong>除法</strong>:
+            \[
+            \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}
+            \]
+            <br>
+            例えば、
+            \[
+            \frac{\sqrt{8}}{\sqrt{2}} = \sqrt{4} = 2
+            </li>
+    </ul>
+
+    <h2>練習問題</h2>
+    <p>以下の平方根を求めてください。</p>
+
+    <ol>
+        <li>\(\sqrt{25}\)</li>
+        <li>\(\frac{1}{\sqrt{3}}\) を有理化してください。</li>
+        <li>\(\sqrt{2} \times \sqrt{18}\)</li>
+        <li>\(\frac{\sqrt{20}}{\sqrt{5}}\)</li>
+    </ol>
+
+    <div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+    <div id="answer1" class="answer">
+        <ol>
+            <li>\(\sqrt{25} = 5\)</li>
+            <li>\(\frac{1}{\sqrt{3}} \times \frac{\sqrt{3}}{\sqrt{3}} = \frac{\sqrt{3}}{3}\)</li>
+            <li>\(\sqrt{2} \times \sqrt{18} = \sqrt{36} = 6\)</li>
+            <li>\(\frac{\sqrt{20}}{\sqrt{5}} = \sqrt{4} = 2\)</li>
+        </ol>
+    </div>
+</body>
+</html>
