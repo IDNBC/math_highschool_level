@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>因数分解の基本概念</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .example, .exercise {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .answer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            display: none;
+        }
+        .toggle-button {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>因数分解の基本概念</h1>
+
+    <h2>1. 因数分解とは</h2>
+    <p>因数分解は、多項式をいくつかの因数に分解する操作です。これは、乗法の逆操作に当たります。例えば、次のような多項式があります：</p>
+    <p>\( x^2 - 5x + 6 \)</p>
+    <p>これを因数分解すると：</p>
+    <p>\( (x - 2)(x - 3) \)</p>
+    <p>このように、因数分解することで元の式を簡単な因数の積に分解できます。</p>
+
+    <h2>2. 素因数分解とは</h2>
+    <p>素因数分解は、整数をその素数の積に分解する操作です。例えば、15を素因数分解すると次のようになります：</p>
+    <p>15 = 3 × 5</p>
+    <p>素因数分解は整数に適用されるのに対し、因数分解は多項式に適用される点が異なります。</p>
+
+    <h2>3. 因数分解の公式</h2>
+    <p>因数分解にはいくつかの公式があります。それらを使うと、多項式の因数分解が容易になります。主な公式は次の通りです：</p>
+    <ul>
+        <li>共通因数の取り出し： \( ax + ay = a(x + y) \)</li>
+        <li>平方差の公式： \( a^2 - b^2 = (a + b)(a - b) \)</li>
+        <li>完全平方の公式： \( a^2 + 2ab + b^2 = (a + b)^2 \)</li>
+        <li>完全平方の公式： \( a^2 - 2ab + b^2 = (a - b)^2 \)</li>
+        <li>一般の二次式の因数分解： \( ax^2 + bx + c \) を因数分解する方法は、解を見つけることで可能です。</li>
+    </ul>
+
+    <h3>例題</h3>
+    <p>次の多項式を因数分解してください。</p>
+    <p>1. \( x^2 - 9 \)</p>
+    <p>2. \( x^2 + 4x + 4 \)</p>
+    <button class="toggle-button" onclick="toggleAnswer('exampleAnswer')">回答を表示/非表示</button>
+    <div id="exampleAnswer" class="answer">
+        <p>1.平方差の公式を使います：</p>
+        <p>\( x^2 - 9 = (x + 3)(x - 3) \)</p>
+        
+        <p>2.完全平方の公式を使います：</p>
+        <p>\( x^2 + 4x + 4 = (x + 2)^2 \)</p>
+    </div>
+
+    <h2>4. 練習問題</h2>
+    <div class="exercise">
+        <p>次の問題に挑戦してください。</p>
+
+        <p>問題1: 次の多項式を因数分解してください。</p>
+        <p>1. \( x^2 - 16 \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer1')">回答を表示/非表示</button>
+        <div id="exerciseAnswer1" class="answer">
+            <p>平方差の公式を使います：</p>
+            <p>\( x^2 - 16 = (x + 4)(x - 4) \)</p>
+        </div>
+
+        <p>問題2: 次の多項式を因数分解してください。</p>
+        <p>2. \( x^2 + 6x + 9 \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer2')">回答を表示/非表示</button>
+        <div id="exerciseAnswer2" class="answer">
+            <p>完全平方の公式を使います：</p>
+            <p>\( x^2 + 6x + 9 = (x + 3)^2 \)</p>
+        </div>
+
+        <p>問題3: 次の多項式を因数分解してください。</p>
+        <p>3. \( 2x^2 + 4x \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer3')">回答を表示/非表示</button>
+        <div id="exerciseAnswer3" class="answer">
+            <p>共通因数を取り出します：</p>
+            <p>\( 2x^2 + 4x = 2x(x + 2) \)</p>
+        </div>
+
+        <p>問題4: 次の多項式を因数分解してください。</p>
+        <p>4. \( x^2 - 6x + 9 \)</p>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer4')">回答を表示/非表示</button>
+        <div id="exerciseAnswer4" class="answer">
+            <p>完全平方の公式を使います：</p>
+            <p>\( x^2 - 6x + 9 = (x - 3)^2 \)</p>
+        </div>
+    </div>
+</body>
+</html>
