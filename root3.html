@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>2重根号の外し方</title> 
+    <style> 
+      .answer { display: none; }
+          .toggle-button {
+        margin-top: 10px;
+        display: inline-block;
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+</head> 
+  <body> 
+    <h1>2重根号の外し方</h1> 
+    <p> 2重根号とは、根号の中にさらに根号が入っている形式のことで、以下のように表されます： </p> 
+    <p> \[ \sqrt{a + \sqrt{b}} \] </p> 
+    <p> 2重根号を外す方法は、以下の形式に変換することにあります。 </p> 
+    <p> \[ \sqrt{a + \sqrt{b}} = \sqrt{x} + \sqrt{y} \] </p> 
+    <p> これを成立させるためには、以下の条件を満たす \(x\) と \(y\) を見つける必要があります。 </p> 
+    <p> \[ x + y = a \quad \text{かつ} \quad 2\sqrt{xy} = \sqrt{b} \] </p>
+    <h2>方法</h2>
+<ol>
+    <li>\(a + \sqrt{b} = x + y + 2\sqrt{xy}\)</li>
+    <li>それぞれの条件 \(x + y = a\) と \(2\sqrt{xy} = \sqrt{b}\) を解く</li>
+</ol>
+
+<h2>簡単な例題</h2>
+<p>
+    次の2重根号を外してみましょう：
+    \[
+    \sqrt{3 + \sqrt{5}}
+    \]
+</p>
+<ol>
+    <li>まず、\(\sqrt{3 + \sqrt{5}} = \sqrt{x} + \sqrt{y}\) と仮定します。</li>
+    <li>次に、\(x + y = 3\) かつ \(2\sqrt{xy} = \sqrt{5}\) という式を立てます。</li>
+    <li>ここで、\(x\) と \(y\) を見つけるためにそれぞれの式を解きます。例えば、\(x\) と \(y\) に適した値を見つけることで、
+        \[
+        2\sqrt{xy} = \sqrt{5} \implies xy = \frac{5}{4}
+        \]
+        \[
+        x + y = 3
+        \]
+    </li>
+    <li>解の公式を使って方程式を解くと、
+        \[
+        x, y = \frac{3 \pm 1}{2} \implies x = 2, y = 1 \quad \text{または} \quad x = 1, y = 2
+        \]
+    </li>
+    <li>これより、
+        \[
+        \sqrt{3 + \sqrt{5}} = \sqrt{2} + \sqrt{1}
+        \]
+    </li>
+    <li>結果として、\(\sqrt{3 + \sqrt{5}} = \sqrt{2} + 1\) となります。</li>
+</ol>
+
+<h2>練習問題</h2>
+<p>以下の2重根号を外してください。</p>
+
+<ol>
+    <li>\(\sqrt{6 + \sqrt{20}}\)</li>
+    <li>\(\sqrt{10 + \sqrt{24}}\)</li>
+    <li>\(\sqrt{8 + \sqrt{15}}\)</li>
+    <li>\(\sqrt{12 + \sqrt{40}}\)</li>
+    <li>\(\sqrt{5 + \sqrt{21}}\)</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer3')">解答を表示/非表示</div>
+<div id="answer3" class="answer">
+    <ol>
+        <li>
+            \[
+            \sqrt{6 + \sqrt{20}} = \sqrt{5} + \sqrt{1}
+            \]
+            (条件: \(x + y = 6\) と \(2\sqrt{xy} = \sqrt{20}\), \(xy = 5\))
+        </li>
+        <li>
+            \[
+            \sqrt{10 + \sqrt{24}} = \sqrt{6} + \sqrt{4}
+            \]
+            (条件: \(x + y = 10\) と \(2\sqrt{xy} = \sqrt{24}\), \(xy = 6\))
+        </li>
+        <li>
+            \[
+            \sqrt{8 + \sqrt{15}} = \sqrt{5} + \sqrt{3}
+            \]
+            (条件: \(x + y = 8\) と \(2\sqrt{xy} = \sqrt{15}\), \(xy = \frac{15}{4} \))
+        </li>
+        <li>
+            \[
+            \sqrt{12 + \sqrt{40}} = \sqrt{8} + \sqrt{4}
+            \]
+            (条件: \(x + y = 12\) と \(2\sqrt{xy} = \sqrt{40}\), \(xy = 8\))
+        </li>
+        <li>
+            \[
+            \sqrt{5 + \sqrt{21}} = \sqrt{7} + \sqrt{-2} \quad \text{または} \quad \sqrt{7 - 2\sqrt{3}}
+            \]
+            (条件: \(x + y = 5\) と \(2\sqrt{xy} = \sqrt{21}\), \(xy = \frac{21}{4}\))
+        </li>
+    </ol>
+</div>
+</body> 
+</html>
+
