@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>連立方程式の基本概念</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .example, .exercise {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .answer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            display: none;
+        }
+        .toggle-button {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>連立方程式の基本概念</h1>
+
+    <h2>1. 連立方程式とは</h2>
+    <p>連立方程式とは、複数の方程式の集まりで、その解が全ての方程式を同時に満たすような値のことです。例えば、次のような2つの方程式があります：</p>
+    <ul>
+        <li>\( x + y = 4 \)</li>
+        <li>\( 2x - y = 1 \)</li>
+    </ul>
+
+    <h2>2. 簡単な連立方程式の解き方</h2>
+    <p>連立方程式を解く方法の一つに「加減法」と「代入法」があります。それぞれの方法を説明します。</p>
+
+    <h3>加減法</h3>
+    <p>加減法は、方程式どうしを足したり引いたりして、変数を消去する方法です。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の連立方程式を加減法で解いてください。</p>
+        <ul>
+            <li>\( x + y = 5 \)</li>
+            <li>\( x - y = 1 \)</li>
+        </ul>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer1')">回答を表示/非表示</button>
+        <div id="exampleAnswer1" class="answer">
+            <p>両方の方程式を足して、変数 \( y \) を消去します：</p>
+            <p>\( (x + y) + (x - y) = 5 + 1 \)</p>
+            <p>\( 2x = 6 \)</p>
+            <p>\( x = 3 \)</p>
+            <p>\( x = 3 \) をどちらかの方程式に代入して、 \( y \) を求めます：</p>
+            <p>\( 3 + y = 5 \)</p>
+            <p>\( y = 2 \)</p>
+            <p>したがって、解は \( x = 3 \)、\( y = 2 \) です。</p>
+        </div>
+    </div>
+
+    <h3>代入法</h3>
+    <p>代入法は、一方の方程式から変数を解いて、その結果を他方の方程式に代入する方法です。</p>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p>次の連立方程式を代入法で解いてください。</p>
+        <ul>
+            <li>\( 2x + y = 7 \)</li>
+            <li>\( x - y = 1 \)</li>
+        </ul>
+        <button class="toggle-button" onclick="toggleAnswer('exampleAnswer2')">回答を表示/非表示</button>
+        <div id="exampleAnswer2" class="answer">
+            <p>まず、第二の方程式から \( x \) を求めます：</p>
+            <p>\( x = y + 1 \)</p>
+            <p>これを第一の方程式に代入します：</p>
+            <p>\( 2(y + 1) + y = 7 \)</p>
+            <p>\( 2y + 2 + y = 7 \)</p>
+            <p>\( 3y = 5 \)</p>
+            <p>\( y = \frac{5}{3} \)</p>
+            <p>この \( y \) を使って、 \( x \) を求めます：</p>
+            <p>\( x = \frac{5}{3} + 1 = \frac{8}{3} \)</p>
+            <p>したがって、解は \( x = \frac{8}{3} \)、\( y = \frac{5}{3} \) です。</p>
+        </div>
+    </div>
+
+    <h2>3. 多元一次方程式</h2>
+    <p>多元一次方程式は、複数の変数を含む一次方程式です。これも連立方程式として解くことができます。</p>
+
+    <h2>4. 練習問題</h2>
+    <div class="exercise">
+        <p>次の連立方程式を解いてください。</p>
+        <p>問題1: 加減法を用いて解いてください。</p>
+        <ul>
+            <li>\( 3x + 2y = 12 \)</li>
+            <li>\( x - 2y = 2 \)</li>
+        </ul>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer1')">回答を表示/非表示</button>
+        <div id="exerciseAnswer1" class="answer">
+            <p>両方の方程式を足して、変数 \( y \) を消去します：</p>
+            <p>\( (3x + 2y) + (x - 2y) = 12 + 2 \)</p>
+            <p>\( 4x = 14 \)</p>
+            <p>\( x = \frac{14}{4} = \frac{7}{2} \)</p>
+            <p>\( x = \frac{7}{2} \) をどちらかの方程式に代入して、 \( y \) を求めます：</p>
+            <p>\( \frac{7}{2} - 2y = 2 \)</p>
+            <p>\( -2y = 2 - \frac{7}{2} \)</p>
+            <p>\( -2y = \frac{4}{2} - \frac{7}{2} = -\frac{3}{2} \)</p>
+            <p>\( y = \frac{3}{2} \times -\frac{1}{2} = -\frac{3}{4} \)</p>
+            <p>したがって、解は \( x = \frac{7}{2} \)、\( y = -\frac{3}{4} \) です。</p>
+        </div>
+
+        <p>問題2: 代入法を用いて解いてください。</p>
+        <ul>
+            <li>\( 4x - y = 9 \)</li>
+            <li>\( x + 3y = -6 \)</li>
+        </ul>
+        <button class="toggle-button" onclick="toggleAnswer('exerciseAnswer2')">回答を表示/非表示</button>
+        <div id="exerciseAnswer2" class="answer">
+            <p>まず、第二の方程式から \( x \) を求めます：</p>
+            <p>\( x = -6 - 3y \)</p>
+            <p>これを第一の方程式に代入します：</p>
+            <p>\( 4(-6 - 3y) - y = 9 \)</p>
+            <p>\( -24 - 12y - y = 9 \)</p>
+            <p>\( -13y = 33 \)</p>
+            <p>\( y = \frac{33}{-13} = -\frac{33}{13} \)</p>
+            <p>この \( y \) を使って、 \( x \) を求めます：</p>
+            <p>\( x = -6 - 3(-\frac{33}{13}) \)</p>
+            <p>\( x = -6 + \frac{99}{13} = -\frac{78}{13} + \frac{99}{13} = \frac{21}{13} \)</p>
+            <p>したがって、解は \( x = \frac{21}{13} \)、\( y = -\frac{33}{13} \) です。</p>
+        </div>
+    </div>
+</body>
+</html>
