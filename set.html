@@ -1,64 +1,105 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>集合の基本</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集合の説明</title>
+    <style>
+        .answer {
+            display: none;
+        }
+          .toggle-button {
+        margin-top: 10px;
+        display: inline-block;
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
 </head>
 <body>
-<h1>集合についての基本</h1>
+    <h1>集合についての説明</h1>
+    <p>
+        集合（しゅうごう、set）は、特定の条件を満たす要素の集まりを意味します。集合は一般に波括弧 { } を用いて表されます。
+    </p>
+    <h2>和集合</h2>
+<p>
+    和集合（わしゅうごう、union）とは、2つの集合 A と B の少なくともどちらか一方に含まれる要素全てを集めた集合です。A と B の和集合は \( A \cup B \) で表されます。
+    <div>
+        例えば、\( A = \{1, 2, 3\} \) と \( B = \{3, 4, 5\} \) の場合、
+        \[        A \cup B = \{1, 2, 3, 4, 5\}        \]
+    </div>
+</p>
 
-<h2>基本的な集合の操作</h2>
-<ul>
-  <li><strong>和集合 (Union):</strong> 二つの集合AとBに属するすべての要素からなる集合を、AとBの和集合と言い、<code>A ∪ B</code>で表します。
-    <ul>
-      <li>例: <code>A = {1, 2, 3}</code>, <code>B = {3, 4, 5}</code> のとき、<code>A ∪ B = {1, 2, 3, 4, 5}</code></li>
-    </ul>
-  </li>
-  <li><strong>積集合 (Intersection):</strong> 二つの集合AとBの共通の要素からなる集合を、AとBの積集合と言い、<code>A ∩ B</code>で表します。
-    <ul>
-      <li>例: <code>A = {1, 2, 3}</code>, <code>B = {3, 4, 5}</code> のとき、<code>A ∩ B = {3}</code></li>
-    </ul>
-  </li>
-  <li><strong>差集合 (Difference):</strong> 集合Aから集合Bに属する要素を除いたものを、AとBの差集合と言い、<code>A - B</code>で表します。
-    <ul>
-      <li>例: <code>A = {1, 2, 3}</code>, <code>B = {3, 4, 5}</code> のとき、<code>A - B = {1, 2}</code></li>
-    </ul>
-  </li>
-</ul>
+<h2>差集合</h2>
+<p>
+    差集合（さしゅうごう、difference）とは、集合 A に属し、かつ集合 B に属さない要素全てを集めた集合です。A から B を引いた差集合は \( A - B \) で表されます。
+    <div>
+        例えば、\( A = \{1, 2, 3\} \) と \( B = \{3, 4, 5\} \) の場合、
+        \[        A - B = \{1, 2\}        \]
+    </div>
+</p>
+
+<h2>積集合</h2>
+<p>
+    積集合（せきしゅうごう、intersection）とは、2つの集合 A と B の両方に含まれる要素全てを集めた集合です。A と B の積集合は \( A \cap B \) で表されます。
+    <div>
+        例えば、\( A = \{1, 2, 3\} \) と \( B = \{3, 4, 5\} \) の場合、
+        \[        A \cap B = \{3\}        \]
+    </div>
+</p>
 
 <h2>ド・モルガンの法則</h2>
-<p>ド・モルガンの法則は集合の補集合と和集合、積集合に関する法則です。集合Uを全体集合とした場合、任意の二つの集合A、Bに対して次の2つの法則が成り立ちます。</p>
-<ol>
-  <li><code>(A ∪ B)^c = A^c ∩ B^c</code></li>
-  <li><code>(A ∩ B)^c = A^c ∪ B^c</code></li>
-</ol>
-
-<h2>例</h2>
+<p>
+    ド・モルガンの法則（ド・モルガンのほうそく、De Morgan's laws）は、集合の補集合に関する重要な法則です。具体的には以下の2つの法則があります。
+</p>
 <ul>
-  <li>集合 <code>U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}</code>、<code>A = {1, 2, 3, 4, 5}</code>、<code>B = {4, 5, 6, 7}</code> とします。</li>
-  <li><code>A ∪ B = {1, 2, 3, 4, 5, 6, 7}</code></li>
-  <li><code>A ∩ B = {4, 5}</code></li>
-  <li><code>A - B = {1, 2, 3}</code></li>
-  <li>ド・モルガンの法則によると、<code>(A ∪ B)^c = A^c ∩ B^c</code>、つまり、<code>{8, 9, 10} = {6, 7, 8, 9, 10} ∩ {1, 2, 3, 8, 9, 10}</code></li>
+    <li>
+        \[        (A \cup B)^c = A^c \cap B^c        \]
+        例えば、\( U = \{1, 2, 3, 4, 5\} \) で \( A = \{1, 2\} \) と \( B = \{2, 3\} \) の場合、
+        \[        A^c = \{3, 4, 5\}, \quad B^c = \{1, 4, 5\}        \]
+        したがって、
+        \[        (A \cup B)^c = \{4, 5\} = A^c \cap B^c        \]
+    </li>
+    <li>
+        \[        (A \cap B)^c = A^c \cup B^c        \]
+        例えば、\( U = \{1, 2, 3, 4, 5\} \) で \( A = \{1, 2\} \) と \( B = \{2, 3\} \) の場合、
+        \[        A^c = \{3, 4, 5\}, \quad B^c = \{1, 4, 5\}        \]
+        したがって、
+        \[        (A \cap B)^c = \{1, 3, 4, 5\} = A^c \cup B^c        \]
+    </li>
 </ul>
 
 <h2>練習問題</h2>
-<p>集合 <code>U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}</code>、<code>A = {2, 4, 6, 8}</code>、<code>B = {5, 6, 7}</code> とするとき、次の集合を求めよ。</p>
+<p>以下の集合演算を求めてください。</p>
+
 <ol>
-  <li><code>A ∪ B</code></li>
-  <li><code>A ∩ B</code></li>
-  <li><code>A - B</code></li>
-  <li><code>(A ∪ B)^c</code></li>
-  <li><code>(A ∩ B)^c</code></li>
+    <li>\( A = \{1, 2, 3\} \) と \( B = \{2, 3, 4\} \) の和集合 \( A \cup B \)</li>
+    <li>\( A = \{1, 2, 3\} \) と \( B = \{2, 3, 4\} \) の差集合 \( A - B \)</li>
+    <li>\( A = \{1, 2, 3\} \) と \( B = \{2, 3, 4\} \) の積集合 \( A \cap B \)</li>
+    <li>ド・モルガンの法則を用いて、\( U = \{1, 2, 3, 4, 5\} \) で \( A = \{1, 2\} \) と \( B = \{2, 3\} \) の \( (A \cup B)^c \)</li>
 </ol>
 
-<h2>解答</h2>
-<ol>
-  <li><code>A ∪ B = {2, 4, 5, 6, 7, 8}</code></li>
-  <li><code>A ∩ B = {6}</code></li>
-  <li><code>A - B = {2, 4, 8}</code></li>
-  <li><code>(A ∪ B)^c = {1, 3, 9, 10}</code></li>
-  <li><code>(A ∩ B)^c = {1, 2, 3, 4, 5, 7, 8, 9, 10}</code></li>
-</ol>
+<div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+<div id="answer1" class="answer">
+    <ol>
+        <li>\( A \cup B = \{1, 2, 3, 4\} \)</li>
+        <li>\( A - B = \{1\} \)</li>
+        <li>\( A \cap B = \{2, 3\} \)</li>
+        <li>\( (A \cup B)^c = \{4, 5\} \)</li>
+    </ol>
+</div>
 </body>
 </html>
