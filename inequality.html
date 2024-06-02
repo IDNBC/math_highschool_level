@@ -1,0 +1,344 @@
+<!DOCTYPE html> <html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>不等式の証明</title> 
+    <style> 
+      .answer { display: none; }
+          .toggle-button {
+        margin-top: 10px;
+        display: inline-block;
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+</head> 
+  <body> 
+    <h1>不等式の証明</h1>
+    <h2>1. 相加平均と相乗平均の不等式</h2>
+<p>
+    相加平均と相乗平均の不等式は、以下のように表されます：
+    \[
+    \frac{a + b}{2} \geq \sqrt{ab} \quad (a, b \geq 0)
+    \]
+    左辺が相加平均、右辺が相乗平均です。等号が成立するのは \(a = b\) のときです。
+</p>
+
+<h3>証明方法</h3>
+<p>次の式を考えます：
+    \[
+    \left( \sqrt{a} - \sqrt{b} \right)^2 \geq 0
+    \]
+    これは平方が常に非負であることからです。これを展開すると：
+    \[
+    \sqrt{a}^2 - 2\sqrt{a}\sqrt{b} + \sqrt{b}^2 \geq 0
+    \]
+    つまり、
+    \[
+    a + b - 2\sqrt{ab} \geq 0
+    \]
+    この式を変形すると、
+    \[
+    a + b \geq 2\sqrt{ab}
+    \]
+    よって、
+    \[
+    \frac{a + b}{2} \geq \sqrt{ab}
+    \]
+</p>
+
+<h3>例題</h3>
+<p>次の数について、不等式 \(\frac{a + b}{2} \geq \sqrt{ab}\) を確かめなさい。</p>
+<ol>
+    <li>a = 4, b = 9</li>
+    <li>a = 1, b = 16</li>
+</ol>
+
+<h3>解答</h3>
+<ol>
+    <li>
+        \[
+        \frac{4 + 9}{2} = \frac{13}{2} = 6.5
+        \]
+        \[
+        \sqrt{4 \cdot 9} = \sqrt{36} = 6
+        \]
+        よって、
+        \[
+        6.5 \geq 6
+        \]
+    </li>
+    <li>
+        \[
+        \frac{1 + 16}{2} = \frac{17}{2} = 8.5
+        \]
+        \[
+        \sqrt{1 \cdot 16} = \sqrt{16} = 4
+        \]
+        よって、
+        \[
+        8.5 \geq 4
+        \]
+    </li>
+</ol>
+
+<h3>練習問題</h3>
+<p>次の数について、不等式 \(\frac{a + b}{2} \geq \sqrt{ab}\) を確かめなさい。</p>
+
+<ol>
+    <li>a = 3, b = 12</li>
+    <li>a = 2, b = 8</li>
+    <li>a = 5, b = 25</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+<div id="answer1" class="answer">
+    <ol>
+        <li>
+            \[
+            \frac{3 + 12}{2} = \frac{15}{2} = 7.5
+            \]
+            \[
+            \sqrt{3 \cdot 12} = \sqrt{36} = 6
+            \]
+            よって、
+            \[
+            7.5 \geq 6
+            \]
+        </li>
+        <li>
+            \[
+            \frac{2 + 8}{2} = \frac{10}{2} = 5
+            \]
+            \[
+            \sqrt{2 \cdot 8} = \sqrt{16} = 4
+            \]
+            よって、
+            \[
+            5 \geq 4
+            \]
+        </li>
+        <li>
+            \[
+            \frac{5 + 25}{2} = \frac{30}{2} = 15
+            \]
+            \[
+            \sqrt{5 \cdot 25} = \sqrt{125} = 11.18
+            \]
+            よって、
+            \[
+            15 \geq 11.18
+            \]
+        </li>
+    </ol>
+</div>
+
+<h2>2. コーシー・シュワルツの不等式</h2>
+<p>
+    コーシー・シュワルツの不等式は、次のように表されます：
+    \[
+    (a^2 + b^2)(c^2 + d^2) \geq (ac + bd)^2
+    \]
+    これは、内積の絶対値がベクトルのノルムの積以下であるというベクトル空間の定理の具体的な形です。
+</p>
+
+<h3>証明方法</h3>
+<p>次の不等式を示すことで証明します：
+    \[
+    (a - tc)^2 + (b - td)^2 \geq 0
+    \]
+    これを展開して
+    \[
+    a^2 - 2atc + t^2c^2 + b^2 - 2btd + t^2d^2 \geq 0
+    \]
+    となります。これを t について最適化すると、 t についての二次形式となり、最小値が 0 以上でなければならないことから証明できます。
+</p>
+
+<h3>例題</h3>
+<p>次の数について、コーシー・シュワルツの不等式 \((a^2 + b^2)(c^2 + d^2) \geq (ac + bd)^2\) を確かめなさい。</p>
+<ol>
+    <li>a = 1, b = 2, c = 3, d = 4</li>
+    <li>a = 5, b = 6, c = 7, d = 8</li>
+</ol>
+
+<h3>解答</h3>
+<ol>
+    <li>
+        \[
+        (1^2 + 2^2)(3^2 + 4^2) = (1 + 4)(9 + 16) = 5 \times 25 = 125
+        \]
+        \[
+        (1 \cdot 3 + 2 \cdot 4)^2 = (3 + 8)^2 = 11^2 = 121
+        \]
+        よって、
+        \[
+        125 \geq 121
+        \]
+    </li>
+    <li>
+        \[
+        (5^2 + 6^2)(7^2 + 8^2) = (25 + 36)(49 + 64) = 61 \times 113 = 6893
+        \]
+        \[
+        (5 \cdot 7 + 6 \cdot 8)^2 = (35 + 48)^2 = 83^2 = 6889
+        \]
+        よって、
+        \[
+        6893 \geq 6889
+        \]
+    </li>
+</ol>
+
+<h3>練習問題</h3>
+<p>次の数について、コーシー・シュワルツの不等式 \((a^2 + b^2)(c^2 + d^2) \geq (ac + bd)^2\) を確かめなさい。</p>
+
+<ol>
+    <li>a = 2, b = 3, c = 4, d = 5</li>
+    <li>a = 1, b = 1, c = 1, d = 1</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer2')">解答を表示/非表示</div>
+<div id="answer2" class="answer">
+    <ol>
+        <li>
+            \[
+            (2^2 + 3^2)(4^2 + 5^2) = (4 + 9)(16 + 25) = 13 \times 41 = 533
+            \]
+            \[
+            (2 \cdot 4 + 3 \cdot 5)^2 = (8 + 15)^2 = 23^2 = 529
+            \]
+            よって、
+            \[
+            533 \geq 529
+            \]
+        </li>
+        <li>
+            \[
+            (1^2 + 1^2)(1^2 + 1^2) = (1 + 1)(1 + 1) = 2 \times 2 = 4
+            \]
+            \[
+            (1 \cdot 1 + 1 \cdot 1)^2 = (1 + 1)^2 = 2^2 = 4
+            \]
+            よって、
+            \[
+            4 \geq 4
+            \]
+        </li>
+    </ol>
+</div>
+
+<h2>3. 三角不等式</h2>
+<p>
+    三角不等式は、次のように表されます：
+    \[
+    |a + b| \leq |a| + |b|
+    \]
+    これは複素数やベクトルの距離に関する基本的な性質を表しています。
+</p>
+
+<h3>証明方法</h3>
+<p>次の絶対値の性質を使います：
+    \[
+    |a + b|^2 = (a + b)(a + b)
+    \]
+    これは次のように展開されます：
+    \[
+    |a + b|^2 = |a|^2 + 2|a||b| + |b|^2
+    \]
+    これは次のように変換できます：
+    \[
+    |a + b|^2 \leq (|a| + |b|)^2
+    \]
+    よって、
+    \[
+    |a + b| \leq |a| + |b|
+    \]
+</p>
+
+<h3>例題</h3>
+<p>次の数について、三角不等式 \(|a + b| \leq |a| + |b|\) を確かめなさい。</p>
+<ol>
+    <li>a = 3, b = -4</li>
+    <li>a = -5, b = 2</li>
+</ol>
+
+<h3>解答</h3>
+<ol>
+    <li>
+        \[
+        |3 + (-4)| = |-1| = 1
+        \]
+        \[
+        |3| + |-4| = 3 + 4 = 7
+        \]
+        よって、
+        \[
+        1 \leq 7
+        \]
+    </li>
+    <li>
+        \[
+        |-5 + 2| = |-3| = 3
+        \]
+        \[
+        |-5| + |2| = 5 + 2 = 7
+        \]
+        よって、
+        \[
+        3 \leq 7
+        \]
+    </li>
+</ol>
+
+<h3>練習問題</h3>
+<p>次の数について、三角不等式 \(|a + b| \leq |a| + |b|\) を確かめなさい。</p>
+
+<ol>
+    <li>a = 7, b = -2</li>
+    <li>a = -6, b = -3</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer3')">解答を表示/非表示</div>
+<div id="answer3" class="answer">
+    <ol>
+        <li>
+            \[
+            |7 + (-2)| = |5| = 5
+            \]
+            \[
+            |7| + |-2| = 7 + 2 = 9
+            \]
+            よって、
+            \[
+            5 \leq 9
+            \]
+        </li>
+        <li>
+            \[
+            |-6 + (-3)| = |-9| = 9
+            \]
+            \[
+            |-6| + |-3| = 6 + 3 = 9
+            \]
+            よって、
+            \[
+            9 \leq 9
+            \]
+        </li>
+    </ol>
+</div>
+</body> 
+</html>
