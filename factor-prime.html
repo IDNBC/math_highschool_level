@@ -8,93 +8,131 @@
         .answer {
             display: none;
         }
-          .toggle-button {
-        margin-top: 10px;
-        display: inline-block;
-        cursor: pointer;
-        color: blue;
-        text-decoration: underline;
-    }
-</style>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-    function toggleAnswer(id) {
-        var element = document.getElementById(id);
-        if (element.style.display === "none") {
-            element.style.display = "block";
-        } else {
-            element.style.display = "none";
+
+        .toggle-button {
+            margin-top: 10px;
+            display: inline-block;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
         }
-    }
-</script>
+
+        .formula {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .formula div {
+            margin-bottom: 5px;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>素因数分解についての説明</h1>
     <p>
         素因数分解（そいんすうぶんかい、prime factorization）とは、ある整数を、それ以上分解できない素数（2、3、5、7 など）だけで表すことです。例えば、60 を素因数分解すると、60 = 2^2 × 3 × 5 となります。
     </p>
+
     <h2>素因数分解の求め方</h2>
-<p>
-    素因数分解の手順は以下の通りです：
+    <p>
+        素因数分解の手順は以下の通りです：
+        <ol>
+            <li>最小の素数である 2 から始め、数を割り切れるか確認します。</li>
+            <li>割り切れたら、その商で同じ操作を繰り返します。</li>
+            <li>割り切れなくなったら、次の素数に進みます。</li>
+            <li>商が 1 になるまで続けます。</li>
+        </ol>
+        例えば、84 を素因数分解する場合、
+        <div class="formula">
+            <div>\( 84 \div 2 = 42 \)</div>
+            <div>\( 42 \div 2 = 21 \)</div>
+            <div>\( 21 \div 3 = 7 \)</div>
+            <div>7 は素数なので、これ以上分解できません。</div>
+            <div>よって、84 = 2^2 \times 3 \times 7</div>
+        </div>
+    </p>
+
+    <h2>例題</h2>
+    <p>
+        例題として、90 を素因数分解してみます。
+        <div class="formula">
+            <div>\( 90 \div 2 = 45 \)</div>
+            <div>\( 45 \div 3 = 15 \)</div>
+            <div>\( 15 \div 3 = 5 \)</div>
+            <div>5 は素数なので、これ以上分解できません。</div>
+            <div>よって、90 = 2 \times 3^2 \times 5</div>
+        </div>
+    </p>
+
+    <h2>練習問題</h2>
+    <p>以下の数を素因数分解してください。</p>
+
     <ol>
-        <li>最小の素数である 2 から始め、数を割り切れるか確認します。</li>
-        <li>割り切れたら、その商で同じ操作を繰り返します。</li>
-        <li>割り切れなくなったら、次の素数に進みます。</li>
-        <li>商が 1 になるまで続けます。</li>
+        <li>56</li>
+        <li>72</li>
+        <li>100</li>
+        <li>120</li>
     </ol>
-    例えば、84 を素因数分解する場合、
-    <div>
-        \[        84 \div 2 = 42 \\        42 \div 2 = 21 \\        21 \div 3 = 7 \\        7 は素数なので、これ以上分解できません。\\        よって、84 = 2^2 \times 3 \times 7        \]
+
+    <div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+    <div id="answer1" class="answer">
+        <ol>
+            <li>
+                56 の素因数分解：
+                <div class="formula">
+                    <div>\( 56 \div 2 = 28 \)</div>
+                    <div>\( 28 \div 2 = 14 \)</div>
+                    <div>\( 14 \div 2 = 7 \)</div>
+                    <div>7 は素数なので、これ以上分解できません。</div>
+                    <div>よって、56 = 2^3 \times 7</div>
+                </div>
+            </li>
+            <li>
+                72 の素因数分解：
+                <div class="formula">
+                    <div>\( 72 \div 2 = 36 \)</div>
+                    <div>\( 36 \div 2 = 18 \)</div>
+                    <div>\( 18 \div 2 = 9 \)</div>
+                    <div>\( 9 \div 3 = 3 \)</div>
+                    <div>\( 3 \div 3 = 1 \)</div>
+                    <div>よって、72 = 2^3 \times 3^2</div>
+                </div>
+            </li>
+            <li>
+                100 の素因数分解：
+                <div class="formula">
+                    <div>\( 100 \div 2 = 50 \)</div>
+                    <div>\( 50 \div 2 = 25 \)</div>
+                    <div>\( 25 \div 5 = 5 \)</div>
+                    <div>\( 5 \div 5 = 1 \)</div>
+                    <div>よって、100 = 2^2 \times 5^2</div>
+                </div>
+            </li>
+            <li>
+                120 の素因数分解：
+                <div class="formula">
+                    <div>\( 120 \div 2 = 60 \)</div>
+                    <div>\( 60 \div 2 = 30 \)</div>
+                    <div>\( 30 \div 2 = 15 \)</div>
+                    <div>\( 15 \div 3 = 5 \)</div>
+                    <div>5 は素数なので、これ以上分解できません。</div>
+                    <div>よって、120 = 2^3 \times 3 \times 5</div>
+                </div>
+            </li>
+        </ol>
     </div>
-</p>
-
-<h2>例題</h2>
-<p>
-    例題として、90 を素因数分解してみます。
-    <div>
-        \[        90 \div 2 = 45 \\        45 \div 3 = 15 \\        15 \div 3 = 5 \\        5 は素数なので、これ以上分解できません。\\        よって、90 = 2 \times 3^2 \times 5        \]
-    </div>
-</p>
-
-<h2>練習問題</h2>
-<p>以下の数を素因数分解してください。</p>
-
-<ol>
-    <li>56</li>
-    <li>72</li>
-    <li>100</li>
-    <li>120</li>
-</ol>
-
-<div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
-<div id="answer1" class="answer">
-    <ol>
-        <li>
-            56 の素因数分解：
-            <div>
-                \[                56 \div 2 = 28 \\                28 \div 2 = 14 \\                14 \div 2 = 7 \\                7 は素数なので、これ以上分解できません。\\                よって、56 = 2^3 \times 7                \]
-            </div>
-        </li>
-        <li>
-            72 の素因数分解：
-            <div>
-                \[                72 \div 2 = 36 \\                36 \div 2 = 18 \\                18 \div 2 = 9 \\                9 \div 3 = 3 \\                3 \div 3 = 1 \\                よって、72 = 2^3 \times 3^2                \]
-            </div>
-        </li>
-        <li>
-            100 の素因数分解：
-            <div>
-                \[                100 \div 2 = 50 \\                50 \div 2 = 25 \\                25 \div 5 = 5 \\                5 \div 5 = 1 \\                よって、100 = 2^2 \times 5^2                \]
-            </div>
-        </li>
-        <li>
-            120 の素因数分解：
-            <div>
-                \[                120 \div 2 = 60 \\                60 \div 2 = 30 \\                30 \div 2 = 15 \\                15 \div 3 = 5 \\                5 は素数なので、これ以上分解できません。\\                よって、120 = 2^3 \times 3 \times 5                \]
-            </div>
-        </li>
-    </ol>
-</div>
 </body>
 </html>
