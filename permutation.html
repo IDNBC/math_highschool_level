@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>順列と組み合わせの説明</title>
+    <style>
+        .answer {
+            display: none;
+        }
+          .toggle-button {
+        margin-top: 10px;
+        display: inline-block;
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+</head>
+<body>
+    <h1>順列と組み合わせについての説明</h1>
+    <p>
+        順列（じゅんれつ、permutation）とは、ある集合の要素を並べ替える方法の数を指します。一方、組み合わせ（くみあわせ、combination）とは、ある集合から要素を選び出す方法の数を指します。
+    </p>
+    <h2>順列</h2>
+<p>
+    順列は、n 個の異なるものから r 個を選び出し、順番に並べる方法の数です。これを \( P(n, r) \) で表し、その計算式は以下の通りです。
+    <div>
+        \[        P(n, r) = \frac{n!}{(n-r)!}        \]
+    </div>
+    例えば、5 個の異なるものから 3 個を選んで並べる場合、
+    <div>
+        \[        P(5, 3) = \frac{5!}{(5-3)!} = \frac{5 \times 4 \times 3 \times 2 \times 1}{2 \times 1} = 60        \]
+    </div>
+</p>
+
+<h2>組み合わせ</h2>
+<p>
+    組み合わせは、n 個の異なるものから r 個を選び出す方法の数です。これを \( C(n, r) \) または \( \binom{n}{r} \) で表し、その計算式は以下の通りです。
+    <div>
+        \[        C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}        \]
+    </div>
+    例えば、5 個の異なるものから 3 個を選ぶ場合、
+    <div>
+        \[        C(5, 3) = \frac{5!}{3! \times (5-3)!} = \frac{5 \times 4 \times 3 \times 2 \times 1}{3 \times 2 \times 1 \times 2 \times 1} = 10        \]
+    </div>
+</p>
+
+<h2>円順列</h2>
+<p>
+    円順列（えんじゅんれつ、circular permutation）とは、円形に並べる順列です。n 個の要素を円形に並べる場合の方法の数は、以下の通りです。
+    <div>
+        \[        (n-1)!        \]
+    </div>
+    例えば、4 個の異なるものを円形に並べる場合、
+    <div>
+        \[        (4-1)! = 3! = 6        \]
+    </div>
+</p>
+
+<h2>数珠順列</h2>
+<p>
+    数珠順列（じゅずじゅんれつ、necklace permutation）は、円順列に対し、回転だけでなく鏡映も考慮した順列です。n 個の要素を数珠状に並べる場合の方法の数は、以下の通りです（n が偶数の場合と奇数の場合で異なります）。
+    <div>
+        偶数の場合：
+        \[        \frac{(n-1)!}{2}        \]
+        奇数の場合：
+        \[        \frac{n!}{2n}        \]
+    </div>
+    例えば、4 個の異なるものを数珠状に並べる場合（n は偶数）、
+    <div>
+        \[        \frac{(4-1)!}{2} = \frac{3!}{2} = 3        \]
+    </div>
+</p>
+
+<h2>同じものを含む順列</h2>
+<p>
+    同じものを含む順列の数は、全体の順列数を同じものの重複分で割ることで求められます。具体的には、n 個の要素のうち、a 個が同じ、b 個が同じ、c 個が同じといった場合の順列の数は以下の通りです。
+    <div>
+        \[        \frac{n!}{a! \times b! \times c!}        \]
+    </div>
+    例えば、A が 3 個、B が 2 個、C が 1 個の場合の順列の数は、
+    <div>
+        \[        \frac{6!}{3! \times 2! \times 1!} = \frac{720}{6 \times 2 \times 1} = 60        \]
+    </div>
+</p>
+
+<h2>練習問題</h2>
+<p>以下の順列と組み合わせを求めてください。</p>
+
+<ol>
+    <li>6 個の異なるものから 2 個を選んで並べる順列 \( P(6, 2) \)</li>
+    <li>7 個の異なるものから 3 個を選ぶ組み合わせ \( C(7, 3) \)</li>
+    <li>5 個の異なるものを円形に並べる円順列</li>
+    <li>4 個の異なるものを数珠状に並べる数珠順列</li>
+    <li>A が 2 個、B が 2 個、C が 2 個の 6 個の要素の順列</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+<div id="answer1" class="answer">
+    <ol>
+        <li>\( P(6, 2) = \frac{6!}{(6-2)!} = \frac{6 \times 5 \times 4!}{4!} = 30 \)</li>
+        <li>\( C(7, 3) = \binom{7}{3} = \frac{7!}{3! \times (7-3)!} = \frac{7 \times 6 \times 5 \times 4!}{3 \times 2 \times 1 \times 4!} = 35 \)</li>
+        <li>5 個の異なるものを円形に並べる場合、\( (5-1)! = 4! = 24 \)</li>
+        <li>4 個の異なるものを数珠状に並べる場合（n は偶数）、\( \frac{(4-1)!}{2} = \frac{3!}{2} = 3 \)</li>
+        <li>A が 2 個、B が 2 個、C が 2 個の 6 個の要素の順列、\( \frac{6!}{2! \times 2! \times 2!} = \frac{720}{8} = 90 \)</li>
+    </ol>
+</div>
+</body>
+</html>
