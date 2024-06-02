@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>絶対値を含む式の計算</title> 
+    <style> 
+      .answer { display: none; }
+          .toggle-button {
+        margin-top: 10px;
+        display: inline-block;
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+</head> 
+  <body> 
+    <h1>絶対値を含む式の計算</h1> 
+    <p> 絶対値（ぜったいち、absolute value）は、数値の大きさを表し、負の数に対しても正の数として扱います。例えば、絶対値とは次のように表されます： </p> 
+    <p> \[ |a| = \begin{cases} a & (a \geq 0)\\ -a & (a < 0) \end{cases} \] つまり、絶対値はその数が正であればそのままの値を、負であればその値の符号を反転して正の値にします。 </p>
+    <h2>例題</h2>
+<p>次の絶対値を含む式を計算してみましょう：</p>
+<ol>
+    <li>\(|-5|\)</li>
+    <li>\(|7| + |-3|\)</li>
+    <li>\(|4 - 10|\)</li>
+    <li>\(|-2| \times |3|\)</li>
+</ol>
+
+<h3>解答</h3>
+<ol>
+    <li>\(|-5| = 5\)</li>
+    <li>\(|7| + |-3| = 7 + 3 = 10\)</li>
+    <li>\(|4 - 10| = |-6| = 6\)</li>
+    <li>\(|-2| \times |3| = 2 \times 3 = 6\)</li>
+</ol>
+
+<h2>練習問題</h2>
+<p>次の絶対値を含む式を計算してください：</p>
+<ol>
+    <li>\(|-8|\)</li>
+    <li>\(|5| + |-2|\)</li>
+    <li>\(|12 - 20|\)</li>
+    <li>\(|-7| \times |4|\)</li>
+    <li>\(|-9 + 2|\)</li>
+    <li>\(2 \times |-3|\)</li>
+    <li>\(|-4| + |4|\)</li>
+    <li>\(|-6 - 2|\)</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer5')">解答を表示/非表示</div>
+<div id="answer5" class="answer">
+    <ol>
+        <li>\(|-8| = 8\)</li>
+        <li>\(|5| + |-2| = 5 + 2 = 7\)</li>
+        <li>\(|12 - 20| = |-8| = 8\)</li>
+        <li>\(|-7| \times |4| = 7 \times 4 = 28\)</li>
+        <li>\(|-9 + 2| = |-7| = 7\)</li>
+        <li>\(2 \times |-3| = 2 \times 3 = 6\)</li>
+        <li>\(|-4| + |4| = 4 + 4 = 8\)</li>
+        <li>\(|-6 - 2| = |-8| = 8\)</li>
+    </ol>
+</div>
+</body> 
+</html>
