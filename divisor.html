@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>約数の個数と総和の求め方</title>
+    <style>
+        .answer {
+            display: none;
+        }
+
+        .toggle-button {
+            margin-top: 10px;
+            display: inline-block;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .formula {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .formula div {
+            margin-bottom: 5px;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>約数の個数と総和の求め方</h1>
+    <p>
+        約数の個数と総和を求めるには、その数の素因数分解を利用します。
+    </p>
+
+    <h2>約数の個数の求め方</h2>
+    <p>
+        ある数 \( n \) の約数の個数を求めるには、まずその数を素因数分解します。素因数分解した結果が 
+        \[
+        n = p_1^{e_1} \times p_2^{e_2} \times \cdots \times p_k^{e_k}
+        \]
+        となるとき、約数の個数は次の式で求められます：
+        \[
+        (e_1 + 1)(e_2 + 1) \cdots (e_k + 1)
+        \]
+    </p>
+
+    <h2>約数の総和の求め方</h2>
+    <p>
+        同様に、ある数 \( n \) の約数の総和を求めるには、素因数分解の結果を利用します。素因数分解した結果が 
+        \[
+        n = p_1^{e_1} \times p_2^{e_2} \times \cdots \times p_k^{e_k}
+        \]
+        となるとき、約数の総和は次の式で求められます：
+        \[
+        (1 + p_1 + p_1^2 + \cdots + p_1^{e_1})(1 + p_2 + p_2^2 + \cdots + p_2^{e_2}) \cdots (1 + p_k + p_k^2 + \cdots + p_k^{e_k})
+        \]
+    </p>
+
+    <h2>例題</h2>
+    <p>
+        例題として、72 の約数の個数と総和を求めてみます。
+        <div class="formula">
+            <div>まず、72 を素因数分解します：</div>
+            <div>\( 72 = 2^3 \times 3^2 \)</div>
+            <div>約数の個数は次のように求められます：</div>
+            <div>\( (3 + 1)(2 + 1) = 4 \times 3 = 12 \)</div>
+            <div>次に、約数の総和は次のように求められます：</div>
+            <div>\( (1 + 2 + 2^2 + 2^3)(1 + 3 + 3^2) = (1 + 2 + 4 + 8)(1 + 3 + 9) = 15 \times 13 = 195 \)</div>
+        </div>
+    </p>
+
+    <h2>練習問題</h2>
+    <p>以下の数の約数の個数と総和を求めてください。</p>
+
+    <ol>
+        <li>36</li>
+        <li>60</li>
+        <li>100</li>
+        <li>150</li>
+    </ol>
+
+    <div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+    <div id="answer1" class="answer">
+        <ol>
+            <li>
+                36 の約数の個数と総和：
+                <div class="formula">
+                    <div>まず、36 を素因数分解します：</div>
+                    <div>\( 36 = 2^2 \times 3^2 \)</div>
+                    <div>約数の個数は次のように求められます：</div>
+                    <div>\( (2 + 1)(2 + 1) = 3 \times 3 = 9 \)</div>
+                    <div>約数の総和は次のように求められます：</div>
+                    <div>\( (1 + 2 + 2^2)(1 + 3 + 3^2) = (1 + 2 + 4)(1 + 3 + 9) = 7 \times 13 = 91 \)</div>
+                </div>
+            </li>
+            <li>
+                60 の約数の個数と総和：
+                <div class="formula">
+                    <div>まず、60 を素因数分解します：</div>
+                    <div>\( 60 = 2^2 \times 3 \times 5 \)</div>
+                    <div>約数の個数は次のように求められます：</div>
+                    <div>\( (2 + 1)(1 + 1)(1 + 1) = 3 \times 2 \times 2 = 12 \)</div>
+                    <div>約数の総和は次のように求められます：</div>
+                    <div>\( (1 + 2 + 2^2)(1 + 3)(1 + 5) = (1 + 2 + 4)(1 + 3)(1 + 5) = 7 \times 4 \times 6 = 168 \)</div>
+                </div>
+            </li>
+            <li>
+                100 の約数の個数と総和：
+                <div class="formula">
+                    <div>まず、100 を素因数分解します：</div>
+                    <div>\( 100 = 2^2 \times 5^2 \)</div>
+                    <div>約数の個数は次のように求められます：</div>
+                    <div>\( (2 + 1)(2 + 1) = 3 \times 3 = 9 \)</div>
+                    <div>約数の総和は次のように求められます：</div>
+                    <div>\( (1 + 2 + 2^2)(1 + 5 + 5^2) = (1 + 2 + 4)(1 + 5 + 25) = 7 \times 31 = 217 \)</div>
+                </div>
+            </li>
+            <li>
+                150 の約数の個数と総和：
+                <div class="formula">
+                    <div>まず、150 を素因数分解します：</div>
+                    <div>\( 150 = 2 \times 3 \times 5^2 \)</div>
+                    <div>約数の個数は次のように求められます：</div>
+                    <div>\( (1 + 1)(1 + 1)(2 + 1) = 2 \times 2 \times 3 = 12 \)</div>
+                    <div>約数の総和は次のように求められます：</div>
+                    <div>\( (1 + 2)(1 + 3)(1 + 5 + 5^2) = (1 + 2)(1 + 3)(1 + 5 + 25) = 3 \times 4 \times 31 = 372 \)</div>
+                </div>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
