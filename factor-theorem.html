@@ -1,0 +1,136 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>剰余の定理と因数定理</title> 
+    <style> 
+      .answer { display: none; }
+          .toggle-button {
+        margin-top: 10px;
+        display: inline-block;
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+</head> 
+  <body> 
+    <h1>剰余の定理と因数定理</h1> 
+    <p> 剰余の定理と因数定理は多項式の因数分解や整式の除法に関する基本的な定理です。 </p>
+    <h2>剰余の定理</h2>
+<p>
+    剰余の定理は、多項式 \(f(x)\) を \(x - a\) で割ったときの剰余が \(f(a)\) であることを示しています。言い換えると、次のように表せます：
+    \[
+    f(x) = (x - a)q(x) + r
+    \]
+    ここで、\(r = f(a)\) です。
+</p>
+
+<h2>因数定理</h2>
+<p>
+    因数定理は、ある多項式 \(f(x)\) において \(f(a) = 0\) ならば \((x - a)\) が \(f(x)\) の因数であることを示しています。逆に、\((x - a)\) が \(f(x)\) の因数であれば \(f(a) = 0\) であることも示しています。
+</p>
+
+<h2>例題</h2>
+<h3>剰余の定理の例題</h3>
+<p>次の多項式 \(f(x) = 2x^3 - 3x^2 + x - 5\) を \(x - 2\) で割ったときの剰余を求めなさい。</p>
+<p>
+    \[
+    f(x) = 2x^3 - 3x^2 + x - 5
+    \]
+    を \(x - 2\) で割るとき、剰余の定理を使います。
+</p>
+<p>
+    \[
+    f(2) = 2(2)^3 - 3(2)^2 + 2 - 5 = 16 - 12 + 2 - 5 = 1
+    \]
+    よって、剰余は \(1\) です。
+</p>
+
+<h3>因数定理の例題</h3>
+<p>次の多項式 \(f(x) = x^3 - 4x^2 + 5x - 2\) が \((x - 1)\) を因数に持つかどうかを判定しなさい。</p>
+<p>
+    \(f(1)\) を計算します：
+    \[
+    f(1) = 1^3 - 4 \cdot 1^2 + 5 \cdot 1 - 2 = 1 - 4 + 5 - 2 = 0
+    \]
+    よって、因数定理により \((x - 1)\) は \(f(x)\) の因数です。
+</p>
+
+<h2>練習問題</h2>
+<p>以下の問題を解きなさい。</p>
+<h3>剰余の定理の問題</h3>
+<ol>
+    <li>\(f(x) = x^3 + 2x^2 - x + 3\) を \(x - 1\) で割ったときの剰余を求めなさい。</li>
+    <li>\(f(x) = 2x^4 - 3x^3 + x^2 - 4x + 5\) を \(x + 2\) で割ったときの剰余を求めなさい。</li>
+    <li>\(f(x) = 4x^2 - 5x + 1\) を \(x - 3\) で割ったときの剰余を求めなさい。</li>
+</ol>
+
+<h3>因数定理の問題</h3>
+<ol>
+    <li>\(g(x) = x^3 - 6x^2 + 11x - 6\) が \((x - 2)\) を因数に持つかどうか判定しなさい。</li>
+    <li>\(g(x) = x^4 - 4x^3 + 6x^2 - 4x + 1\) が \((x - 1)\) を因数に持つかどうか判定しなさい。</li>
+    <li>\(g(x) = 2x^3 - 3x^2 - 8x + 4\) が \((x + 1)\) を因数に持つかどうか判定しなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer6')">解答を表示/非表示</div>
+<div id="answer6" class="answer">
+    <h3>剰余の定理の解答</h3>
+    <ol>
+        <li>
+            \[
+            f(1) = 1^3 + 2 \cdot 1^2 - 1 + 3 = 1 + 2 - 1 + 3 = 5
+            \]
+            よって、剰余は \(5\) です。
+        </li>
+        <li>
+            \[
+            f(-2) = 2(-2)^4 - 3(-2)^3 + (-2)^2 - 4(-2) + 5 = 2 \cdot 16 + 3 \cdot 8 + 4 + 8 + 5 = 32 + 24 + 4 + 8 + 5 = 73
+            \]
+            よって、剰余は \(73\) です。
+        </li>
+        <li>
+            \[
+            f(3) = 4 \cdot 3^2 - 5 \cdot 3 + 1 = 4 \cdot 9 - 15 + 1 = 36 - 15 + 1 = 22
+            \]
+            よって、剰余は \(22\) です。
+        </li>
+    </ol>
+
+    <h3>因数定理の解答</h3>
+    <ol>
+        <li>
+            \[
+            g(2) = 2^3 - 6 \cdot 2^2 + 11 \cdot 2 - 6 = 8 - 24 + 22 - 6 = 0
+            \]
+            よって、\((x - 2)\) は \(g(x)\) の因数です。
+        </li>
+        <li>
+            \[
+            g(1) = 1^4 - 4 \cdot 1^3 + 6 \cdot 1^2 - 4 \cdot 1 + 1 = 1 - 4 + 6 - 4 + 1 = 0
+            \]
+            よって、\((x - 1)\) は \(g(x)\) の因数です。
+        </li>
+        <li>
+            \[
+            g(-1) = 2(-1)^3 - 3(-1)^2 - 8(-1) + 4 = -2 - 3 + 8 + 4 = 7
+            \]
+            よって、\((x + 1)\) は \(g(x)\) の因数ではありません。
+        </li>
+    </ol>
+</div>
+</body> 
+</html>
