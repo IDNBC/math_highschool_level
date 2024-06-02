@@ -1,82 +1,66 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>実数の公理</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        .example, .exercise, .answer {
-            margin-top: 20px;
-        }
-        .example h3, .exercise h3, .answer h3 {
-            margin-bottom: 10px;
-        }
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-
-    <h1>実数の公理</h1>
-
-    <p>実数の公理は数学の基礎を形成します。ここでは、順序の公理、完備性の公理、および算術の公理について説明します。また、例題と練習問題も含めています。</p>
-
-    <h2>順序の公理</h2>
-    <ul>
-        <li><strong>反射律</strong>: 任意の実数 <em>a</em> について <em>a ≤ a</em> が成り立ちます。</li>
-        <li><strong>反対称律</strong>: 任意の実数 <em>a, b</em> について <em>a ≤ b</em> かつ <em>b ≤ a</em> ならば <em>a = b</em> が成り立ちます。</li>
-        <li><strong>推移律</strong>: 任意の実数 <em>a, b, c</em> について <em>a ≤ b</em> かつ <em>b ≤ c</em> ならば <em>a ≤ c</em> が成り立ちます。</li>
-        <li><strong>全順序律</strong>: 任意の実数 <em>a, b</em> について <em>a ≤ b</em> あるいは <em>b ≤ a</em> が成り立ちます。</li>
-    </ul>
-
-    <h2>完備性の公理</h2>
-    <p>実数は <strong>完備</strong> です。すなわち、任意の有界非空集合は上限（最小上界）と下限（最大下界）を持ちます。</p>
-
-    <h2>算術の公理</h2>
-    <ul>
-        <li><strong>閉性</strong>: 任意の実数 <em>a, b</em> について <em>a + b</em> と <em>ab</em> も実数です。</li>
-        <li><strong>交換律</strong>: 任意の実数 <em>a, b</em> について <em>a + b = b + a</em> および <em>ab = ba</em> が成り立ちます。</li>
-        <li><strong>結合律</strong>: 任意の実数 <em>a, b, c</em> について <em>(a + b) + c = a + (b + c)</em> および <em>(ab)c = a(bc)</em> が成り立ちます。</li>
-        <li><strong>分配律</strong>: 任意の実数 <em>a, b, c</em> について <em>a(b + c) = ab + ac</em> が成り立ちます。</li>
-        <li><strong>単位元の存在</strong>: 加法の単位元は 0、乗法の単位元は 1 です。</li>
-        <li><strong>逆元の存在</strong>: 任意の実数 <em>a</em> について加法の逆元は <em>-a</em>、乗法の逆元は <em>1/a</em>（<em>a ≠ 0</em> の場合）です。</li>
-    </ul>
-
-    <div class="example">
-        <h3>例題</h3>
-        <p><strong>例題 1</strong>: <em>a = 3</em>、<em>b = 4</em> のとき、<em>a + b</em> と <em>ab</em> を求めなさい。</p>
-        <p><strong>解答</strong>:</p>
-        <ul>
-            <li><em>a + b = 3 + 4 = 7</em></li>
-            <li><em>ab = 3 × 4 = 12</em></li>
-        </ul>
-    </div>
-
-    <div class="exercise">
-        <h3>練習問題</h3>
-        <ol>
-            <li><em>a = 2</em>、<em>b = 5</em> のとき、<em>a + b</em> と <em>ab</em> を求めなさい。</li>
-            <li>実数集合 <em>{1, 2, 3, 4, 5}</em> の上限と下限を求めなさい。</li>
-            <li><em>a = -3</em>、<em>b = 7</em> のとき、<em>a</em> と <em>b</em> の和と積を求めなさい。</li>
+<!DOCTYPE html> 
+<html lang="ja"> 
+    <head> 
+        <meta charset="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>実数の公理</title> 
+        <style> 
+            .answer { display: none; } .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; } 
+        </style> 
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+        <script> function toggleAnswer(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } 
+        </script> 
+    </head> 
+    <body> 
+        <h1>実数の公理</h1> 
+        <p> 実数（じっすう、real number）は、整数、有理数、および無理数を含む数の集合です。実数には次のような基本的な性質（公理）があります： </p> 
+        <h2>実数の公理</h2> 
+        <p>実数には以下の基本的な公理があります：</p> 
+        <ol> 
+            <li>加法の公理：任意の実数 \(a\) と \(b\) に対して、\(a + b\) は実数である。</li> 
+            <li>乗法の公理：任意の実数 \(a\) と \(b\) に対して、\(a \times b\) は実数である。</li> 
+            <li>分配法則：任意の実数 \(a\)、\(b\)、および \(c\) に対して、\(a \times (b + c) = (a \times b) + (a \times c)\)。</li> 
+            <li>加法の単位元の存在：任意の実数 \(a\) に対して、\(a + 0 = a\)。</li> 
+            <li>乗法の単位元の存在：任意の実数 \(a\) に対して、\(a \times 1 = a\)。</li> 
+            <li>加法の逆元の存在：任意の実数 \(a\) に対して、ある実数 \(-a\) が存在し、\(a + (-a) = 0\)。</li> 
+            <li>乗法の逆元の存在：0でない任意の実数 \(a\) に対して、ある実数 \(a^{-1}\) が存在し、\(a \times a^{-1} = 1\)。</li> 
         </ol>
-    </div>
+        <h2>例題</h2>
+<p>次の実数の性質を確認してみましょう：</p>
+<ol>
+    <li>加法の単位元：\(5 + 0\)</li>
+    <li>乗法の単位元：\(3 \times 1\)</li>
+    <li>加法の逆元：\(7 + (-7)\)</li>
+    <li>分配法則：\(2 \times (3 + 4)\)</li>
+</ol>
 
-    <div class="answer">
-        <h3>解答</h3>
-        <ol>
-            <li><em>a + b = 2 + 5 = 7</em>、<em>ab = 2 × 5 = 10</em></li>
-            <li>上限は 5、下限は 1 です。</li>
-            <li><em>a + b = -3 + 7 = 4</em>、<em>ab = -3 × 7 = -21</em></li>
-        </ol>
-    </div>
+<h3>解答</h3>
+<ol>
+    <li>\(5 + 0 = 5\)（加法の単位元）</li>
+    <li>\(3 \times 1 = 3\)（乗法の単位元）</li>
+    <li>\(7 + (-7) = 0\)（加法の逆元）</li>
+    <li>\(2 \times (3 + 4) = 2 \times 7 = 14\)（分配法則）</li>
+</ol>
 
-</body>
+<h2>練習問題</h2>
+<p>次の実数の性質を確認してください：</p>
+<ol>
+    <li>加法の単位元：\(12 + 0\)</li>
+    <li>乗法の単位元：\(6 \times 1\)</li>
+    <li>加法の逆元：\(9 + (-9)\)</li>
+    <li>分配法則：\(5 \times (2 + 3)\)</li>
+    <li>乗法の逆元：\(4 \times 4^{-1}\)</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer6')">解答を表示/非表示</div>
+<div id="answer6" class="answer">
+    <ol>
+        <li>\(12 + 0 = 12\)（加法の単位元）</li>
+        <li>\(6 \times 1 = 6\)（乗法の単位元）</li>
+        <li>\(9 + (-9) = 0\)（加法の逆元）</li>
+        <li>\(5 \times (2 + 3) = 5 \times 5 = 25\)（分配法則）</li>
+        <li>\(4 \times 4^{-1} = 4 \times \frac{1}{4} = 1\)（乗法の逆元）</li>
+    </ol>
+</div>
+</body> 
 </html>
