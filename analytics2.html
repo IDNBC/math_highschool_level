@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>数列の極限</title> 
+    <style> 
+      .answer { display: none; } .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; } </style> 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+    <script> function toggleAnswer(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script> 
+  </head> 
+  <body> 
+    <h1>数列の極限</h1> 
+    <p>数列の極限とは、数列が無限に続くときにその数列が近づく値のことです。数列 \(a_n\) の極限が \(L\) であるとき、次のように表されます：</p> 
+    <p style="text-align: center;">\(\lim_{n \to \infty} a_n = L\)</p> 
+    <p>これは、数列 \(a_n\) の \(n\) が非常に大きくなると、数列の値が \(L\) に非常に近づくことを意味します。</p>
+    <h2>例題</h2>
+<p>次の数列の極限を求めてみましょう：</p>
+<ol>
+    <li>\(\lim_{n \to \infty} \frac{1}{n}\)</li>
+    <li>\(\lim_{n \to \infty} \frac{2n + 1}{n + 1}\)</li>
+    <li>\(\lim_{n \to \infty} \frac{5n^2 + 3}{n^2 + 1}\)</li>
+</ol>
+<h3>解答</h3>
+<ol>
+    <li>\(\lim_{n \to \infty} \frac{1}{n} = 0\)</li>
+    <li>\(\lim_{n \to \infty} \frac{2n + 1}{n + 1} = \lim_{n \to \infty} \frac{2 + \frac{1}{n}}{1 + \frac{1}{n}} = \frac{2 + 0}{1 + 0} = 2\)</li>
+    <li>\(\lim_{n \to \infty} \frac{5n^2 + 3}{n^2 + 1} = \lim_{n \to \infty} \frac{5 + \frac{3}{n^2}}{1 + \frac{1}{n^2}} = \frac{5 + 0}{1 + 0} = 5\)</li>
+</ol>
+
+<h2>練習問題</h2>
+<p>次の数列の極限を計算してください：</p>
+<ol>
+    <li>\(\lim_{n \to \infty} \frac{3}{n}\)</li>
+    <li>\(\lim_{n \to \infty} \frac{4n - 2}{2n + 3}\)</li>
+    <li>\(\lim_{n \to \infty} \frac{6n^2 + n}{3n^2 + 2n + 1}\)</li>
+    <li>\(\lim_{n \to \infty} \frac{n + 5}{2n - 1}\)</li>
+</ol>
+<div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+<div id="answer1" class="answer">
+    <ol>
+        <li>\(\lim_{n \to \infty} \frac{3}{n} = 0\)</li>
+        <li>\(\lim_{n \to \infty} \frac{4n - 2}{2n + 3} = \lim_{n \to \infty} \frac{4 - \frac{2}{n}}{2 + \frac{3}{n}} = \frac{4 - 0}{2 + 0} = 2\)</li>
+        <li>\(\lim_{n \to \infty} \frac{6n^2 + n}{3n^2 + 2n + 1} = \lim_{n \to \infty} \frac{6 + \frac{1}{n}}{3 + \frac{2}{n} + \frac{1}{n^2}} = \frac{6 + 0}{3 + 0 + 0} = 2\)</li>
+        <li>\(\lim_{n \to \infty} \frac{n + 5}{2n - 1} = \lim_{n \to \infty} \frac{1 + \frac{5}{n}}{2 - \frac{1}{n}} = \frac{1 + 0}{2 - 0} = \frac{1}{2}\)</li>
+    </ol>
+</div>
+</body> 
+</html>
