@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>実数の公理</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .example, .exercise, .answer {
+            margin-top: 20px;
+        }
+        .example h3, .exercise h3, .answer h3 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>実数の公理</h1>
+
+    <p>実数の公理は数学の基礎を形成します。ここでは、順序の公理、完備性の公理、および算術の公理について説明します。また、例題と練習問題も含めています。</p>
+
+    <h2>順序の公理</h2>
+    <ul>
+        <li><strong>反射律</strong>: 任意の実数 <em>a</em> について <em>a ≤ a</em> が成り立ちます。</li>
+        <li><strong>反対称律</strong>: 任意の実数 <em>a, b</em> について <em>a ≤ b</em> かつ <em>b ≤ a</em> ならば <em>a = b</em> が成り立ちます。</li>
+        <li><strong>推移律</strong>: 任意の実数 <em>a, b, c</em> について <em>a ≤ b</em> かつ <em>b ≤ c</em> ならば <em>a ≤ c</em> が成り立ちます。</li>
+        <li><strong>全順序律</strong>: 任意の実数 <em>a, b</em> について <em>a ≤ b</em> あるいは <em>b ≤ a</em> が成り立ちます。</li>
+    </ul>
+
+    <h2>完備性の公理</h2>
+    <p>実数は <strong>完備</strong> です。すなわち、任意の有界非空集合は上限（最小上界）と下限（最大下界）を持ちます。</p>
+
+    <h2>算術の公理</h2>
+    <ul>
+        <li><strong>閉性</strong>: 任意の実数 <em>a, b</em> について <em>a + b</em> と <em>ab</em> も実数です。</li>
+        <li><strong>交換律</strong>: 任意の実数 <em>a, b</em> について <em>a + b = b + a</em> および <em>ab = ba</em> が成り立ちます。</li>
+        <li><strong>結合律</strong>: 任意の実数 <em>a, b, c</em> について <em>(a + b) + c = a + (b + c)</em> および <em>(ab)c = a(bc)</em> が成り立ちます。</li>
+        <li><strong>分配律</strong>: 任意の実数 <em>a, b, c</em> について <em>a(b + c) = ab + ac</em> が成り立ちます。</li>
+        <li><strong>単位元の存在</strong>: 加法の単位元は 0、乗法の単位元は 1 です。</li>
+        <li><strong>逆元の存在</strong>: 任意の実数 <em>a</em> について加法の逆元は <em>-a</em>、乗法の逆元は <em>1/a</em>（<em>a ≠ 0</em> の場合）です。</li>
+    </ul>
+
+    <div class="example">
+        <h3>例題</h3>
+        <p><strong>例題 1</strong>: <em>a = 3</em>、<em>b = 4</em> のとき、<em>a + b</em> と <em>ab</em> を求めなさい。</p>
+        <p><strong>解答</strong>:</p>
+        <ul>
+            <li><em>a + b = 3 + 4 = 7</em></li>
+            <li><em>ab = 3 × 4 = 12</em></li>
+        </ul>
+    </div>
+
+    <div class="exercise">
+        <h3>練習問題</h3>
+        <ol>
+            <li><em>a = 2</em>、<em>b = 5</em> のとき、<em>a + b</em> と <em>ab</em> を求めなさい。</li>
+            <li>実数集合 <em>{1, 2, 3, 4, 5}</em> の上限と下限を求めなさい。</li>
+            <li><em>a = -3</em>、<em>b = 7</em> のとき、<em>a</em> と <em>b</em> の和と積を求めなさい。</li>
+        </ol>
+    </div>
+
+    <div class="answer">
+        <h3>解答</h3>
+        <ol>
+            <li><em>a + b = 2 + 5 = 7</em>、<em>ab = 2 × 5 = 10</em></li>
+            <li>上限は 5、下限は 1 です。</li>
+            <li><em>a + b = -3 + 7 = 4</em>、<em>ab = -3 × 7 = -21</em></li>
+        </ol>
+    </div>
+
+</body>
+</html>
