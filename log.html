@@ -1,0 +1,116 @@
+<!DOCTYPE html> <html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>対数</title> 
+    <style> 
+      .answer { display: none; }
+          .toggle-button {
+        margin-top: 10px;
+        display: inline-block;
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+</head> 
+  
+  <body> 
+    <h1>対数演算と対数法則</h1> 
+    <p> 対数（logarithm）とは、ある数を特定の基数（底、base）に対して何乗すれば特定の数になるかを表す概念です。対数は指数演算の逆とも言えます。 </p> 
+    <p> 例えば、次の指数方程式があったとします： \[ b^x = a \] このとき、対数を使ってこの関係を次のように表します： \[ x = \log_b a \] ここで、\(x\) は対数の結果、\(b\) は底、\(a\) は真数を表します。 </p>
+
+    <h2>指数法則の復習</h2>
+<ul>
+    <li>\(a^m \times a^n = a^{m+n}\)</li>
+    <li>\(\frac{a^m}{a^n} = a^{m-n}\)</li>
+    <li>\((a^m)^n = a^{mn}\)</li>
+    <li>\(a^0 = 1 \quad (a \neq 0)\)</li>
+    <li>\(a^{-m} = \frac{1}{a^m}\)</li>
+</ul>
+
+<h2>対数法則</h2>
+<ul>
+    <li>\(\log_b (mn) = \log_b m + \log_b n\)</li>
+    <li>\(\log_b \left(\frac{m}{n}\right) = \log_b m - \log_b n\)</li>
+    <li>\(\log_b (m^n) = n \log_b m\)</li>
+    <li>\(\log_b b = 1\)</li>
+    <li>\(\log_b 1 = 0\)</li>
+    <li>\(\log_b a = \frac{\log_c a}{\log_c b}\)（底の変換公式）</li>
+</ul>
+
+<h2>例題</h2>
+<p>
+    次の対数を計算しなさい：
+</p>
+<ol>
+    <li>\(\log_3 27\)</li>
+    <li>\(\log_2 16\)</li>
+    <li>\(\log_{10} 1000\)</li>
+    <li>\(\log_5 \left(\frac{25}{5}\right)\)</li>
+    <li>\(\log_2 32^3\)</li>
+</ol>
+
+<h3>解答</h3>
+<ol>
+    <li>
+        \(\log_3 27 = \log_3 3^3 = 3 \log_3 3 = 3 \times 1 = 3\)
+    </li>
+    <li>
+        \(\log_2 16 = \log_2 2^4 = 4 \log_2 2 = 4 \times 1 = 4\)
+    </li>
+    <li>
+        \(\log_{10} 1000 = \log_{10} 10^3 = 3 \log_{10} 10 = 3 \times 1 = 3\)
+    </li>
+    <li>
+        \(\log_5 \left(\frac{25}{5}\right) = \log_5 25 - \log_5 5 = \log_5 5^2 - \log_5 5 = 2 \log_5 5 - 1 \log_5 5 = 2 - 1 = 1\)
+    </li>
+    <li>
+        \(\log_2 32^3 = 3 \log_2 32 = 3 \log_2 2^5 = 3 \times 5 \log_2 2 = 3 \times 5 \times 1 = 15\)
+    </li>
+</ol>
+
+<h2>練習問題</h2>
+<p>次の対数を計算しなさい：</p>
+<ol>
+    <li>\(\log_4 64\)</li>
+    <li>\(\log_3 81\)</li>
+    <li>\(\log_7 49\)</li>
+    <li>\(\log_2 \left(\frac{64}{4}\right)\)</li>
+    <li>\(\log_5 125\)</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer7')">解答を表示/非表示</div>
+<div id="answer7" class="answer">
+    <ol>
+        <li>
+            \(\log_4 64 = \log_4 4^3 = 3 \log_4 4 = 3 \times 1 = 3\)
+        </li>
+        <li>
+            \(\log_3 81 = \log_3 3^4 = 4 \log_3 3 = 4 \times 1 = 4\)
+        </li>
+        <li>
+            \(\log_7 49 = \log_7 7^2 = 2 \log_7 7 = 2 \times 1 = 2\)
+        </li>
+        <li>
+            \(\log_2 \left(\frac{64}{4}\right) = \log_2 64 - \log_2 4 = \log_2 2^6 - \log_2 2^2 = 6 \log_2 2 - 2 \log_2 2 = 6 - 2 = 4\)
+        </li>
+        <li>
+            \(\log_5 125 = \log_5 5^3 = 3 \log_5 5 = 3 \times 1 = 3\)
+        </li>
+    </ol>
+</div>
+</body> 
+</html>
