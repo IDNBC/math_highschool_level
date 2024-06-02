@@ -1,1 +1,68 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>論理とその応用</title> 
+    <style> 
+      .answer { display: none; } 
+      .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; } 
+    </style> 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+    <script> 
+      function toggleAnswer(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } 
+    </script> 
+  </head> 
+  <body> 
+    <h1>論理</h1> 
+    <p>論理は、正しい推論を行うための学問です。主に、逆、裏、対偶という概念を使って、命題の真偽を推論します。</p>
+    <h2>逆、裏、対偶</h2>
+<p>命題「もしPならばQ」という形の文を考えます。</p>
+<ul>
+    <li>逆：「もしQならばP」</li>
+    <li>裏：「もしPでないならばQでない」</li>
+    <li>対偶：「もしQでないならばPでない」</li>
+</ul>
+<p>命題と対偶は常に同じ真偽値を持ちますが、逆と裏は必ずしもそうではありません。</p>
 
+<h2>必要条件と十分条件</h2>
+<p>「もしPならばQ」の場合、PはQの十分条件、QはPの必要条件です。</p>
+
+<h2>対偶による証明</h2>
+<p>対偶を用いることで、元の命題の真を証明する方法です。</p>
+
+<h2>背理法による証明</h2>
+<p>ある命題の否定から矛盾を導き、元の命題が真であることを示す方法です。</p>
+
+<h3>例題</h3>
+<p>以下の命題について、対偶を用いた証明を示しなさい。</p>
+<p>命題：「\(n\)が奇数ならば、\(n^2\)も奇数である。」</p>
+
+<h3>解答</h3>
+<p>命題の対偶：「\(n^2\)が偶数ならば、\(n\)も偶数である。」</p>
+<p>証明：</p>
+<p>\(n^2\)が偶数ならば、\(n^2 = 2k\) (\(k\)は整数)と表せます。</p>
+<p>したがって、\(n = \sqrt{2k}\)です。しかし、偶数の平方根は整数になることはないので、\(n\)は偶数でなければなりません。</p>
+<p>従って、命題の対偶が真であるため、元の命題も真です。</p>
+
+<h3>練習問題</h3>
+<p>次の命題の対偶を述べ、背理法による証明を行いなさい。</p>
+<ol>
+    <li>命題：「\(x\)が正の整数で、\(x^2\)が偶数ならば、\(x\)も偶数である。」</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+<div id="answer1" class="answer">
+    <ol>
+        <li>
+            <p>命題の対偶：「\(x\)が奇数ならば、\(x^2\)も奇数である。」</p>
+            <p>背理法による証明：</p>
+            <p>命題の否定を仮定して、\(x\)が奇数で\(x^2\)が偶数であるとします。\(x\)が奇数ならば、\(x = 2k + 1\) (\(k\)は整数)と表せます。</p>
+            <p>したがって、\(x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1\)となります。これは\(x^2\)が奇数であることを示しており、矛盾します。</p>
+            <p>従って、元の命題が真であることが示されました。</p>
+        </li>
+    </ol>
+</div>
+</body> 
+</html>
