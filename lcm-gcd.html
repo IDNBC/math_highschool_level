@@ -8,100 +8,120 @@
         .answer {
             display: none;
         }
-          .toggle-button {
-        margin-top: 10px;
-        display: inline-block;
-        cursor: pointer;
-        color: blue;
-        text-decoration: underline;
-    }
-</style>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-    function toggleAnswer(id) {
-        var element = document.getElementById(id);
-        if (element.style.display === "none") {
-            element.style.display = "block";
-        } else {
-            element.style.display = "none";
+
+        .toggle-button {
+            margin-top: 10px;
+            display: inline-block;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
         }
-    }
-</script>
+
+        .formula {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .formula div {
+            margin-bottom: 5px;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>最小公倍数と最大公約数についての説明</h1>
     <p>
         最小公倍数（さいしょうこうばいすう、Least Common Multiple、LCM）とは、2つ以上の整数のうち、共通する倍数の中で最小のものを指します。最大公約数（さいだいこうやくすう、Greatest Common Divisor、GCD）とは、2つ以上の整数のうち、共通する約数の中で最大のものを指します。
     </p>
+
     <h2>最大公約数の求め方</h2>
-<p>
-    最大公約数を求める方法の一つに、ユークリッドの互除法があります。これは次のように計算します。
-    <ol>
-        <li>2つの数のうち大きい方を a、小さい方を b とします。</li>
-        <li>a を b で割った余りを r とします。</li>
-        <li>r が 0 になるまで、a を b、b を r に置き換えて繰り返します。</li>
-        <li>最後に b が最大公約数になります。</li>
-    </ol>
-    例えば、48 と 18 の最大公約数を求める場合、
-    <div>
-        \[        48 \div 18 = 2 \text{ 余り } 12 \\        18 \div 12 = 1 \text{ 余り } 6 \\        12 \div 6 = 2 \text{ 余り } 0 \\        \]
+    <p>
+        最大公約数を求める方法の一つに、ユークリッドの互除法があります。これは次のように計算します。
+        <ol>
+            <li>2つの数のうち大きい方を a、小さい方を b とします。</li>
+            <li>a を b で割った余りを r とします。</li>
+            <li>r が 0 になるまで、a を b、b を r に置き換えて繰り返します。</li>
+            <li>最後に b が最大公約数になります。</li>
+        </ol>
+        例えば、48 と 18 の最大公約数を求める場合、
+        <div class="formula">
+            <div>\( 48 \div 18 = 2 \text{ 余り } 12 \)</div>
+            <div>\( 18 \div 12 = 1 \text{ 余り } 6 \)</div>
+            <div>\( 12 \div 6 = 2 \text{ 余り } 0 \)</div>
+        </div>
         よって、48 と 18 の最大公約数は 6 です。
-    </div>
-</p>
+    </p>
 
-<h2>最小公倍数の求め方</h2>
-<p>
-    最小公倍数は、以下の式で最大公約数を使って求めることができます。
-    <div>
-        \[        \text{LCM}(a, b) = \frac{a \times b}{\text{GCD}(a, b)}        \]
-    </div>
-    例えば、48 と 18 の最小公倍数を求める場合、
-    <div>
-        \[        \text{GCD}(48, 18) = 6 \\        \text{LCM}(48, 18) = \frac{48 \times 18}{6} = 144        \]
-    </div>
-</p>
+    <h2>最小公倍数の求め方</h2>
+    <p>
+        最小公倍数は、以下の式で最大公約数を使って求めることができます。
+        <div class="formula">
+            \( \text{LCM}(a, b) = \frac{a \times b}{\text{GCD}(a, b)} \)
+        </div>
+        例えば、48 と 18 の最小公倍数を求める場合、
+        <div class="formula">
+            <div>\( \text{GCD}(48, 18) = 6 \)</div>
+            <div>\( \text{LCM}(48, 18) = \frac{48 \times 18}{6} = 144 \)</div>
+        </div>
+    </p>
 
-<h2>練習問題</h2>
-<p>以下の数の最小公倍数と最大公約数を求めてください。</p>
+    <h2>練習問題</h2>
+    <p>以下の数の最小公倍数と最大公約数を求めてください。</p>
 
-<ol>
-    <li>24 と 36 の最大公約数</li>
-    <li>24 と 36 の最小公倍数</li>
-    <li>15 と 25 の最大公約数</li>
-    <li>15 と 25 の最小公倍数</li>
-</ol>
-
-<div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
-<div id="answer1" class="answer">
     <ol>
-        <li>
-            24 と 36 の最大公約数：
-            <div>
-                \[                36 \div 24 = 1 \text{ 余り } 12 \\                24 \div 12 = 2 \text{ 余り } 0 \\                \]
-                よって、最大公約数は 12。
-            </div>
-        </li>
-        <li>
-            24 と 36 の最小公倍数：
-            <div>
-                \[                \text{GCD}(24, 36) = 12 \\                \text{LCM}(24, 36) = \frac{24 \times 36}{12} = 72                \]
-            </div>
-        </li>
-        <li>
-            15 と 25 の最大公約数：
-            <div>
-                \[                25 \div 15 = 1 \text{ 余り } 10 \\                15 \div 10 = 1 \text{ 余り } 5 \\                10 \div 5 = 2 \text{ 余り } 0 \\                \]
-                よって、最大公約数は 5。
-            </div>
-        </li>
-        <li>
-            15 と 25 の最小公倍数：
-            <div>
-                \[                \text{GCD}(15, 25) = 5 \\                \text{LCM}(15, 25) = \frac{15 \times 25}{5} = 75                \]
-            </div>
-        </li>
+        <li>24 と 36 の最大公約数</li>
+        <li>24 と 36 の最小公倍数</li>
+        <li>15 と 25 の最大公約数</li>
+        <li>15 と 25 の最小公倍数</li>
     </ol>
-</div>
+
+    <div class="toggle-button" onclick="toggleAnswer('answer1')">解答を表示/非表示</div>
+    <div id="answer1" class="answer">
+        <ol>
+            <li>
+                24 と 36 の最大公約数：
+                <div class="formula">
+                    <div>\( 36 \div 24 = 1 \text{ 余り } 12 \)</div>
+                    <div>\( 24 \div 12 = 2 \text{ 余り } 0 \)</div>
+                    よって、最大公約数は 12。
+                </div>
+            </li>
+            <li>
+                24 と 36 の最小公倍数：
+                <div class="formula">
+                    <div>\( \text{GCD}(24, 36) = 12 \)</div>
+                    <div>\( \text{LCM}(24, 36) = \frac{24 \times 36}{12} = 72 \)</div>
+                </div>
+            </li>
+            <li>
+                15 と 25 の最大公約数：
+                <div class="formula">
+                    <div>\( 25 \div 15 = 1 \text{ 余り } 10 \)</div>
+                    <div>\( 15 \div 10 = 1 \text{ 余り } 5 \)</div>
+                    <div>\( 10 \div 5 = 2 \text{ 余り } 0 \)</div>
+                    よって、最大公約数は 5。
+                </div>
+            </li>
+            <li>
+                15 と 25 の最小公倍数：
+                <div class="formula">
+                    <div>\( \text{GCD}(15, 25) = 5 \)</div>
+                    <div>\( \text{LCM}(15, 25) = \frac{15 \times 25}{5} = 75 \)</div>
+                </div>
+            </li>
+        </ol>
+    </div>
 </body>
 </html>
