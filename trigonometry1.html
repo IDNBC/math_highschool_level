@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角比の解説</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>三角比の解説</h1>
+<p>三角比（さんかくひ、trigonometric ratios）は、直角三角形の辺の長さの比を使って角度を表現する方法です。主な三角比には、正弦（sin）、余弦（cos）、正接（tan）の3つがあります。</p>
+
+<h2>三角比の定義</h2>
+
+<h3>直角三角形の基本</h3>
+<p>直角三角形において、次のように辺を定義します：</p>
+<ul>
+    <li>直角を挟む二辺を「隣辺（adjacent leg）」と「対辺（opposite leg）」</li>
+    <li>直角に対する辺を「斜辺（hypotenuse）」</li>
+</ul>
+
+<p>以下の図で示します：</p>
+<pre>
+        hypotenuse
+        /|
+       / |
+      /  | opposite
+     /θ  |
+    /____|
+adjacent
+</pre>
+
+<h3>三角比の定義</h3>
+<ul>
+    <li>正弦（sin）：\(\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}\)</li>
+    <li>余弦（cos）：\(\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}}\)</li>
+    <li>正接（tan）：\(\tan \theta = \frac{\text{opposite}}{\text{adjacent}}\)</li>
+</ul>
+
+<h2>具体的な例</h2>
+
+<h3>例 1</h3>
+<p>直角三角形 ABC で、角 B が直角、角 A が 30° の場合を考えます。辺 AB の長さを 1、斜辺 AC の長さを 2 とします。ここで、三角比を計算してみます：</p>
+
+<pre>
+     C
+     /|
+    / |
+   /  | 1
+  /30°|
+ /____|
+A  1  B
+</pre>
+
+<p>ここで、斜辺 AC = 2、AB = 1、BC はピタゴラスの定理より、</p>
+<p>\[BC = \sqrt{AC^2 - AB^2} = \sqrt{2^2 - 1^2} = \sqrt{3}\]</p>
+
+<ul>
+    <li>\(\sin 30° = \frac{1}{2}\)</li>
+    <li>\(\cos 30° = \frac{\sqrt{3}}{2}\)</li>
+    <li>\(\tan 30° = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}\)</li>
+</ul>
+
+<h3>例 2</h3>
+<p>直角三角形 DEF で、角 D が 45° の場合を考えます。辺 DE と DF がともに 1 の場合、三角比を計算します：</p>
+
+<pre>
+     F
+     /|
+    / |
+   /  | 1
+  /45°|
+ /____|
+D  1  E
+</pre>
+
+<p>ここで、斜辺 EF はピタゴラスの定理より、</p>
+<p>\[EF = \sqrt{DE^2 + DF^2} = \sqrt{1^2 + 1^2} = \sqrt{2}\]</p>
+
+<ul>
+    <li>\(\sin 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+    <li>\(\cos 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+    <li>\(\tan 45° = \frac{1}{1} = 1\)</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の直角三角形について、三角比 \(sin\)、\(cos\)、\(tan\) の値を求めてください：</p>
+
+<ol>
+    <li>角 A が 60°、斜辺 BC が 2 の場合</li>
+    <li>角 X が 45°、隣辺 XY が 1 の場合</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer6')">解答を表示/非表示</div>
+<div id="answer6" class="answer">
+    <ol>
+        <li>角 A が 60°、斜辺 BC が 2 の場合
+            <p>直角三角形の特性上、辺 AB = 1、辺 AC = \(\sqrt{3}\)</p>
+            <ul>
+                <li>\(\sin 60° = \frac{\sqrt{3}}{2}\)</li>
+                <li>\(\cos 60° = \frac{1}{2}\)</li>
+                <li>\(\tan 60° = \sqrt{3}\)</li>
+            </ul>
+        </li>
+        <li>角 X が 45°、隣辺 XY が 1 の場合
+            <p>直角三角形の特性上、辺 XZ = 1 (斜辺 XZ = \(\sqrt{2}\))</p>
+            <ul>
+                <li>\(\sin 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+                <li>\(\cos 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+                <li>\(\tan 45° = \frac{1}{1} = 1\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
