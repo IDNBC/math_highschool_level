@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角比の具体的な値</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>三角比の具体的な値</h1>
+<p>ここでは、代表的な角度に対する三角比の具体的な値を紹介します。それぞれの値を確認して、理解を深めましょう。</p>
+
+<h2>30°の三角比</h2>
+<ul>
+    <li>\(\sin 30° = \frac{1}{2}\)</li>
+    <li>\(\cos 30° = \frac{\sqrt{3}}{2}\)</li>
+    <li>\(\tan 30° = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}\)</li>
+</ul>
+
+<h2>45°の三角比</h2>
+<ul>
+    <li>\(\sin 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+    <li>\(\cos 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+    <li>\(\tan 45° = 1\)</li>
+</ul>
+
+<h2>60°の三角比</h2>
+<ul>
+    <li>\(\sin 60° = \frac{\sqrt{3}}{2}\)</li>
+    <li>\(\cos 60° = \frac{1}{2}\)</li>
+    <li>\(\tan 60° = \sqrt{3}\)</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の直角三角形について、三角比 \( \sin\)、\( \cos\)、\( \tan\) の値を求めてください：</p>
+
+<ol>
+    <li>角 P が 30°、底辺 PQ が 1 の場合</li>
+    <li>角 Y が 60°、対辺 YZ が \(\sqrt{3}\) の場合</li>
+    <li>角 M が 45°、底辺 MN が 1 の場合</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer7')">解答を表示/非表示</div>
+<div id="answer7" class="answer">
+    <ol>
+        <li>角 P が 30°、底辺 PQ が 1 の場合
+            <p>直角三角形の特性上、辺 PR（斜辺）は 2、辺 QR（対辺）は 1</p>
+            <ul>
+                <li>\(\sin 30° = \frac{1}{2}\)</li>
+                <li>\(\cos 30° = \frac{\sqrt{3}}{2}\)</li>
+                <li>\(\tan 30° = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}\)</li>
+            </ul>
+        </li>
+        <li>角 Y が 60°、対辺 YZ が \(\sqrt{3}\) の場合
+            <p>直角三角形の特性上、辺 YX（底辺）は 1、斜辺 XZ は 2</p>
+            <ul>
+                <li>\(\sin 60° = \frac{\sqrt{3}}{2}\)</li>
+                <li>\(\cos 60° = \frac{1}{2}\)</li>
+                <li>\(\tan 60° = \sqrt{3}\)</li>
+            </ul>
+        </li>
+        <li>角 M が 45°、底辺 MN が 1 の場合
+            <p>直角三角形の特性上、辺 MO（対辺）は 1、斜辺 NO は \(\sqrt{2}\)</p>
+            <ul>
+                <li>\(\sin 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+                <li>\(\cos 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+                <li>\(\tan 45° = 1\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
