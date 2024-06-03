@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>図形の相似の解説</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+        .graph-container { text-align: center; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+        
+        // 描画関数
+        function drawSimilarTriangles() {
+            var canvas = document.getElementById('triangleCanvas');
+            var ctx = canvas.getContext('2d');
+
+            // 大きな三角形
+            ctx.beginPath();
+            ctx.moveTo(50, 50);
+            ctx.lineTo(200, 50);
+            ctx.lineTo(50, 200);
+            ctx.closePath();
+            ctx.strokeStyle = 'blue';
+            ctx.stroke();
+
+            // 小さな三角形
+            ctx.beginPath();
+            ctx.moveTo(150, 150);
+            ctx.lineTo(250, 150);
+            ctx.lineTo(150, 250);
+            ctx.closePath();
+            ctx.strokeStyle = 'red';
+            ctx.stroke();
+
+            // 辺の長さを書く 
+            ctx.font = '16px Arial';
+            ctx.fillStyle = 'blue';
+            ctx.fillText('8', 125, 45);
+            ctx.fillText('6', 25, 125);
+            ctx.fillText('10', 100, 125);
+            
+            ctx.fillStyle = 'red';
+            ctx.fillText('4', 200, 145);
+            ctx.fillText('3', 140, 200);
+            ctx.fillText('5', 180, 200);
+        }
+
+        window.onload = drawSimilarTriangles;
+    </script>
+</head>
+<body>
+
+<h1>図形の相似の解説</h1>
+<p>相似（そうじ、Similarity）とは、二つの図形が形は同じで大きさが異なることを意味します。相似な図形どうしでは、対応する辺の比がすべて等しく、対応する角度の大きさもすべて等しいです。</p>
+
+<h2>相似の三角形の説明</h2>
+
+<div class="graph-container">
+    <canvas id="triangleCanvas" width="300" height="300" style="border:1px solid #000000;"></canvas>
+</div>
+
+<p>上記の図は、相似な二つの三角形を示しています。青い三角形と赤い三角形は相似であり、それぞれの辺の比は次のようになります：</p>
+<ul>
+    <li>対応する辺の長さの比：8 : 4 = 2 : 1</li>
+    <li>対応する辺の長さの比：6 : 3 = 2 : 1</li>
+    <li>対応する辺の長さの比：10 : 5 = 2 : 1</li>
+</ul>
+<p>このように、すべての辺の比が等しいため、これらの三角形は相似です。</p>
+
+<h2>長さを求める例</h2>
+<p>次に、辺の比から辺の長さを求める例を示します。</p>
+
+<h3>例</h3>
+<p>大きな三角形の一辺の長さが 12 cm、小さな三角形の対応する辺の長さが 6 cm の場合、他の辺の長さがわかっているとすると、次のようにして残りの辺の長さを求めることができます：</p>
+
+<pre>
+       C                     F
+      / \                   / \
+     /   \                 /   \
+    /     \   相似比: 2   /     \
+   /       \             /       \
+  /_________\           /_________\
+ A           B         D           E
+
+  AB = 12                DE = 6
+</pre>
+
+<p>大きな三角形のもう一つの辺 AC の長さが 8 cm のとき、小さな三角形の辺 DF の長さを求めるには、次のようにします：</p>
+<p>
+\[
+\frac{AC}{DF} = \frac{相似比の分母}{相似比の分子} = \frac{12}{6} = \frac{8}{x}
+\]
+</p>
+<p>
+解いていくと、
+\[
+x = 4 \text{ cm}
+\]
+</p>
+
+<h2>練習問題</h2>
+<p>次の相似な三角形 ABC と DEF について、辺の長さを求めてください：</p>
+
+<ol>
+    <li>三角形 ABC の辺 AB の長さが 15 cm、辺 DE が 5 cm であるとき、三角形 ABC の辺 AC が 9 cm のとき、三角形 DEF の辺 DF の長さを求めなさい。</li>
+    <li>三角形 ABC の辺 BC の長さが 10 cm、辺 EF が 4 cm であるとき、三角形 DEF の辺 DE が 6 cm のとき、三角形 ABC の辺 AB の長さを求めなさい。</li>
+    <li>三角形 ABC の辺 AB が 20 cm、辺 DE が 8 cm であるとき、三角形 ABC の辺 BC が 14 cm のとき、三角形 DEF の辺 EF の長さを求めなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer6')">解答を表示/非表示</div>
+<div id="answer6" class="answer">
+    <ol>
+        <li>三角形 ABC の辺 AB の長さが 15 cm、辺 DE が 5 cm であるとき、三角形 ABC の辺 AC が 9 cm のとき、三角形 DEF の辺 DF の長さを求めなさい。
+            <p>相似比は \(\frac{15}{5} = 3:1\)。したがって、</p>
+            <p>
+            \[
+            \frac{AC}{DF} = 3 \implies \frac{9}{DF} = 3 \implies DF = \frac{9}{3} = 3 \text{ cm}
+            \]
+            </p>
+        </li>
+        <li>三角形 ABC の辺 BC の長さが 10 cm、辺 EF が 4 cm であるとき、三角形 DEF の辺 DE が 6 cm のとき、三角形 ABC の辺 AB の長さを求めなさい。
+            <p>相似比は \(\frac{BC}{EF} = \frac{10}{4} = 2.5:1\)。この相似比を DE と AB の比にも適用します。</p>
+            <p>
+            \[
+            \frac{AB}{DE} = 2.5 \implies \frac{AB}{6} = 2.5 \implies AB = 6 \times 2.5 = 15 \text{ cm}
+            \]
+            </p>
+        </li>
+        <li>三角形 ABC の辺 AB が 20 cm、辺 DE が 8 cm であるとき、三角形 ABC の辺 BC が 14 cm のとき、三角形 DEF の辺 EF の長さを求めなさい。
+            <p>相似比は \(\frac{AB}{DE} = \frac{20}{8} = 2.5:1\)。したがって、</p>
+            <p>
+            \[
+            \frac{BC}{EF} = 2.5 \implies \frac{14}{EF} = 2.5 \implies EF = \frac{14}{2.5} = 5.6 \text{ cm}
+            \]
+            </p>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
