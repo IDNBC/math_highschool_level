@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+    <head> 
+        <meta charset="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>実数の公理</title> 
+        <style> 
+            .answer { display: none; } .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; } 
+        </style> 
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+        <script> function toggleAnswer(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script> 
+    </head> 
+    <body> 
+        <h1>実数の公理</h1> 
+        <p>数学における公理（こうり、axiom）とは、証明を必要とせずに真とされる基本的な命題や原理のことです。公理は理論の基礎を成し、それに基づいて他の全ての命題が証明されます。実数の公理も、その一例です。</p> 
+        <p>実数の公理のほかにも次のようなものがあります：</p> 
+        <ul> 
+            <li>ユークリッド幾何学の公理：例えば、二点を結ぶ直線が唯一存在すること。</li> 
+            <li>集合論の公理：例えば、任意の集合に対して、その部分集合の集合が存在すること。</li> 
+            <li>代数学の公理：例えば、ゼロ元や単位元の存在。</li> 
+        </ul>
+            <h2>実数の公理</h2> 
+    <p>実数（じっすう、real number）は、整数、有理数、および無理数を含む数の集合です。実数には次のような基本的な性質（公理）があります：</p> 
+    <ol> 
+        <li>加法の公理：任意の実数 \(a\) と \(b\) に対して、\(a + b\) は実数である。</li> 
+        <li>乗法の公理：任意の実数 \(a\) と \(b\) に対して、\(a \times b\) は実数である。</li> 
+        <li>分配法則：任意の実数 \(a\)、\(b\)、および \(c\) に対して、\(a \times (b + c) = (a \times b) + (a \times c)\)。</li> 
+        <li>加法の単位元の存在：任意の実数 \(a\) に対して、\(a + 0 = a\)。</li> 
+        <li>乗法の単位元の存在：任意の実数 \(a\) に対して、\(a \times 1 = a\)。</li> 
+        <li>加法の逆元の存在：任意の実数 \(a\) に対して、ある実数 \(-a\) が存在し、\(a + (-a) = 0\)。</li> 
+        <li>乗法の逆元の存在：0でない任意の実数 \(a\) に対して、ある実数 \(a^{-1}\) が存在し、\(a \times a^{-1} = 1\)。</li> 
+    </ol>
+
+    <h2>例題</h2>
+    <p>次の実数の性質を確認してみましょう：</p>
+    <ol>
+        <li>加法の単位元：\(5 + 0\)</li>
+        <li>乗法の単位元：\(3 \times 1\)</li>
+        <li>加法の逆元：\(7 + (-7)\)</li>
+        <li>分配法則：\(2 \times (3 + 4)\)</li>
+    </ol>
+
+    <h3>解答</h3>
+    <ol>
+        <li>\(5 + 0 = 5\)（加法の単位元）</li>
+        <li>\(3 \times 1 = 3\)（乗法の単位元）</li>
+        <li>\(7 + (-7) = 0\)（加法の逆元）</li>
+        <li>\(2 \times (3 + 4) = 2 \times 7 = 14\)（分配法則）</li>
+    </ol>
+
+    <h2>練習問題</h2>
+    <p>次の実数の性質を確認してください：</p>
+    <ol>
+        <li>加法の単位元：\(12 + 0\)</li>
+        <li>乗法の単位元：\(6 \times 1\)</li>
+        <li>加法の逆元：\(9 + (-9)\)</li>
+        <li>分配法則：\(5 \times (2 + 3)\)</li>
+        <li>乗法の逆元：\(4 \times 4^{-1}\)</li>
+    </ol>
+
+    <div class="toggle-button" onclick="toggleAnswer('answer6')">解答を表示/非表示</div>
+    <div id="answer6" class="answer">
+        <ol>
+            <li>\(12 + 0 = 12\)（加法の単位元）</li>
+            <li>\(6 \times 1 = 6\)（乗法の単位元）</li>
+            <li>\(9 + (-9) = 0\)（加法の逆元）</li>
+            <li>\(5 \times (2 + 3) = 5 \times 5 = 25\)（分配法則）</li>
+            <li>\(4 \times 4^{-1} = 4 \times \frac{1}{4} = 1\)（乗法の逆元）</li>
+        </ol>
+    </div>
+</body> 
+</html>
