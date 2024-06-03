@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弧度法</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>弧度法の解説</h1>
+<p>弧度法（こどほう、radian measure）は、角度を円の半径を基準にして表現する方法です。1弧度は、1ラジアンとも呼ばれ、円の半径と同じ長さの弧が作る角度です。</p>
+
+<h2>弧度法の基本</h2>
+<p>度数法との対応関係を以下に示します：</p>
+<ul>
+    <li>0度 = \(0\) ラジアン</li>
+    <li>90度 = \(\frac{\pi}{2}\) ラジアン</li>
+    <li>180度 = \(\pi\) ラジアン</li>
+    <li>270度 = \(\frac{3\pi}{2}\) ラジアン</li>
+    <li>360度 = \(2\pi\) ラジアン</li>
+</ul>
+<p>つまり、角度の度数法をラジアンに変換するには、次の変換式を使用します：</p>
+<p>\(\theta (\text{ラジアン}) = \theta (\text{度}) \times \frac{\pi}{180}\)</p>
+
+<h2>角度の変換例</h2>
+
+<h3>例 1: 45度をラジアンに変換</h3>
+<p>\[ 45度 \times \frac{\pi}{180} = \frac{\pi}{4} \text{ラジアン} \]</p>
+
+<h3>例 2: 120度をラジアンに変換</h3>
+<p>\[ 120度 \times \frac{\pi}{180} = \frac{2\pi}{3} \text{ラジアン} \]</p>
+
+<h2>練習問題</h2>
+<p>以下の角度をラジアンに変換してください：</p>
+
+<ol>
+    <li>30度</li>
+    <li>60度</li>
+    <li>90度</li>
+    <li>150度</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer8')">解答を表示/非表示</div>
+<div id="answer8" class="answer">
+    <ol>
+        <li>30度
+            <p>\[ 30度 \times \frac{\pi}{180} = \frac{\pi}{6} \text{ラジアン} \]</p>
+        </li>
+        <li>60度
+            <p>\[ 60度 \times \frac{\pi}{180} = \frac{\pi}{3} \text{ラジアン} \]</p>
+        </li>
+        <li>90度
+            <p>\[ 90度 \times \frac{\pi}{180} = \frac{\pi}{2} \text{ラジアン} \]</p>
+        </li>
+        <li>150度
+            <p>\[ 150度 \times \frac{\pi}{180} = \frac{5\pi}{6} \text{ラジアン} \]</p>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
