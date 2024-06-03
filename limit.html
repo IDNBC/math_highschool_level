@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>数学における極限</title> 
+    <style> 
+      .answer { display: none; } .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; } 
+    </style> 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+  </head> 
+  <body> 
+    <h1>数学における極限の解説</h1> 
+    <p>数学における極限（きょくげん、limit）は、ある数列や関数がある点に近づくとき、その値にどれだけ近づくかを解析する概念です。極限は微積分の基本となる概念の一つで、関数の連続性、微分、積分などを定義する基礎となります。</p> 
+    <h2>極限の基本概念</h2> 
+    <p>極限の具体的な定義を次に示します。</p> 
+    <h3>数列の極限</h3> 
+    <p>数列 \(\{a_n\}\) が \(L\) に収束するとは、任意の正の数 \(\epsilon\) に対して、ある自然数 \(N\) が存在し、\(n \geq N\) のときに \(|a_n - L| < \epsilon\) となることを意味します。このとき、\(L\) を数列 \(\{a_n\}\) の極限と言い、次のように表記します：</p> 
+    <p>\(\lim_{n \to \infty} a_n = L\)</p> 
+    <h3>関数の極限</h3> 
+    <p>関数 \(f(x)\) が \(x\) が \(a\) に近づくとき \(L\) に近づくとは、任意の正の数 \(\epsilon\) に対して、ある正の数 \(\delta\) が存在し、\(0 < |x - a| < \delta\) のときに \(|f(x) - L| < \epsilon\) となることを意味します。このとき、\(L\) を関数 \(f(x)\) の極限と言い、次のように表記します：</p> 
+      <p>\(\lim_{x \to a} f(x) = L\)</p> 
+      <h2>具体的な例</h2> 
+      <h3>数列の極限の例</h3> 
+      <p>次に数列 \(\{a_n\}\) の具体例を見てみましょう：</p> 
+      <ol> 
+        <li>\(a_n = \frac{1}{n}\)</li> 
+      </ol> 
+      <p>ここで、\(\lim_{n \to \infty} a_n\) を求めてみます。\(n\) が大きくなるにつれて、\(\frac{1}{n}\) は小さくなり、最終的には 0 に近づきます。このため、</p> 
+      <p>\(\lim_{n \to \infty} \frac{1}{n} = 0\)</p> 
+      <h2>さらに具体的な例</h2> 
+      <h3>例 1</h3> 
+      <p>数列 \(\{b_n\}\) が次のように定義される場合を考えます：</p> <p>\(b_n = \frac{2n+3}{3n}\)</p> 
+      <p>この数列の極限を求めるには、分母と分子を \(n\) で割ると便利です：</p> 
+      <p>\(b_n = \frac{2 + \frac{3}{n}}{3}\)</p> <p>\(n\) を無限大にする（\(n \to \infty\)）と、\(\frac{3}{n}\) は 0 に近づくので、</p> 
+      <p>\(\lim_{n \to \infty} b_n = \frac{2+0}{3} = \frac{2}{3}\)</p> 
+      <h3>例 2</h3> 
+      <p>次に、数列 \(\{c_n\}\) が次のように定義される場合を考えます：</p> <p>\(c_n = (1 + \frac{1}{n})^n\)</p> <p> この数列の極限は特別で、\(n \to \infty\) のときに \(\{c_n\}\) は数学定数 \(e\) に収束します。つまり、</p> 
+      <p>\(\lim_{n \to \infty} (1 + \frac{1}{n})^n = e \approx 2.71828\)</p> 
+      <h2>練習問題</h2> 
+      <p>次の数列の極限を求めてください：</p> 
+      <ol> 
+        <li>\(\{d_n\}\) が \(d_n = \frac{n}{n+1}\) と定義される場合</li> 
+        <li>\(\{e_n\}\) が \(e_n = \frac{5n+2}{2n-1}\) と定義される場合</li> 
+      </ol> 
+      <div class="toggle-button" onclick="toggleAnswer('answer6')">解答を表示/非表示</div> 
+      <div id="answer6" class="answer"> 
+        <ol> 
+          <li>\(\{d_n\} = \frac{n}{n+1}\) 
+            <p> \[ \lim_{n \to \infty} \frac{n}{n+1} = \lim_{n \to \infty} \frac{1}{1+\frac{1}{n}} = \frac{1}{1+0} = 1 \] </p> 
+          </li> 
+          <li>\(\{e_n\} = \frac{5n+2}{2n-1}\) 
+            <p> \[ \lim_{n \to \infty} \frac{5n+2}{2n-1} = \lim_{n \to \infty} \frac{5+\frac{2}{n}}{2-\frac{1}{n}} = \frac{5+0}{2-0} = \frac{5}{2} \] </p> 
+          </li> 
+        </ol> 
+      </div> 
+    </body> 
+    </html>
