@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角比の相互関係</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>三角比の相互関係</h1>
+<p>ここでは、三角比 \(\sin\)、\(\cos\)、\(\tan\) の間の相互関係を解説します。よく知られている公式について学びましょう。</p>
+
+<h2>基本関係式 1</h2>
+<p>\(\sin^2\theta + \cos^2\theta = 1\)</p>
+<p>この公式はすべての角度 \(\theta\) に対して成り立ちます。この公式は三角比の基本中の基本です。</p>
+<ul>
+    <li>例：\(\theta = 30°\)
+        <ul>
+            <li>\(\sin 30° = \frac{1}{2}\)</li>
+            <li>\(\cos 30° = \frac{\sqrt{3}}{2}\)</li>
+            <li> \((\frac{1}{2})^2 + (\frac{\sqrt{3}}{2})^2 = \frac{1}{4} + \frac{3}{4} = 1\)</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>基本関係式 2</h2>
+<p>\(1 + \tan^2\theta = \frac{1}{\cos^2\theta}\)</p>
+<p>この公式は \(\tan\theta = \frac{\sin\theta}{\cos\theta}\) を利用して得られる関係式です。</p>
+<ul>
+    <li>例：\(\theta = 45°\)
+        <ul>
+            <li>\(\tan 45° = 1\)</li>
+            <li>\(\cos 45° = \frac{\sqrt{2}}{2}\)</li>
+            <li>\(1 + 1^2 = 1 + 1 = 2\)</li>
+            <li>\(\frac{1}{(\frac{\sqrt{2}}{2})^2} = \frac{1}{\frac{2}{4}} = 2\)</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>基本関係式 3</h2>
+<p>\(1 + \frac{1}{\tan^2\theta} = \frac{1}{\sin^2\theta}\)</p>
+<p>この公式は \(\frac{1}{\tan\theta} = \frac{\cos\theta}{\sin\theta}\) を利用して得られる関係式です。</p>
+<ul>
+    <li>例：\(\theta = 60°\)
+        <ul>
+            <li>\(\tan 60° = \sqrt{3}\)</li>
+            <li>\(\sin 60° = \frac{\sqrt{3}}{2}\)</li>
+            <li>\(\frac{1}{\tan 60°} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}\)</li>
+            <li>\(1 + \left(\frac{\sqrt{3}}{3}\right)^2 = 1 + \frac{3}{9} = 1 + \frac{1}{3} = \frac{4}{3}\)</li>
+            <li>\(\frac{1}{(\frac{\sqrt{3}}{2})^2} = \frac{1}{\frac{3}{4}} = \frac{4}{3}\)</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の角度 \(\theta\) について、上記の公式を用いて確認してみましょう：</p>
+
+<ol>
+    <li>\(\theta = 45°\)</li>
+    <li>\(\theta = 30°\)</li>
+    <li>\(\theta = 60°\)</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_relations')">解答を表示/非表示</div>
+<div id="answer_relations" class="answer">
+    <ol>
+        <li>\(\theta = 45°\)
+            <ul>
+                <li>\(\sin 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+                <li>\(\cos 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+                <li>\(\tan 45° = 1\)</li>
+                <li>\(\sin^2 45° + \cos^2 45° = 1\)</li>
+                <li>\(1 + \tan^2 45° = \frac{1}{\cos^2 45°} = 1 + 1 = 2\)</li>
+                <li>\(1 + \frac{1}{\tan^2 45°} = \frac{1}{\sin^2 45°} = 1 + 1 = 2\)</li>
+            </ul>
+        </li>
+        <li>\(\theta = 30°\)
+            <ul>
+                <li>\(\sin 30° = \frac{1}{2}\)</li>
+                <li>\(\cos 30° = \frac{\sqrt{3}}{2}\)</li>
+                <li>\(\tan 30° = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}\)</li>
+                <li>\(\sin^2 30° + \cos^2 30° = 1\)</li>
+                <li>\(1 + \tan^2 30° = \frac{1}{\cos^2 30°} = 1 + \frac{1}{3} = \frac{4}{3}\)</li>
+                <li>\(1 + \frac{1}{\tan^2 30°} = \frac{1}{\sin^2 30°} = 1 + 3 = 4\)</li>
+            </ul>
+        </li>
+        <li>\(\theta = 60°\)
+            <ul>
+                <li>\(\sin 60° = \frac{\sqrt{3}}{2}\)</li>
+                <li>\(\cos 60° = \frac{1}{2}\)</li>
+                <li>\(\tan 60° = \sqrt{3}\)</li>
+                <li>\(\sin^2 60° + \cos^2 60° = 1\)</li>
+                <li>\(1 + \tan^2 60° = \frac{1}{\cos^2 60°} = 1 + 3 = 4\)</li>
+                <li>\(1 + \frac{1}{\tan^2 60°} = \frac{1}{\sin^2 60°} = 1 + \frac{1}{3} = \frac{4}{3}\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
