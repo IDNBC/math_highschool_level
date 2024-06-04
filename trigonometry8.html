@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角関数の合成</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>三角関数の合成</h1>
+
+<p>三角関数の合成は、複数の三角関数を1つの三角関数にまとめる方法です。これにより、計算が簡単になります。</p>
+
+<h2>基本公式</h2>
+<p>合成の基本的な公式は次の通りです:</p>
+<ul>
+    <li>\(a \sin \theta + b \cos \theta = \sqrt{a^2 + b^2} \sin (\theta + \alpha)\)</li>
+    <li>ここで、\(\alpha\) は \(\tan \alpha = \frac{b}{a}\) で求められます。</li>
+</ul>
+
+<h3>具体的な例</h3>
+<p>次の式を合成しなさい: \(3 \sin \theta + 4 \cos \theta\)</p>
+<ul>
+    <li>まず、\(\sqrt{a^2 + b^2}\) を求めます：\(\sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\)</li>
+    <li>次に、\(\alpha\) を求めます：\(\tan \alpha = \frac{4}{3}\)</li>
+    <li>\(\alpha = \tan^{-1} \frac{4}{3}\) を計算します。</li>
+    <li>したがって、\(3 \sin \theta + 4 \cos \theta = 5 \sin (\theta + \tan^{-1} \frac{4}{3})\)</li>
+</ul>
+
+<h2>応用例</h2>
+<p>次の式を合成しなさい: \(2 \sin x - \cos x\)</p>
+<ul>
+    <li>まず、\(\sqrt{a^2 + b^2}\) を求めます：\(\sqrt{2^2 + (-1)^2} = \sqrt{4 + 1} = \sqrt{5}\)</li>
+    <li>次に、\(\alpha\) を求めます：\(\tan \alpha = \frac{-1}{2}\)</li>
+    <li>\(\alpha = \tan^{-1} \frac{-1}{2}\) を計算します。</li>
+    <li>したがって、\(2 \sin x - \cos x = \sqrt{5} \sin (x + \tan^{-1} \frac{-1}{2})\)</li>
+</ul>
+
+<h2>三角関数の合成を用いた問題の解決</h2>
+<p>合成後の三角関数を使うと、最大値や最小値を簡単に求めることができます。</p>
+<p>例：\(3 \sin \theta + 4 \cos \theta\) の最大値と最小値を求めなさい。</p>
+<ul>
+    <li>合成した結果： \(5 \sin (\theta + \tan^{-1} \frac{4}{3})\)</li>
+    <li>\(\sin\) の最大値は 1、最小値は -1 です。</li>
+    <li>したがって、最大値は \(5 \times 1 = 5\)、最小値は \(5 \times (-1) = -5\) です。</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の問題を解いて、三角関数の合成について確認してください：</p>
+<ol>
+    <li>\(\sin x + \sqrt{3} \cos x\) を合成しなさい。</li>
+    <li>合成後の三角関数を使って、\(\sin x + \sqrt{3} \cos x\) の最大値と最小値を求めなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_composition')">解答を表示/非表示</div>
+<div id="answer_composition" class="answer">
+    <ol>
+        <li>\(\sin x + \sqrt{3} \cos x\) を合成する
+            <ul>
+                <li>まず、\(\sqrt{a^2 + b^2}\) を求めます：\(\sqrt{1^2 + (\sqrt{3})^2} = \sqrt{1 + 3} = \sqrt{4} = 2\)</li>
+                <li>次に、\(\alpha\) を求めます：\(\tan \alpha = \frac{\sqrt{3}}{1} = \sqrt{3}\)</li>
+                <li>\(\alpha = \tan^{-1} \sqrt{3} = 60°\)</li>
+                <li>したがって、\(\sin x + \sqrt{3} \cos x = 2 \sin (x + 60°)\)</li>
+            </ul>
+        </li>
+        <li>合成後の三角関数を使って、\(\sin x + \sqrt{3} \cos x\) の最大値と最小値を求める
+            <ul>
+                <li>合成した結果： \(2 \sin (x + 60°)\)</li>
+                <li>\(\sin\) の最大値は 1、最小値は -1 です。</li>
+                <li>したがって、最大値は \(2 \times 1 = 2\)、最小値は \(2 \times (-1) = -2\) です。</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
