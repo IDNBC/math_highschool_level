@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合同式と剰余類</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>合同式と剰余類</h1>
+
+<p>合同式とは、整数の差がある数で割り切れるときに成り立つ数式です。これは数論や暗号理論で重要な概念です。</p>
+
+<h2>合同式の基本</h2>
+<p>合同式は次のように表されます:</p>
+<p>\(a \equiv b \pmod{n}\)</p>
+<p>ここで、\(a\) と \(b\) は整数で、\(n\) は法と呼ばれる正の整数です。意味は「\(a\) と \(b\) の差が \(n\) で割り切れる」です。</p>
+
+<h3>具体例</h3>
+<p>例1: \(17 \equiv 5 \pmod{12}\)</p>
+<ul>
+    <li>\(17 - 5 = 12\)</li>
+    <li>12 は 12 で割り切れるので、成立します。</li>
+</ul>
+
+<p>例2: \(23 \equiv 2 \pmod{7}\)</p>
+<ul>
+    <li>\(23 - 2 = 21\)</li>
+    <li>21 は 7 で割り切れるので、成立します。</li>
+</ul>
+
+<h2>剰余類</h2>
+<p>剰余類は全ての整数を法 \(n\) ごとに分類した集合です。</p>
+
+<h3>具体例</h3>
+<p>例: \(n = 3\) の場合の剰余類</p>
+<ul>
+    <li>\([0] = \{...\ -6, -3, 0, 3, 6, ...\}\)</li>
+    <li>\([1] = \{...\ -5, -2, 1, 4, 7, ...\}\)</li>
+    <li>\([2] = \{...\ -4, -1, 2, 5, 8, ...\}\)</li>
+</ul>
+<p>つまり、任意の整数は、3つの剰余類 \([0], [1], [2]\) のどれかに属します。</p>
+
+<h2>演算規則</h2>
+<p>合同式にも通常の演算と同様の規則が適用されます。そのため、加減乗除の操作を行うことができます。</p>
+
+<h3>具体例</h3>
+<p>例: \(a \equiv 3 \pmod{5}\) と \(b \equiv 4 \pmod{5}\) のとき</p>
+<ul>
+    <li>\(a + b \equiv 3 + 4 \equiv 7 \equiv 2 \pmod{5}\)</li>
+    <li>\(a - b \equiv 3 - 4 \equiv -1 \equiv 4 \pmod{5}\)</li>
+    <li>\(a \times b \equiv 3 \times 4 \equiv 12 \equiv 2 \pmod{5}\)</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の問題を解いて、合同式の理解を深めましょう：</p>
+<ol>
+    <li>\(29 \equiv ? \pmod{8}\)</li>
+    <li>\(56 \equiv ? \pmod{7}\)</li>
+    <li>\([-15] \pmod{4}\) を求めなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_modular_arithmetic')">解答を表示/非表示</div>
+<div id="answer_modular_arithmetic" class="answer">
+    <ol>
+        <li>\(29 \equiv ? \pmod{8}\)
+            <ul>
+                <li>\(29 \div 8 = 3\) 余り \(5\)</li>
+                <li>したがって、\(29 \equiv 5 \pmod{8}\)</li>
+            </ul>
+        </li>
+        <li>\(56 \equiv ? \pmod{7}\)
+            <ul>
+                <li>\(56 \div 7 = 8\) 余り \(0\)</li>
+                <li>したがって、\(56 \equiv 0 \pmod{7}\)</li>
+            </ul>
+        </li>
+        <li>\([-15] \pmod{4}\) を求める
+            <ul>
+                <li>\(-15 \div 4 = -4\) 余り \(1\)</li>
+                <li>したがって、\(-15 \equiv 1 \pmod{4}\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
