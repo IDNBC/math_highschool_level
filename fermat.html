@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フェルマーの小定理</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>フェルマーの小定理の解説</h1>
+
+<p>フェルマーの小定理は数論の基本的な定理の一つで、素数の性質を利用して計算を簡単にするための重要な結果です。</p>
+
+<h2>フェルマーの小定理</h2>
+<p>フェルマーの小定理は次のように表されます：</p>
+<p>\(p\) を素数とし、\(a\) を \(p\) で割り切れない整数とすると、次の式が成り立ちます：</p>
+<p>\[a^{p-1} \equiv 1 \pmod{p}\]</p>
+<p>さらに、一般形として：</p>
+<p>\[a^p \equiv a \pmod{p}\]</p>
+
+<h3>具体例</h3>
+<p>例1: \(a = 2\)、\(p = 7\) の場合、\(2^{7-1} = 64\) を計算します：</p>
+<ul>
+    <li>\[2^6 = 64\]</li>
+    <li>64 を 7 で割ると、64 は 7 × 9 = 63 の1つ余りです：</li>
+    <li>\[64 \equiv 1 \pmod{7}\]</li>
+</ul>
+
+<p>例2: \(a = 3\)、\(p = 11\) の場合、\(3^{11-1} = 3^{10}\) を計算します：</p>
+<ul>
+    <li>\[3^{10} = 59049\]</li>
+    <li>59049 を 11 で割ると、59049 は 11 × 5368 + 1 です：</li>
+    <li>\[59049 \equiv 1 \pmod{11}\]</li>
+</ul>
+
+<h2>フェルマーの小定理の応用</h2>
+<p>フェルマーの小定理は、特にモジュラー逆数を計算するときに役立ちます。</p>
+<p>モジュラー逆数とは、ある数 \(a\) に対して、\(a \cdot b \equiv 1 \pmod{m}\) を満たす \(b\) のことです。</p>
+
+<h3>具体例</h3>
+<p>例: 7 の 13 におけるモジュラー逆数を求める：</p>
+<ul>
+    <li>フェルマーの小定理によれば、\((a^{p-1} \equiv 1 \pmod{p})\) です：</li>
+    <li>したがって、\(7^{12} \equiv 1 \pmod{13}\)</li>
+    <li>7 の逆数 \((b)\) は、\((7^{12-1} \equiv b \pmod{13})\) です：</li>
+    <li>\[7^{11} \equiv b \pmod{13}\]</li>
+    <li>計算すると、\((7^{11} \mod 13) = b\) です。</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の問題を解いて、フェルマーの小定理の理解を深めましょう：</p>
+<ol>
+    <li>\(a = 4\)、\(p = 13\) に対して、\(4^{13-1} \mod 13\) を計算しなさい。</li>
+    <li>\(a = 5\)、\(p = 17\) に対して、\(5^{16} \mod 17\) を計算しなさい。</li>
+    <li>\(a = 9\)、\(p = 19\) に対して、\(9^{18} \equiv 1 \pmod{19}\) であることを確認しなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_fermat')">解答を表示/非表示</div>
+<div id="answer_fermat" class="answer">
+    <ol>
+        <li>\(a = 4\)、\(p = 13\) に対して、\(4^{13-1} \mod 13\) を計算する
+            <ul>
+                <li>\(4^{12} = 16777216\)</li>
+                <li>16777216 を 13 で割る：</li>
+                <li>\[16777216 \div 13 = 1290555\] 余り \[1\]</li>
+                <li>したがって、\(4^{12} \equiv 1 \pmod{13}\)</li>
+            </ul>
+        </li>
+        <li>\(a = 5\)、\(p = 17\) に対して、\(5^{16} \mod 17\) を計算する
+            <ul>
+                <li>\(5^{16} = 152587890625\)</li>
+                <li>152587890625 を 17 で割る：</li>
+                <li>\[152587890625 \div 17 = 8975758254\] 余り \[1\]</li>
+                <li>したがって、\(5^{16} \equiv 1 \pmod{17}\)</li>
+            </ul>
+        </li>
+        <li>\(a = 9\)、\(p = 19\) に対して、\(9^{18} \equiv 1 \pmod{19}\) であることを確認する
+            <ul>
+                <li>\(9^{18} = 150094635296999121\)</li>
+                <li>150094635296999121 を 19 で割る：</li>
+                <li>\[150094635296999121 \div 19 = 7902928120899953\] 余り \[1\]</li>
+                <li>したがって、\(9^{18} \equiv 1 \pmod{19}\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
