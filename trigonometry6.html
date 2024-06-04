@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倍角公式と半角公式</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>倍角公式と半角公式</h1>
+
+<h2>2倍角の公式</h2>
+<p>倍角の公式は、三角関数を2倍の角に適用するための公式です。</p>
+<ul>
+    <li>\(\sin 2\theta = 2 \sin \theta \cos \theta\)</li>
+    <li>\(\cos 2\theta = \cos^2 \theta - \sin^2 \theta = 2\cos^2 \theta - 1 = 1 - 2\sin^2 \theta\)</li>
+    <li>\(\tan 2\theta = \frac{2 \tan \theta}{1 - \tan^2 \theta}\)</li>
+</ul>
+
+<h3>具体的な例</h3>
+<p>角度 \(\theta = 30°\) のとき、2倍角の値を求める：</p>
+<ul>
+    <li>\(\sin 60° = \sin 2 \times 30° = 2 \sin 30° \cos 30°\)</li>
+    <li>\(\sin 30° = \frac{1}{2}\)、\(\cos 30° = \frac{\sqrt{3}}{2}\)</li>
+    <li>\(\sin 60° = 2 \times \frac{1}{2} \times \frac{\sqrt{3}}{2} = \frac{\sqrt{3}}{2}\)</li>
+</ul>
+
+<h2>半角の公式</h2>
+<p>半角の公式は、三角関数の角度を半分にするための公式です。</p>
+<ul>
+    <li>\(\sin \frac{\theta}{2} = \pm \sqrt{\frac{1 - \cos \theta}{2}}\)</li>
+    <li>\(\cos \frac{\theta}{2} = \pm \sqrt{\frac{1 + \cos \theta}{2}}\)</li>
+    <li>\(\tan \frac{\theta}{2} = \pm \sqrt{\frac{1 - \cos \theta}{1 + \cos \theta}} = \frac{\sin \theta}{1 + \cos \theta} = \frac{1 - \cos \theta}{\sin \theta}\)</li>
+</ul>
+
+<h3>具体的な例</h3>
+<p>角度 \(\theta = 60°\) のとき、半角の値を求める：</p>
+<ul>
+    <li>\(\sin 30° = \sin \frac{60°}{2} = \sqrt{\frac{1 - \cos 60°}{2}}\)</li>
+    <li>\(\cos 60° = \frac{1}{2}\)</li>
+    <li>\(\sin 30° = \sqrt{\frac{1 - \frac{1}{2}}{2}} = \sqrt{\frac{\frac{1}{2}}{2}} = \sqrt{\frac{1}{4}} = \frac{1}{2}\)</li>
+</ul>
+
+<h2>3倍角の公式</h2>
+<p>3倍角の公式は、三角関数を3倍の角に適用するための公式です。</p>
+<ul>
+    <li>\(\sin 3\theta = 3 \sin \theta - 4 \sin^3 \theta\)</li>
+    <li>\(\cos 3\theta = 4 \cos^3 \theta - 3 \cos \theta\)</li>
+    <li>\(\tan 3\theta = \frac{3 \tan \theta - \tan^3 \theta}{1 - 3 \tan^2 \theta}\)</li>
+</ul>
+
+<h3>具体的な例</h3>
+<p>角度 \(\theta = 20°\) のとき、3倍角の値を求める：</p>
+<ul>
+    <li>\(\sin 60° = \sin 3 \times 20° = 3 \sin 20° - 4 \sin^3 20°\)</li>
+    <li>\(\sin 20° \approx 0.342\) を使用して：</li>
+    <li>\(\sin 60° = 3 \times 0.342 - 4 \times (0.342)^3 \approx 1.026 - 0.160 \approx 0.866\)</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の問題を解いて、倍角公式、半角公式、および3倍角公式を確認してください：</p>
+<ol>
+    <li>角度 \(\theta = 45°\) のときの \(\sin 2\theta\) を求めなさい。</li>
+    <li>角度 \(\theta = 90°\) のときの \(\cos \frac{\theta}{2}\) を求めなさい。</li>
+    <li>角度 \(\theta = 15°\) のときの \(\tan 3\theta\) を求めなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_angles')">解答を表示/非表示</div>
+<div id="answer_angles" class="answer">
+    <ol>
+        <li>角度 \(\theta = 45°\) のときの \(\sin 2\theta\) を求める
+            <ul>
+                <li>\(\sin 90° = \sin 2 \times 45°\)</li>
+                <li>倍角の公式を使います：</li>
+                <li>\(\sin 90° = 2 \sin 45° \cos 45°\)</li>
+                <li>\(\sin 45° = \frac{\sqrt{2}}{2}\)、\(\cos 45° = \frac{\sqrt{2}}{2}\)</li>
+                <li>\(\sin 90° = 2 \times \frac{\sqrt{2}}{2} \times \frac{\sqrt{2}}{2} = 2 \times \frac{2}{4} = 1\)</li>
+            </ul>
+        </li>
+        <li>角度 \(\theta = 90°\) のときの \(\cos \frac{\theta}{2}\) を求める
+            <ul>
+                <li>\(\cos 45° = \cos \frac{90°}{2} = \sqrt{\frac{1 + \cos 90°}{2}}\)</li>
+                <li>\(\cos 90° = 0\)</li>
+                <li>\(\cos 45° = \sqrt{\frac{1 + 0}{2}} = \sqrt{\frac{1}{2}} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</li>
+            </ul>
+        </li>
+        <li>角度 \(\theta = 15°\) のときの \(\tan 3\theta\) を求める
+            <ul>
+                <li>\(\tan 45° = \tan 3 \times 15°\)</li>
+                <li>3倍角の公式を使います：</li>
+                <li>\(\tan 45° = \frac{3 \tan 15° - \tan^3 15°}{1 - 3 \tan^2 15°}\)</li>
+                <li>\(\tan 15° \approx 0.268\) を使用して：</li>
+                <li>\(\tan 45° = \frac{3 \times 0.268 - (0.268)^3}{1 - 3 \times (0.268)^2} = \frac{0.804 - 0.019}{1 - 0.215} \approx \frac{0.785}{0.785} = 1\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
