@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ベクトルの基本的な解説</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+        .example, .exercise { margin-top: 20px; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>ベクトルの基本的な解説</h1>
+
+<p>ベクトルとは、大きさと向きを持つ量のことです。これは物理や数学でよく使われる概念です。</p>
+
+<h2>ベクトルの基本的な表現</h2>
+<p>ベクトルは通常、どちらの点からどの点への移動を示す矢印で表されます。一般的に、ベクトル \(\vec{a}\) を次のように表します：</p>
+<p>\(\vec{a} = (a_1, a_2)\)</p>
+<p>ここで、\(a_1\) は x軸方向の成分、\(a_2\) は y軸方向の成分です。</p>
+
+<h3 class="example">具体例</h3>
+<p>例1: ベクトル \(\vec{a} = (3, 4)\) の場合、これは次のような意味を持ちます：</p>
+<ul>
+    <li>x軸方向に3単位</li>
+    <li>y軸方向に4単位</li>
+</ul>
+
+<p>例2: ベクトル \(\vec{b} = (-2, 5)\) の場合、これは次のような意味を持ちます：</p>
+<ul>
+    <li>x軸方向に-2単位（つまり左方向に2単位）</li>
+    <li>y軸方向に5単位</li>
+</ul>
+
+<h2>ベクトルの演算</h2>
+<p>ベクトルは足し算や引き算、スカラー倍などの演算を行うことができます。</p>
+
+<h3>ベクトルの足し算</h3>
+<p>2つのベクトル \(\vec{a} = (a_1, a_2)\) と \(\vec{b} = (b_1, b_2)\) の和は：</p>
+<p>\(\vec{a} + \vec{b} = (a_1 + b_1, a_2 + b_2)\)</p>
+
+<h3>ベクトルの引き算</h3>
+<p>2つのベクトル \(\vec{a} = (a_1, a_2)\) と \(\vec{b} = (b_1, b_2)\) の差は：</p>
+<p>\(\vec{a} - \vec{b} = (a_1 - b_1, a_2 - b_2)\)</p>
+
+<h3>スカラー倍</h3>
+<p>スカラー倍とは、ベクトルの各成分を特定の数（スカラー）で掛ける操作です。ベクトル \(\vec{a} = (a_1, a_2)\) をスカラー \(k\) で掛けると：</p>
+<p>\(k \vec{a} = (k a_1, k a_2)\)</p>
+<p>スカラー倍により、ベクトルの大きさが変わり（向きは変わることもありますが、通常はそのままです）、スカラー \(k\) が負の場合、ベクトルの方向が逆になります。</p>
+
+<h3 class="example">具体例</h3>
+<p>例3: \(\vec{a} = (3, 4)\) と \(\vec{b} = (1, 2)\) の場合：</p>
+<ul>
+    <li>\(\vec{a} + \vec{b} = (3 + 1, 4 + 2) = (4, 6)\)</li>
+    <li>\(\vec{a} - \vec{b} = (3 - 1, 4 - 2) = (2, 2)\)</li>
+    <li>スカラー倍： \(2\vec{a} = 2 \times (3, 4) = (6, 8)\)</li>
+</ul>
+
+<h2>ベクトルの大きさ</h2>
+<p>ベクトル \(\vec{a} = (a_1, a_2)\) の大きさ（ノルム）は次のように計算します：</p>
+<p>\(|\vec{a}| = \sqrt{a_1^2 + a_2^2}\)</p>
+
+<h3 class="example">具体例</h3>
+<p>例4: ベクトル \(\vec{a} = (3, 4)\) の場合、大きさは：</p>
+<ul>
+    <li>\(|\vec{a}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\)</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の問題を解いて、ベクトルについて確認しましょう：</p>
+<ol>
+    <li>\(\vec{a} = (2, -3)\) と \(\vec{b} = (-1, 4)\) の場合、\(\vec{a} + \vec{b}\) を求めなさい。</li>
+    <li>\(\vec{a} = (5, -2)\) の大きさを求めなさい。</li>
+    <li>\(\vec{a} = (2, 1)\) をスカラー 3 倍したベクトルを求めなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_vector')">解答を表示/非表示</div>
+<div id="answer_vector" class="answer">
+    <ol>
+        <li>\(\vec{a} = (2, -3)\) と \(\vec{b} = (-1, 4)\) の場合、\(\vec{a} + \vec{b}\) を求める
+            <ul>
+                <li>\(\vec{a} + \vec{b} = (2 + (-1), -3 + 4) = (1, 1)\)</li>
+            </ul>
+        </li>
+        <li>\(\vec{a} = (5, -2)\) の大きさを求める
+            <ul>
+                <li>\(|\vec{a}| = \sqrt{5^2 + (-2)^2} = \sqrt{25 + 4} = \sqrt{29}\)</li>
+            </ul>
+        </li>
+        <li>\(\vec{a} = (2, 1)\) をスカラー 3 倍したベクトルを求める
+            <ul>
+                <li>3\(\vec{a} = 3 \times (2, 1) = (6, 3)\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
