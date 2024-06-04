@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>積和公式と和積公式</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>三角関数の積和公式と和積公式</h1>
+
+<h2>積和公式</h2>
+<p>積和公式は、積の形の三角関数を和（または差）の形に変換する公式です。</p>
+<ul>
+    <li>\(\sin \alpha \cos \beta = \frac{1}{2} [\sin (\alpha + \beta) + \sin (\alpha - \beta)]\)</li>
+    <li>\(\cos \alpha \cos \beta = \frac{1}{2} [\cos (\alpha + \beta) + \cos (\alpha - \beta)]\)</li>
+    <li>\(\sin \alpha \sin \beta = \frac{1}{2} [\cos (\alpha - \beta) - \cos (\alpha + \beta)]\)</li>
+</ul>
+
+<h3>具体的な例</h3>
+<p>角度 \(\alpha = 30°\) と \(\beta = 45°\) に対して、\(\sin \alpha \cos \beta\) を求める：</p>
+<ul>
+    <li>\(\sin 30° \cos 45°\)</li>
+    <li>積和公式を使います：</li>
+    <li>\(\sin 30° \cos 45° = \frac{1}{2} [\sin (30° + 45°) + \sin (30° - 45°)]\)</li>
+    <li>\(\sin 75° = \frac{\sqrt{6} + \sqrt{2}}{4}\) および \(\sin (-15°) = - \sin 15° = -\frac{\sqrt{6} - \sqrt{2}}{4}\)</li>
+    <li>値を代入して計算します：</li>
+    <li>\(\sin 30° \cos 45° = \frac{1}{2} \left[\frac{\sqrt{6} + \sqrt{2}}{4} - \frac{\sqrt{6} - \sqrt{2}}{4}\right] = \frac{1}{2} \left[ \frac{2\sqrt{2}}{4} \right] = \frac{\sqrt{2}}{4}\)</li>
+</ul>
+
+<h2>和積公式</h2>
+<p>和積公式は、和（または差）の形の三角関数を積の形に変換する公式です。</p>
+<ul>
+    <li>\(\sin \alpha + \sin \beta = 2 \sin \left( \frac{\alpha + \beta}{2} \right) \cos \left( \frac{\alpha - \beta}{2} \right)\)</li>
+    <li>\(\sin \alpha - \sin \beta = 2 \cos \left( \frac{\alpha + \beta}{2} \right) \sin \left( \frac{\alpha - \beta}{2} \right)\)</li>
+    <li>\(\cos \alpha + \cos \beta = 2 \cos \left( \frac{\alpha + \beta}{2} \right) \cos \left( \frac{\alpha - \beta}{2} \right)\)</li>
+    <li>\(\cos \alpha - \cos \beta = -2 \sin \left( \frac{\alpha + \beta}{2} \right) \sin \left( \frac{\alpha - β}{2} \right)\)</li>
+</ul>
+
+<h3>具体的な例</h3>
+<p>角度 \(\alpha = 45°\) と \(\beta = 15°\) に対して、\(\sin \alpha + \sin \beta\) を求める：</p>
+<ul>
+    <li>\(\sin 45° + \sin 15°\)</li>
+    <li>和積公式を使います：</li>
+    <li>\(\sin 45° + \sin 15° = 2 \sin \left( \frac{45° + 15°}{2} \right) \cos \left( \frac{45° - 15°}{2} \right)\)</li>
+    <li>\(\sin 30° = \frac{1}{2}\) および \(\cos 15° \approx 0.966\)</li>
+    <li>値を代入して計算します：</li>
+    <li>\(\sin 45° + \sin 15° = 2 \times \frac{1}{2} \times 0.966 = 0.966\)</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の問題を解いて、積和公式および和積公式を確認してください：</p>
+<ol>
+    <li>角度 \(\alpha = 60°\) と \(\beta = 30°\) に対して、\(\cos \alpha \cos β\) を求めなさい。</li>
+    <li>角度 \(\alpha = 75°\) と \(\beta = 15°\) に対して、\(\sin \alpha - \sin β\) を求めなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_trig_identities')">解答を表示/非表示</div>
+<div id="answer_trig_identities" class="answer">
+    <ol>
+        <li>角度 \(\alpha = 60°\) と \(\beta = 30°\) に対して、\(\cos \alpha \cos \beta\) を求める
+            <ul>
+                <li>\(\cos 60° \cos 30°\)</li>
+                <li>積和公式を使います：</li>
+                <li>\(\cos 60° \cos 30° = \frac{1}{2} [\cos (60° + 30°) + \cos (60° - 30°)]\)</li>
+                <li>\(\cos 90° = 0\) および \(\cos 30° = \frac{\sqrt{3}}{2}\)</li>
+                <li>値を代入して計算します：</li>
+                <li>\(\cos 60° \cos 30° = \frac{1}{2} [0 + \frac{\sqrt{3}}{2}] = \frac{1}{2} \times \frac{\sqrt{3}}{2} = \frac{\sqrt{3}}{4}\)</li>
+            </ul>
+        </li>
+        <li>角度 \(\alpha = 75°\) と \(\β = 15°\) に対して、\(\sin \alpha - \sin β\) を求める
+            <ul>
+                <li>\(\sin 75° - \sin 15°\)</li>
+                <li>和積公式を使います：</li>
+                <li>\(\sin 75° - \sin 15° = 2 \cos \left( \frac{75° + 15°}{2} \right) \sin \left( \frac{75° - 15°}{2} \right)\)</li>
+                <li>\(\cos 45° = \frac{\sqrt{2}}{2}\) および \(\sin 30° = \frac{1}{2}\)</li>
+                <li>値を代入して計算します：</li>
+                <li>\(\sin 75° - \sin 15° = 2 \times \frac{\sqrt{2}}{2} \times \frac{1}{2} = \sqrt{2} \times \frac{1}{2} = \frac{\sqrt{2}}{2}\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
