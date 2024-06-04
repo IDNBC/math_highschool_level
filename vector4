@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+<head> 
+<meta charset="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>ベクトルの内積となす角の解説</title> 
+<style> 
+.answer { display: none; } 
+.toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; } 
+.example, .exercise { margin-top: 20px; } 
+</style> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+<script> function toggleAnswer(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script> 
+  </head> 
+  <body> 
+  <h1>ベクトルの内積と2つのベクトルのなす角の解説</h1> 
+  <h2>ベクトルの内積</h2> 
+  <p>ベクトルの内積（スカラー積）とは、2つのベクトルの成分を乗算し、その和をとったものです。内積は次のように表されます：</p> 
+  <p>\(\vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2\)</p> <p>ここで、\(\vec{a} = (a_1, a_2)\) と \(\vec{b} = (b_1, b_2)\) です。</p> 
+  <h3 class="example">具体例</h3> 
+    <p>例1: ベクトル \(\vec{a} = (2, 3)\) と \(\vec{b} = (-1, 4)\) の内積は：</p> 
+    <ul> 
+    <li>\(\vec{a} \cdot \vec{b} = 2 \cdot (-1) + 3 \cdot 4 = -2 + 12 = 10\)</li> 
+    </ul> 
+    <h2>2つのベクトルのなす角</h2> 
+    <p>ベクトルのなす角 \(\theta\) は、次の式を用いて計算します：</p> 
+    <p>\(\cos \theta = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|}\)</p> 
+    <p>ここで、\(\vec{a} \cdot \vec{b}\) はベクトルの内積、\(|\vec{a}|\) と \(|\vec{b}|\) はそれぞれのベクトルの大きさです。</p> 
+    <h3 class="example">具体例</h3> 
+      <p>例2: ベクトル \(\vec{a} = (1, 2)\) と \(\vec{b} = (2, 3)\) のなす角を求めます：</p> 
+      <ul> 
+      <li>内積：\(\vec{a} \cdot \vec{b} = 1 \cdot 2 + 2 \cdot 3 = 2 + 6 = 8\)</li> 
+      <li>ベクトルの大きさ： \(|\vec{a}| = \sqrt{1^2 + 2^2} = \sqrt{1 + 4} = \sqrt{5}\)</li> <li>\(|\vec{b}| = \sqrt{2^2 + 3^2} = \sqrt{4 + 9} = \sqrt{13}\)</li> 
+      <li>\(\cos \theta = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|} = \frac{8}{\sqrt{5} \cdot \sqrt{13}} = \frac{8}{\sqrt{65}}\)</li> 
+      <li>したがって、なす角 \(\theta\) は \(\cos^{-1}\left(\frac{8}{\sqrt{65}}\right)\) となります。</li> 
+      </ul> 
+      <h2>意義</h2> 
+      <p>ベクトルの内積は、2つのベクトル間の関係性を理解するために重要な概念です。例えば、内積が0の場合、2つのベクトルは直交（垂直）しています。</p> 
+      <p>ベクトルのなす角は、ベクトル間の方向の違いを定量的に評価する方法であり、物理やエンジニアリングの多くの分野で重要な役割を果たします。</p> 
+      <h2>練習問題</h2> 
+      <p>次の問題を解いて、ベクトルの内積やなす角について確認しましょう：</p> 
+      <ol> 
+      <li>\(\vec{a} = (3, -1)\) と \(\vec{b} = (2, 2)\) の内積を求めなさい。</li> 
+      <li>\(\vec{a} = (1, 1)\) と \(\vec{b} = (-1, 1)\) のなす角を求めなさい。</li> 
+      <li>\(\vec{a} = (0, 2)\) と \(\vec{b} = (2, 0)\) は直交しているか確認しなさい。</li> 
+      </ol> 
+      <div class="toggle-button" onclick="toggleAnswer('answer_vector')">解答を表示/非表示</div> 
+        <div id="answer_vector" class="answer"> 
+          <ol> 
+          <li>\(\vec{a} = (3, -1)\) と \(\vec{b} = (2, 2)\) の内積 
+          <ul> 
+          <li>\(\vec{a} \cdot \vec{b} = 3 \cdot 2 + (-1) \cdot 2 = 6 - 2 = 4\)</li> 
+          </ul> 
+          </li> 
+          <li>\(\vec{a} = (1, 1)\) と \(\vec{b} = (-1, 1)\) のなす角 
+          <ul> 
+          <li>内積：\(\vec{a} \cdot \vec{b} = 1 \cdot (-1) + 1 \cdot 1 = -1 + 1 = 0\)</li> 
+          <li>ベクトルの大きさ： \(|\vec{a}| = \sqrt{1^2 + 1^2} = \sqrt{2}\)</li> 
+          <li>\(|\vec{b}| = \sqrt{(-1)^2 + 1^2} = \sqrt{2}\)</li> 
+          <li>\(\cos \theta = \frac{0}{\sqrt{2} \cdot \sqrt{2}} = 0\)</li> 
+          <li>したがって、なす角 \(\theta\) は \(\cos^{-1}(0) = \frac{\pi}{2}\)（90度）です。</li> 
+          </ul> 
+          </li> 
+          <li>\(\vec{a} = (0, 2)\) と \(\vec{b} = (2, 0)\) が直交しているか確認 
+          <ul> 
+          <li>内積：\(\vec{a} \cdot \vec{b} = 0 \cdot 2 + 2 \cdot 0 = 0\)</li> <li>内積が0なので、これらのベクトルは直交しています。</li> 
+          </ul> 
+          </li> 
+          </ol> 
+          </div> 
+          </body> 
+          </html>
