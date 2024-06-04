@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+  <head> 
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>ベクトルの1次結合と独立/従属性</title> 
+    <style> 
+      .answer { display: none; } .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; } 
+      .example, .exercise { margin-top: 20px; } 
+    </style> 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+    <script> function toggleAnswer(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script> 
+  </head> 
+  <body> 
+    <h1>ベクトルの1次結合と独立/従属性の解説</h1> 
+    <h2>ベクトルの1次結合</h2> 
+    <p>2つ以上のベクトル\(\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}\) の1次結合とは、それらのベクトルにスカラー値を掛け合わせた和を指します。具体的には、以下のように表されます：</p> 
+    <p>\(k_1 \vec{a_1} + k_2 \vec{a_2} + \dots + k_n \vec{a_n}\)</p> 
+    <p>ここで、\(k_1, k_2, \dots, k_n\) はスカラーです。</p> 
+    <h3 class="example">具体例</h3> 
+    <p>例1: ベクトル \(\vec{a} = (1, 2)\) と \(\vec{b} = (3, 4)\) の1次結合\(2 \vec{a} + 3 \vec{b}\) を考えると：</p> 
+    <ul> 
+      <li>2 \(\vec{a} = 2 \times (1, 2) = (2, 4)\)</li> 
+      <li>3 \(\vec{b} = 3 \times (3, 4) = (9, 12)\)</li> 
+      <li>2 \(\vec{a} + 3 \(\vec{b}\) = (2, 4) + (9, 12) = (11, 16)\)</li> 
+    </ul> 
+    <h2>ベクトルの1次独立と従属</h2> 
+    <p>ベクトル \(\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}\) は1次独立か1次従属のいずれかの属性を持つ場合があります。</p> 
+    <h3>1次独立</h3> 
+    <p>ベクトル \(\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}\) が1次独立であるとは、次の条件を満たす時を言います：</p> <p>\(k_1 \vec{a_1} + k_2 \vec{a_2} + \dots + k_n \vec{a_n} = 0\) が成立するためには、全ての \(k_1, k_2, \dots, k_n\) が0である必要があります。</p> 
+    <h4 class="example">具体例</h4> 
+    <p>例2: ベクトル \(\vec{a} = (1, 0)\) と \(\vec{b} = (0, 1)\) は1次独立です。任意の \(k_1, k_2\) に対して：</p> <p>\(k_1 \vec{a} + k_2 \vec{b} = (k_1, 0) + (0, k_2) = (k_1, k_2) = (0, 0)\)</p> 
+    <p>この方程式が成立するには \(k_1 = 0\) かつ \(k_2 = 0\) でなければなりません。</p> 
+    <h3>1次従属</h3> 
+    <p>ベクトル \(\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}\) が1次従属であるとは、次の条件を満たす時を言います：</p> 
+    <p>\(k_1 \vec{a_1} + k_2 \vec{a_2} + \dots + k_n \vec{a_n} = 0\) が成立するために、全ての \(k_1, k_2, \dots, k_n\) が0ではなく、一部が0でないスカラー値が存在する場合です。</p> 
+    <h4 class="example">具体例</h4> 
+    <p>例3: ベクトル \(\vec{a} = (1, 2)\) と \(\vec{b} = (2, 4)\) は1次従属です。なぜなら、\(\vec{b}\) は \(\vec{a}\) のスカラー倍です：</p> 
+    <p>\(2 \vec{a} - \vec{b} = 2 (1, 2) - (2, 4) = (2, 4) - (2, 4) = (0, 0)\)</p> 
+    <p>この場合、\(k_1 = 2\) かつ \(k_2 = -1\) で、両方が0ではありません。</p> 
+    <h2>練習問題</h2> 
+    <p>次の問題を解いて、ベクトルの1次結合や1次独立/従属について確認しましょう：</p> 
+    <ol> 
+      <li>\(\vec{a} = (2, 3)\) と \(\vec{b} = (4, -1)\)、およびスカラー \(k_1 = 3\)、\(k_2 = -2\)の場合、\(k_1 \vec{a} + k_2 \vec{b}\) を求めなさい。</li> 
+      <li>ベクトル \(\vec{a} = (1, 2)\)、\(\vec{b} = (2, 4)\)、\(\vec{c} = (3, 6)\) が1次独立か1次従属かを判定しなさい。</li> 
+      <li>\(\vec{a} = (1, -1)\) と \(\vec{b} = (2, -3)\) が1次独立か1次従属かを確認しなさい。</li> 
+    </ol> 
+    <div class="toggle-button" onclick="toggleAnswer('answer_vector2')">解答を表示/非表示</div> 
+    <div id="answer_vector2" class="answer"> 
+      <ol> 
+        <li>\(\vec{a} = (2, 3)\) と \(\vec{b} = (4, -1)\)、およびスカラー \(k_1 = 3\)、\(k_2 = -2\) の場合、\(k_1 \vec{a} + k_2 \vec{b}\) <ul> <li>\(3 \vec{a} = 3 \times (2, 3) = (6, 9)\)</li> 
+          <li>\(-2 \vec{b} = -2 \times (4, -1) = (-8, 2)\)</li> 
+          <li>\(k_1 \vec{a} + k_2 \vec{b} = (6, 9) + (-8, 2) = (-2, 11)\)</li> 
+        </ul> 
+        </li> 
+        <li>ベクトル \(\vec{a} = (1, 2)\)、\(\vec{b} = (2, 4)\)、\(\vec{c} = (3, 6)\) が1次独立か1次従属かを判定 
+          <ul> 
+            <li>これらのベクトルはすべて比例しています。たとえば、\(\vec{b} = 2 \vec{a}\) および \(\vec{c} = 3 \vec{a}\) です。このため、これらは1次従属です。</li> 
+          </ul> 
+        </li> 
+        <li>\(\vec{a} = (1, -1)\) と \(\vec{b} = (2, -3)\) が1次独立か1次従属か 
+          <ul> 
+            <li> 方程式 \(k_1 \vec{a} + k_2 \vec{b} = 0\) を考えます。 <br> 
+              \(\vec{a}\) が \((1, -1)\)、\(\vec{b}\) が \((2, -3)\) なので： \[ k_1 (1, -1) + k_2 (2, -3) = (0, 0) \] <br> 展開すると： \[ (k_1 + 2k_2, -k_1 - 3k_2) = (0, 0) \] <br> 
+              よって連立方程式が作成されます： \[ \begin{cases} k_1 + 2k_2 = 0 \\ -k_1 - 3k_2 = 0 \end{cases} \] <br> 
+              これを解くと、\(k_1 = 0\) および \(k_2 = 0\) の解しかないため、この2つのベクトルは1次独立です。 </li> 
+          </ul> 
+        </li> 
+      </ol> 
+    </div> 
+  </body> 
+</html>
