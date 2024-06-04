@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直線のベクトル方程式</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+        .example, .exercise { margin-top: 20px; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>直線のベクトル方程式の解説</h1>
+
+<h2>直線のベクトル方程式</h2>
+<p>直線のベクトル方程式は、1点および方向ベクトルを使って表現されます。直線のベクトル方程式には代表的な形式がいくつかあります。</p>
+
+<h3>1. 点-方向ベクトル形式</h3>
+<p>任意の直線は点 \(\vec{a}\) を通り、方向ベクトル \(\vec{b}\) を持つ場合、次のように表されます：</p>
+<p>\(\vec{r} = \vec{a} + t \vec{b}\)</p>
+<p>ここで、\(\vec{r}\) は直線上の任意の点を示し、\(t\) は実数のパラメータです。</p>
+
+<h3 class="example">具体例</h3>
+<p>例1: 点 \((1, 2)\) を通り、方向ベクトル \((3, 4)\) を持つ直線：</p>
+<ul>
+    <li>\(\vec{r} = (1, 2) + t (3, 4) = (1 + 3t, 2 + 4t)\)</li>
+</ul>
+
+<h3>2. 点-点形式</h3>
+<p>2点 \(\vec{a}\) と \(\vec{b}\) を通る直線は、次のように表されます：</p>
+<p>\(\vec{r} = \vec{a} + t (\vec{b} - \vec{a})\)</p>
+<p>ここで、\(\vec{r}\) は直線上の任意の点、\(t\) は実数のパラメータです。</p>
+
+<h3 class="example">具体例</h3>
+<p>例2: 点 \((1, 2)\) と \((4, 6)\) を通る直線：</p>
+<ul>
+    <li>\(\vec{r} = (1, 2) + t ((4, 6) - (1, 2)) = (1, 2) + t (3, 4) = (1 + 3t, 2 + 4t)\)</li>
+</ul>
+
+<h3>3. パラメトリック形式</h3>
+<p>直線のベクトル方程式は、パラメータを用いて各成分ごとに表すこともできます：</p>
+<p>\(\begin{cases}
+x = x_0 + at \\
+y = y_0 + bt
+\end{cases}\)</p>
+<p>ここで、\((x_0, y_0)\) は直線上の1点、\((a, b)\) は方向ベクトル、\(t\) は実数のパラメータです。</p>
+
+<h3 class="example">具体例</h3>
+<p>例3: 点 \((1, 2)\) を通り、方向ベクトル \((3, 4)\) を持つ直線：</p>
+<ul>
+    <li>\(\begin{cases}
+x = 1 + 3t \\
+y = 2 + 4t
+\end{cases}\)</li>
+</ul>
+
+<h2>意義</h2>
+<p>直線のベクトル方程式は、空間内の直線を簡潔に表現する手段として重要です。特に、コンピュータゲームや物理シミュレーション、機械学習など、複数の分野で利用されています。</p>
+
+<h2>練習問題</h2>
+<p>次の問題を解いて、直線のベクトル方程式について確認しましょう：</p>
+<ol>
+    <li>点 \((2, 3)\) を通り、方向ベクトル \((1, -2)\) を持つ直線のベクトル方程式を求めなさい。</li>
+    <li>点 \((0, 0)\) と \((4, 5)\) を通る直線のベクトル方程式を求めなさい。</li>
+    <li>点 \((1, 1)\) を通り、方向ベクトル \((2, 3)\) を持つ直線のパラメトリック方程式を書きなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_vector')">解答を表示/非表示</div>
+<div id="answer_vector" class="answer">
+    <ol>
+        <li>点 \((2, 3)\) を通り、方向ベクトル \((1, -2)\) を持つ直線のベクトル方程式
+            <ul>
+                <li>\(\vec{r} = (2, 3) + t (1, -2) = (2 + t, 3 - 2t)\)</li>
+            </ul>
+        </li>
+        <li>点 \((0, 0)\) と \((4, 5)\) を通る直線のベクトル方程式
+            <ul>
+                <li>\(\vec{r} = (0, 0) + t ((4, 5) - (0, 0)) = t (4, 5) = (4t, 5t)\)</li>
+            </ul>
+        </li>
+        <li>点 \((1, 1)\) を通り、方向ベクトル \((2, 3)\) を持つ直線のパラメトリック方程式
+            <ul>
+                <li>\(\begin{cases}
+                x = 1 + 2t \\
+                y = 1 + 3t
+                \end{cases}\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
