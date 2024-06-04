@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正弦定理と余弦定理</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>正弦定理と余弦定理</h1>
+
+<h2>正弦定理</h2>
+<p>正弦定理は、任意の三角形において、各辺の長さとその対角の正弦の比が等しいことを示します：</p>
+<p>\[\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}\]</p>
+<p>ここで、\(a\)、\(b\)、\(c\) はそれぞれ角 \(A\)、\(B\)、\(C\) に対する辺の長さです。</p>
+
+<h3>例</h3>
+<p>三角形 \(ABC\) において、角 \(A = 30°\)、角 \(B = 45°\)、辺 \(a = 5\) の場合、辺 \(b\) を求める。</p>
+<ul>
+    <li>まず、正弦定理を使用します：</li>
+    <li>\[\frac{a}{\sin A} = \frac{b}{\sin B}\]</li>
+    <li>値を代入します：</li>
+    <li>\[\frac{5}{\sin 30°} = \frac{b}{\sin 45°}\]</li>
+    <li>ここで、\(\sin 30° = \frac{1}{2}\) および \(\sin 45° = \frac{\sqrt{2}}{2}\) です：</li>
+    <li>\[\frac{5}{\frac{1}{2}} = \frac{b}{\frac{\sqrt{2}}{2}}\]</li>
+    <li>比例を解くと：</li>
+    <li>\[5 \times 2 = b \times \frac{2}{\sqrt{2}}\]</li>
+    <li>\[10 = b \times \sqrt{2}\]</li>
+    <li>\[b = \frac{10}{\sqrt{2}} = 5\sqrt{2}\]</li>
+</ul>
+
+<h2>余弦定理</h2>
+<p>余弦定理は、三角形の任意の2辺とその間の角を使って第三辺の長さを求める公式です：</p>
+<p>\[c^2 = a^2 + b^2 - 2ab \cos C\]</p>
+<p>ここで、\(a\)、\(b\)、\(c\) は三角形の各辺の長さで、\(C\) は辺 \(a\) および \(b\) の間の角度です。</p>
+
+<h3>例</h3>
+<p>三角形において、辺 \(a = 7\)、辺 \(b = 10\)、角 \(C = 60°\) の場合、辺 \(c\) を求める。</p>
+<ul>
+    <li>まず、余弦定理を使用します：</li>
+    <li>\[c^2 = a^2 + b^2 - 2ab \cos C\]</li>
+    <li>値を代入します：</li>
+    <li>\[c^2 = 7^2 + 10^2 - 2 \cdot 7 \cdot 10 \cdot \cos 60°\]</li>
+    <li>ここで、\(\cos 60° = \frac{1}{2}\) です：</li>
+    <li>\[c^2 = 49 + 100 - 2 \cdot 7 \cdot 10 \cdot \frac{1}{2}\]</li>
+    <li>\[c^2 = 49 + 100 - 70\]</li>
+    <li>\[c^2 = 79\]</li>
+    <li>\[c = \sqrt{79}\]</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の問題を解いて、正弦定理と余弦定理を確認してください：</p>
+
+<ol>
+    <li>三角形 \(ABC\) において、角 \(A = 40°\)、角 \(B = 60°\)、辺 \(a = 8\) の場合、辺 \(b\) を求める。</li>
+    <li>三角形 \(DEF\) において、辺 \(d = 9\)、辺 \(e = 12\)、角 \(F = 45°\) の場合、辺 \(f\) を求める。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_sine_cosine')">解答を表示/非表示</div>
+<div id="answer_sine_cosine" class="answer">
+    <ol>
+        <li>三角形 \(ABC\) において、角 \(A = 40°\)、角 \(B = 60°\)、辺 \(a = 8\) の場合
+            <ul>
+                <li>正弦定理を使用します：</li>
+                <li>\[\frac{a}{\sin A} = \frac{b}{\sin B}\]</li>
+                <li>値を代入し、\(\sin 40°\) と \(\sin 60°\) の値を使用します：</li>
+                <li>\[\frac{8}{\sin 40°} = \frac{b}{\sin 60°}\]</li>
+                <li>\(\sin 40° \approx 0.6428\) と \(\sin 60° = \frac{\sqrt{3}}{2}\) を使用して：</li>
+                <li>\[\frac{8}{0.6428} = \frac{b}{\frac{\sqrt{3}}{2}}\]</li>
+                <li>\[8 \times \frac{2}{0.6428} = b \times \sqrt{3}\]</li>
+                <li>\[b = \frac{16}{0.6428 \cdot \sqrt{3}} \approx 8.93\]</li>
+            </ul>
+        </li>
+        <li>三角形 \(DEF\) において、辺 \(d = 9\)、辺 \(e = 12\)、角 \(F = 45°\) の場合
+            <ul>
+                <li>余弦定理を使用します：</li>
+                <li>\[f^2 = d^2 + e^2 - 2de \cos F\]</li>
+                <li>値を代入し、\(\cos 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\) を使用します：</li>
+                <li>\[f^2 = 9^2 + 12^2 - 2 \cdot 9 \cdot 12 \cdot \cos 45°\]</li>
+                <li>\[f^2 = 81 + 144 - 2 \cdot 9 \cdot 12 \cdot \frac{\sqrt{2}}{2}\]</li>
+                <li>\[f^2 = 225 - 108\sqrt{2}\]</li>
+                <li>\[f \approx \sqrt{225 - 108\cdot1.414}\]</li>
+                <li>\[f \approx 7.62\]</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
