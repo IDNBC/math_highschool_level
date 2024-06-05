@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>軌跡についての解説</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+        .example, .exercise { margin-top: 20px; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>軌跡についての解説</h1>
+
+<h2>軌跡とは？</h2>
+<p>軌跡とは、点や物体が動く過程で通過した位置の集合を指します。数学では、特定の条件を満たす点の集合として表されます。</p>
+
+<h3>軌跡の基本概念</h3>
+<p>ある点 \(P(x, y)\) が条件 \(F(x, y) = 0\) を満たしながら動くとき、その点の通過する全ての位置の集合を、その条件によって定まる<strong>軌跡</strong>と呼びます。</p>
+
+<h3 class="example">具体例</h3>
+<p>例1: 点 \(P(x, y)\) が、原点からの距離が常に一定であるとき、その軌跡を求めなさい。</p>
+<ul>
+    <li>点Pが原点からの距離がrであるとすると、次の関係が成立します：\[
+        \sqrt{x^2 + y^2} = r
+    \]</li>
+    <li>これを平方すると：
+        \[x^2 + y^2 = r^2\] になります。</li>
+    <li>この式は、原点を中心とする半径rの円を示しています。</li>
+</ul>
+
+<h3 class="example">具体例</h3>
+<p>例2: 点 \(P(x, y)\) が、直線 \(x = 3\) 上を動くとき、その軌跡を求めなさい。</p>
+<ul>
+    <li>与えられた条件により、点Pのx座標は常に3です：</li>
+    <li>y座標に制約はないため、この条件に基づいて軌跡は：
+        \[x = 3\]
+    </li>
+    <li>これは、縦の直線 \(x = 3\) を示しています。</li>
+</ul>
+
+<h2>軌跡を求める手順</h2>
+<p>軌跡を求める際の手順の一例は以下の通りです：</p>
+<ol>
+    <li>関数の条件をもとに、変数間の関係を表す方程式を立てます。</li>
+    <li>方程式を整理し、特定の条件を満たす点の集合（軌跡）を導き出します。</li>
+</ol>
+
+<h2>練習問題</h2>
+<p>次の軌跡を求める問題を解いてみましょう。</p>
+<ol>
+    <li>点 \(P(x, y)\) が原点を中心とする半径2の円上を動くとき、その軌跡を求めなさい。</li>
+    <li>点 \(P(x, y)\) が直線 \(y = 2x + 1\) 上を動くとき、その軌跡を求めなさい。</li>
+    <li>点 \(P(x, y)\) が2つの焦点が \((1, 0)\) と \((-1, 0)\) である双曲線上を動くとき、その軌跡を求めなさい。ただし、双曲線の定義に従い、点 \(P\) からの焦点までの距離の差が常に2であるものとします。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_trajectory')">解答を表示/非表示</div>
+<div id="answer_trajectory" class="answer">
+    <ol>
+        <li>点 \(P(x, y)\) が原点を中心とする半径2の円上を動くとき、その軌跡を求めなさい。
+            <ul>
+                <li>半径が2であるため、点Pがこの条件を満たす時：
+                    \[
+                    \sqrt{x^2 + y^2} = 2
+                    \]</li>
+                <li>これを平方すると：
+                    \[
+                    x^2 + y^2 = 4
+                    \]</li>
+                <li>したがって、原点を中心とする半径2の円の方程式は \(x^2 + y^2 = 4\) です。</li>
+            </ul>
+        </li>
+        <li>点 \(P(x, y)\) が直線 \(y = 2x + 1\) 上を動くとき、その軌跡を求めなさい。
+            <ul>
+                <li>点Pが条件を満たすとき、その方程式はそのまま軌跡となります：
+                    \[
+                    y = 2x + 1
+                    \]</li>
+                <li>したがって、軌跡は直線 \(y = 2x + 1\) です。</li>
+            </ul>
+        </li>
+        <li>点 \(P(x, y)\) が2つの焦点が \((1, 0)\) と \((-1, 0)\) である双曲線上を動くとき、その軌跡を求めなさい。ただし、点Pから各焦点までの距離の差が常に2であるとします。
+            <ul>
+                <li>双曲線の定義より、点Pから各焦点までの距離の差が一定の時、その軌跡は双曲線の方程式で表されます：
+                    \[
+                    | (x-1)^2 + y^2 - (x+1)^2 - y^2 | = 2
+                    \]</li>
+                <li>整理すると：
+                    \[
+                    | (x-1) - (x+1) | = 2
+                    \]</li>
+                <li>まとめると： \[
+                    | x-1 - x-1 | =2  
+                    \]です。</li>
+
+               <li> したがって軌跡は
+                    \[
+                   x -1 - x -1 = 2    です。
+                    \]</li>
+                    
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
