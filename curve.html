@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2次曲線</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+        .example, .exercise { margin-top: 20px; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>2次曲線の解説</h1>
+
+<h2>放物線</h2>
+<p>放物線は2次曲線の一つで、一般的な方程式は次の通りです：
+\[ y = ax^2 + bx + c \]
+ここで、a, b, c は定数です。</p>
+
+<h3 class="example">具体例1: 放物線</h3>
+<p>例1: 方程式が \( y = x^2 \) で表される放物線を考えます。</p>
+<ul>
+    <li>グラフは原点を頂点とし、上に開いた形になります。</li>
+</ul>
+
+<h2>楕円</h2>
+<p>楕円は2次曲線の一つで、一般的な方程式は次の通りです：
+\[ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \]
+ここで、a, b は軸の長さを決める定数です。</p>
+
+<h3 class="example">具体例2: 楕円</h3>
+<p>例2: 方程式が \( \frac{x^2}{4} + \frac{y^2}{9} = 1 \) で表される楕円を考えます。</p>
+<ul>
+    <li>この楕円は、x軸方向に長さが4、y軸方向に長さが9の楕円です。</li>
+</ul>
+
+<h2>双曲線</h2>
+<p>双曲線は2次曲線の一つで、一般的な方程式は次の通りです：
+\[ \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 \]
+ここで、a, b は軸の長さを決める定数です。</p>
+
+<h3 class="example">具体例3: 双曲線</h3>
+<p>例3: 方程式が \( \frac{x^2}{4} - \frac{y^2}{9} = 1 \) で表される双曲線を考えます。</p>
+<ul>
+    <li>この双曲線は、x軸方向に長さが4、y軸方向に長さが9の双曲線です。</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の2次曲線について、それぞれの曲線を求めてみましょう：</p>
+<ol>
+    <li>方程式が \( y = 2x^2 + 3x + 1 \) で表される放物線について、頂点と軸を求めなさい。</li>
+    <li>方程式が \( \frac{x^2}{16} + \frac{y^2}{25} = 1 \) で表される楕円について、長軸と短軸の長さを求めなさい。</li>
+    <li>方程式が \( \frac{x^2}{9} - \frac{y^2}{16} = 1 \) で表される双曲線について、漸近線の方程式を求めなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_conic')">解答を表示/非表示</div>
+<div id="answer_conic" class="answer">
+    <ol>
+        <li>方程式が \( y = 2x^2 + 3x + 1 \) で表される放物線について、頂点と軸を求めなさい。
+            <ul>
+                <li>一般的な形式 \( y = ax^2 + bx + c \) を使用して頂点を求めます。</li>
+                <li>頂点のx座標は次の式で求められます：
+                    \[ x = -\frac{b}{2a} = -\frac{3}{4} \]
+                </li>
+                <li>y座標はこのx値を元の方程式に代入して求めます：
+                    \[ y = 2 \left( -\frac{3}{4} \right)^2 + 3 \left( -\frac{3}{4} \right) + 1 = -\frac{1}{8} \]
+                </li>
+                <li>よって、頂点は \(\left( -\frac{3}{4}, -\frac{1}{8} \right)\) です。</li>
+                <li>軸はx = -3/4 の直線です。</li>
+            </ul>
+        </li>
+        <li>方程式が \( \frac{x^2}{16} + \frac{y^2}{25} = 1 \) で表される楕円について、長軸と短軸の長さを求めなさい。
+            <ul>
+                <li>この楕円において、a = 4、b = 5 です。</li>
+                <li>長軸の長さは2b = 10、短軸の長さは2a = 8です。</li>
+            </ul>
+        </li>
+        <li>方程式が \( \frac{x^2}{9} - \frac{y^2}{16} = 1 \) で表される双曲線について、漸近線の方程式を求めなさい。
+            <ul>
+                <li>双曲線の標準形式において、漸近線の方程式は次の通りです：
+                    \[
+                      y = \pm \frac{b}{a} x = \pm \frac{4}{3} x
+                    \]
+                </li>
+                <li>故に漸近線の方程式は y = \frac{4}{3}x と y = -\frac{4}{3}x です。</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
