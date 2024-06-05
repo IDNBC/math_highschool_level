@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>連立不等式の解法</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+        .example, .exercise { margin-top: 20px; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>連立不等式の解法</h1>
+
+<h2>連立不等式とは？</h2>
+<p>連立不等式とは、複数の不等式が同時に成り立つ条件を求める問題です。これを満たす解の範囲を求めることが主な目的です。</p>
+
+<h3 class="example">具体例</h3>
+<p>例1: 次の連立不等式を解きなさい：</p>
+<p>\(\begin{cases}
+2x + 3 \leq 7 \\
+x - 1 > -2
+\end{cases}\)</p>
+
+<p>まず、各不等式を個別に解きます。</p>
+<ul>
+    <li>不等式 \(2x + 3 \leq 7\) を解く：
+        <ul>
+            <li>両辺から3を引く：\(2x \leq 4\)</li>
+            <li>両辺を2で割る：\(x \leq 2\)</li>
+        </ul>
+    </li>
+    <li>不等式 \(x - 1 > -2\) を解く：
+        <ul>
+            <li>両辺に1を足す：\(x > -1\)</li>
+        </ul>
+    </li>
+</ul>
+
+<p>次に、この2つの解を同時に満たす範囲を求めます：</p>
+<ul>
+    <li>解は \(-1 < x \leq 2\) です。</li>
+</ul>
+
+<h3 class="example">具体例</h3>
+<p>例2: 次の連立不等式を解きなさい：</p>
+<p>\(\begin{cases}
+3x - 2 \geq 1 \\
+-x + 4 < 6
+\end{cases}\)</p>
+
+<p>まず、各不等式を個別に解きます。</p>
+<ul>
+    <li>不等式 \(3x - 2 \geq 1\) を解く：
+        <ul>
+            <li>両辺に2を足す：\(3x \geq 3\)</li>
+            <li>両辺を3で割る：\(x \geq 1\)</li>
+        </ul>
+    </li>
+    <li>不等式 \(-x + 4 < 6\) を解く：
+        <ul>
+            <li>両辺から4を引く：\(-x < 2\)</li>
+            <li>両辺に-1を掛ける：\(x > -2\)</li>
+        </ul>
+    </li>
+</ul>
+
+<p>次に、この2つの解を同時に満たす範囲を求めます：</p>
+<ul>
+    <li>解は \(1 \leq x < 2\) です。</li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の連立不等式を解きなさい：</p>
+<ol>
+    <li>\(\begin{cases}
+4x - 1 < 7 \\
+2x + 3 \geq 1
+    </begin{cases}\)</li>
+    <li>\(\begin{cases}
+5 - x \leq 3 \\
+3x + 2 > 0
+\end{cases}\)</li>
+    <li>\(\begin{cases}
+x + 2 > 5 \\
+2x - 1 < 7
+\end{cases}\)</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_inequality')">解答を表示/非表示</div>
+<div id="answer_inequality" class="answer">
+    <ol>
+        <li>\(\begin{cases}
+4x - 1 < 7 \\
+2x + 3 \geq 1
+        \end{cases}\)
+            <ul>
+                <li>不等式 \(4x - 1 < 7\) を解く：
+                    <ul>
+                        <li>両辺に1を足す：\(4x < 8\)</li>
+                        <li>両辺を4で割る：\(x < 2\)</li>
+                    </ul>
+                </li>
+                <li>不等式 \(2x + 3 \geq 1\) を解く：
+                    <ul>
+                        <li>両辺から3を引く：\(2x \geq -2\)</li>
+                        <li>両辺を2で割る：\(x \geq -1\)</li>
+                    </ul>
+                </li>
+                <li>解は：\(-1 \leq x < 2\)</li>
+            </ul>
+        </li>
+        <li>\(\begin{cases}
+5 - x \leq 3 \\
+3x + 2 > 0
+        \end{cases}\)
+            <ul>
+                <li>不等式 \(5 - x \leq 3\) を解く：
+                    <ul>
+                        <li>両辺から5を引く：\(-x \leq -2\)</li>
+                        <li>両辺に-1を掛ける：\(x \geq 2\)</li>
+                    </ul>
+                </li>
+                <li>不等式 \(3x + 2 > 0\) を解く：
+                    <ul>
+                        <li>両辺から2を引く：\(3x > -2\)</li>
+                        <li>両辺を3で割る：\(x > -\frac{2}{3}\)</li>
+                    </ul>
+                </li>
+                <li>解は：\(2 \leq x\)</li>
+            </ul>
+        </li>
+        <li>\(\begin{cases}
+x + 2 > 5 \\
+2x - 1 < 7
+        \end{cases}\)
+            <ul>
+                <li>不等式 \(x + 2 > 5\) を解く：
+                    <ul>
+                        <li>両辺から2を引く：\(x > 3\)</li>
+                    </ul>
+                </li>
+                <li>不等式 \(2x - 1 < 7\) を解く：
+                    <ul>
+                        <li>両辺に1を足す：\(2x < 8\)</li>
+                        <li>両辺を2で割る：\(x < 4\)</li>
+                    </ul>
+                </li>
+                <li>解は：\(3 < x < 4\)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
