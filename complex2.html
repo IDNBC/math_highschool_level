@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複素数の極形式</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+        .example, .exercise { margin-top: 20px; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>複素数の極形式の解説</h1>
+
+<h2>複素数とは？</h2>
+<p>複素数とは、実数と虚数の和で表される数です。一般的な複素数は次のように書かれます：
+\[ z = a + bi \]
+ここで、\(a\) は実部、\(b\) は虚部、\(i\) は虚数単位で、\(i^2 = -1\) です。</p>
+
+<h2>極形式とは？</h2>
+<p>複素数を極形式で表すと、次のようになります：
+\[ z = r (\cos \theta + i \sin \theta) \]
+ここで、\(r\) は複素数の絶対値（モジュールス）、\(\theta\) は偏角（アーギュメント）です。</p>
+
+<h3>極形式の求め方</h3>
+<ul>
+    <li>絶対値 \(r\) は次のように計算します：
+        \[ r = \sqrt{a^2 + b^2} \]
+    </li>
+    <li>偏角 \(\theta\) は次のように計算します：
+        \[ \theta = \tan^{-1}\left(\frac{b}{a}\right) \]
+    </li>
+</ul>
+
+<h3 class="example">具体例1: 複素数の極形式</h3>
+<p>例1: \(z = 1 + i\) の極形式を求めなさい。</p>
+<ul>
+    <li>絶対値 \(r\) を計算：
+        \[ r = \sqrt{1^2 + 1^2} = \sqrt{2} \]
+    </li>
+    <li>偏角 \(\theta\) を計算：
+        \[ \theta = \tan^{-1}\left(\frac{1}{1}\right) = \frac{\pi}{4} \]
+    </li>
+    <li>したがって、極形式は：
+        \[ z = \sqrt{2} \left(\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}\right) \]
+    </li>
+</ul>
+
+<h3 class="example">具体例2: 複素数の極形式</h3>
+<p>例2: \(z = -1 + \sqrt{3}i\) の極形式を求めなさい。</p>
+<ul>
+    <li>絶対値 \(r\) を計算：
+        \[ r = \sqrt{(-1)^2 + (\sqrt{3})^2} = \sqrt{1 + 3} = 2 \]
+    </li>
+    <li>偏角 \(\theta\) を計算：
+        \[ \theta = \tan^{-1}\left(\frac{\sqrt{3}}{-1}\right) = \frac{2\pi}{3} \]
+    </li>
+    <li>したがって、極形式は：
+        \[ z = 2 \left(\cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}\right) \]
+    </li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の複素数の極形式を求めてみましょう：</p>
+<ol>
+    <li> \(z = 3 + 4i\) の極形式を求めなさい。</li>
+    <li> \(z = -1 - i\) の極形式を求めなさい。</li>
+    <li> \(z = 2 - 2\sqrt{3}i\) の極形式を求めなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_polar')">解答を表示/非表示</div>
+<div id="answer_polar" class="answer">
+    <ol>
+        <li> \(z = 3 + 4i\) の極形式を求めなさい。
+            <ul>
+                <li>絶対値 \(r\) を計算：
+                    \[ r = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = 5 \]
+                </li>
+                <li>偏角 \(\theta\) を計算：
+                    \[ \theta = \tan^{-1}\left(\frac{4}{3}\right) \approx 0.93 \text{ ラジアン} \text{ または } \theta = \tan^{-1}( \frac{4}{3}) \approx 53.13^\circ \]
+                </li>
+                <li>したがって、極形式は：
+                    \[ z = 5 \left(\cos 0.93 + i \sin 0.93\right) \approx 5 \left(\cos 53.13^\circ + i \sin 53.13^\circ \right) \]
+                </li>
+            </ul>
+        </li>
+        <li> \(z = -1 - i\) の極形式を求めなさい。
+            <ul>
+                <li>絶対値 \(r\) を計算：
+                    \[ r = \sqrt{(-1)^2 + (-1)^2} = \sqrt{1 + 1} = \sqrt{2} \]
+                </li>
+                <li>偏角 \(\theta\) を計算：
+                    \[ \theta = \tan^{-1}\left(\frac{-1}{-1}\right) + \pi = \frac{3\pi}{4} \]
+                </li>
+                <li>したがって、極形式は：
+                    \[ z = \sqrt{2} \left(\cos \frac{3\pi}{4} + i \sin \frac{3\pi}{4}\right) \]
+                </li>
+            </ul>
+        </li>
+        <li> \(z = 2 - 2\sqrt{3}i\) の極形式を求めなさい。
+            <ul>
+                <li>絶対値 \(r\) を計算：
+                    \[ r = \sqrt{2^2 + (-2\sqrt{3})^2} = \sqrt{4 + 12} = 4 \]
+                </li>
+                <li>偏角 \(\theta\) を計算：
+                    \[ \theta = \tan^{-1}\left(\frac{-2\sqrt{3}}{2}\right) = -\frac{\pi}{3} \text{ または } \theta = \tan^{-1}( \frac{-2\sqrt{3}}{2}) = -60^\circ  \]
+                </li>
+                <li>したがって、極形式は：
+                    \[ z = 4 \left(\cos -\frac{\pi}{3} + i \sin -\frac{\pi}{3}\right) \]
+                    または \[
+                    z = 4 \left(\cos -60^\circ + i \sin -60^\circ \right) \]
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
