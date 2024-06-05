@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ド・モアブルの定理</title>
+    <style>
+        .answer { display: none; }
+        .toggle-button { margin-top: 10px; display: inline-block; cursor: pointer; color: blue; text-decoration: underline; }
+        .example, .exercise { margin-top: 20px; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>ド・モアブルの定理の解説</h1>
+
+<h2>ド・モアブルの定理とは？</h2>
+<p>ド・モアブルの定理は、複素数の極形式を使って複素数のべき乗を計算するための定理です。この定理は次のように表されます：</p>
+<p>\[ (r (\cos \theta + i \sin \theta))^n = r^n (\cos (n\theta) + i \sin (n\theta)) \]</p>
+<p>ここで、\(r\) は複素数の絶対値、\(\theta\) は偏角、\(n\) は整数です。</p>
+
+<h3 class="example">具体例1: ド・モアブルの定理の適用</h3>
+<p>例1: \((1 + i)^3\) をド・モアブルの定理を使って計算しなさい。</p>
+<ul>
+    <li>まず、複素数を極形式に変換します：
+        \[ 1 + i = \sqrt{2} \left( \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} \right) \]
+    </li>
+    <li>ド・モアブルの定理を適用：
+        \[ (\sqrt{2} (\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}))^3 = (\sqrt{2})^3 (\cos \frac{3\pi}{4} + i \sin \frac{3\pi}{4}) \]
+    </li>
+    <li>
+        \(\sqrt{2}^3 = 2\sqrt{2}\) なので、次のようになります：
+        \[ 2\sqrt{2} (\cos \frac{3\pi}{4} + i \sin \frac{3\pi}{4}) = 2\sqrt{2} \left( -\frac{1}{\sqrt{2}} + i \frac{1}{\sqrt{2}} \right) \]
+    </li>
+    <li>最終的に：
+        \[ = 2\sqrt{2} \left( -\frac{1}{\sqrt{2}} + i \frac{1}{\sqrt{2}} \right) \]
+        \[ = -2 + 2i \]
+    </li>
+</ul>
+
+<h2>ド・モアブルの定理の証明</h2>
+<p>複素数 \(z = r (\cos \theta + i \sin \theta)\) のべき乗を計算する際、次のようにド・モアブルの定理を使います：</p>
+<ul>
+    <li>まず、\(z^n\) を展開：
+        \[ z^n = (r (\cos \theta + i \sin \theta))^n \]
+    </li>
+    <li>ド・モアブルの定理を使って計算：
+        \[ = r^n (\cos (n\theta) + i \sin (n\theta)) \]
+    </li>
+</ul>
+
+<h2>練習問題</h2>
+<p>次の複素数のべき乗をド・モアブルの定理を使って計算しなさい：</p>
+<ol>
+    <li> \((\sqrt{3} + i)^2\) を計算しなさい。</li>
+    <li> \((1 - i)^4\) を計算しなさい。</li>
+    <li> \((-1 + i\sqrt{3})^3\) を計算しなさい。</li>
+</ol>
+
+<div class="toggle-button" onclick="toggleAnswer('answer_demoivre')">解答を表示/非表示</div>
+<div id="answer_demoivre" class="answer">
+    <ol>
+        <li> \((\sqrt{3} + i)^2\) を計算しなさい。
+            <ul>
+                <li>複素数を極形式に変換します：
+                    \[ \sqrt{3} + i = 2 \left( \cos \frac{\pi}{6} + i \sin \frac{\pi}{6} \right) \]
+                </li>
+                <li>ド・モアブルの定理を適用：
+                    \[ (2 (\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}))^2 = 2^2 (\cos \frac{2\pi}{6} + i \sin \frac{2\pi}{6}) \]
+                </li>
+                <li>
+                    \[ = 4 (\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}) = 4 \left( \frac{1}{2} + i \frac{\sqrt{3}}{2} \right) \]
+                </li>
+                <li>最終的に：
+                    \[ = 2 + 2i\sqrt{3} \]
+                </li>
+            </ul>
+        </li>
+        <li> \((1 - i)^4\) を計算しなさい。
+            <ul>
+                <li>複素数を極形式に変換します：
+                    \[ 1 - i = \sqrt{2} \left( \cos \left(-\frac{\pi}{4}\right) + i \sin \left(-\frac{\pi}{4}\right) \]
+                </li>
+                <li>ド・モアブルの定理を適用：
+                    \[ (\sqrt{2} (\cos \left(-\frac{\pi}{4}\right) + i \sin \left(-\frac{\pi}{4}\right)))^4 = (\sqrt{2})^4 (\cos \left(-\frac{4\pi}{4}\right) + i \sin \left(-\frac{4\pi}{4}\right)) \]
+                </li>
+                <li>
+                    \[ = 4 (\cos \left(-\pi\right) + i \sin \left(-\pi\right)) \]
+                </li>
+                <li>したがって：
+                    \[ = 4 (-1 + i \cdot 0) = -4 \]
+                </li>
+            </ul>
+        </li>
+        <li> \((-1 + i\sqrt{3})^3\) を計算しなさい。
+            <ul>
+                <li>複素数を極形式に変換します：
+                    \[ -1 + i\sqrt{3} = 2 \left( \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} \right) \]
+                </li>
+                <li>ド・モアブルの定理を適用：
+                    \[ (2 (\cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}))^3 = 2^3 (\cos \frac{6\pi}{3} + i \sin \frac{6\pi}{3}) \]
+                </li>
+                <li>
+                    \[ = 8 (\cos 2\pi + i \sin 2\pi) \]
+                </li>
+                <li>したがって：
+                    \[ = 8 (1 + i\cdot0) = 8 \]
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
