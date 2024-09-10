@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>三角関数の値表</title>
+    <title>三角関数の値</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .math-list {
+            margin: 20px 0;
         }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
+        .math-list-item {
+            margin-bottom: 10px;
         }
     </style>
     <script>
@@ -34,57 +28,20 @@
     </script>
 </head>
 <body>
-    <h1>三角関数の値表</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>θ (度)</th>
-                <th>\\( \\cos(\\theta) \\)</th>
-                <th>\\( \\sin(\\theta) \\)</th>
-                <th>\\( \\tan(\\theta) \\)</th>
-                <th>\\( \\cot(\\theta) \\)</th>
-                <th>\\( \\csc(\\theta) \\)</th>
-                <th>\\( \\sec(\\theta) \\)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>30°</td>
-                <td>\\( \\frac{\\sqrt{3}}{2} \\)</td>
-                <td>\\( \\frac{1}{2} \\)</td>
-                <td>\\( \\frac{1}{\\sqrt{3}} \\)</td>
-                <td>\\( \\sqrt{3} \\)</td>
-                <td>\\( 2 \\)</td>
-                <td>\\( \\frac{2}{\\sqrt{3}} \\)</td>
-            </tr>
-            <tr>
-                <td>45°</td>
-                <td>\\( \\frac{\\sqrt{2}}{2} \\)</td>
-                <td>\\( \\frac{\\sqrt{2}}{2} \\)</td>
-                <td>\\( 1 \\)</td>
-                <td>\\( 1 \\)</td>
-                <td>\\( \\sqrt{2} \\)</td>
-                <td>\\( \\sqrt{2} \\)</td>
-            </tr>
-            <tr>
-                <td>60°</td>
-                <td>\\( \\frac{1}{2} \\)</td>
-                <td>\\( \\frac{\\sqrt{3}}{2} \\)</td>
-                <td>\\( \\sqrt{3} \\)</td>
-                <td>\\( \\frac{1}{\\sqrt{3}} \\)</td>
-                <td>\\( \\frac{2}{\\sqrt{3}} \\)</td>
-                <td>\\( 2 \\)</td>
-            </tr>
-            <tr>
-                <td>90°</td>
-                <td>\\( 0 \\)</td>
-                <td>\\( 1 \\)</td>
-                <td>\\( \\infty \\)</td>
-                <td>\\( 0 \\)</td>
-                <td>\\( 1 \\)</td>
-                <td>\\( \\infty \\)</td>
-            </tr>
-        </tbody>
-    </table>
+    <h1>三角関数の値</h1>
+    <div class="math-list">
+        <div class="math-list-item">
+            <strong>30°</strong>: \\( \\cos(30^\circ) = \\frac{\\sqrt{3}}{2} \\), \\( \\sin(30^\circ) = \\frac{1}{2} \\), \\( \\tan(30^\circ) = \\frac{1}{\\sqrt{3}} \\), \\( \\cot(30^\circ) = \\sqrt{3} \\), \\( \\csc(30^\circ) = 2 \\), \\( \\sec(30^\circ) = \\frac{2}{\\sqrt{3}} \\)
+        </div>
+        <div class="math-list-item">
+            <strong>45°</strong>: \\( \\cos(45^\circ) = \\frac{\\sqrt{2}}{2} \\), \\( \\sin(45^\circ) = \\frac{\\sqrt{2}}{2} \\), \\( \\tan(45^\circ) = 1 \\), \\( \\cot(45^\circ) = 1 \\), \\( \\csc(45^\circ) = \\sqrt{2} \\), \\( \\sec(45^\circ) = \\sqrt{2} \\)
+        </div>
+        <div class="math-list-item">
+            <strong>60°</strong>: \\( \\cos(60^\circ) = \\frac{1}{2} \\), \\( \\sin(60^\circ) = \\frac{\\sqrt{3}}{2} \\), \\( \\tan(60^\circ) = \\sqrt{3} \\), \\( \\cot(60^\circ) = \\frac{1}{\\sqrt{3}} \\), \\( \\csc(60^\circ) = \\frac{2}{\\sqrt{3}} \\), \\( \\sec(60^\circ) = 2 \\)
+        </div>
+        <div class="math-list-item">
+            <strong>90°</strong>: \\( \\cos(90^\circ) = 0 \\), \\( \\sin(90^\circ) = 1 \\), \\( \\tan(90^\circ) = \\infty \\), \\( \\cot(90^\circ) = 0 \\), \\( \\csc(90^\circ) = 1 \\), \\( \\sec(90^\circ) = \\infty \\)
+        </div>
+    </div>
 </body>
 </html>
