@@ -2,44 +2,23 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>積分の問題と解答の手順</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"></script>
-<script>
-      document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-          delimiters: [
-            {left: "$$", right: "$$", display: true},
-            {left: "\\(", right: "\\)", display: false},
-            {left: "\\[", right: "\\]", display: true}
-          ]
+    <title>KaTeX テスト</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                ]
+            });
         });
-      });
     </script>
 </head>
 <body>
-    <h1>積分の問題と解答の手順</h1>
-    <p>次の積分を解きなさい：</p>
-    <p>
-      $$ \int (3x^2 + 2x + 1) \, dx $$
-    </p>
-    <p>解答手順：</p>
-    <p>1. 各項ごとに積分を行います：</p>
-    <p>
-      $$ \int 3x^2 \, dx + \int 2x \, dx + \int 1 \, dx $$
-    </p>
-    <p>2. 各積分を計算します：</p>
-    <p>
-      $$ \frac{3}{3}x^3 + \frac{2}{2}x^2 + x $$
-    </p>
-    <p>3. 結果を簡略化します：</p>
-    <p>
-      $$ x^3 + x^2 + x + C $$
-    </p>
-    <p>したがって、最終的な解答は：</p>
-    <p>
-      $$ \int (3x^2 + 2x + 1) \, dx = x^3 + x^2 + x + C $$
-    </p>
+    <p>$$ x^2 + y^2 = z^2 $$</p>
 </body>
 </html>
