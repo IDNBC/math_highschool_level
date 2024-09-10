@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角関数の値表</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                ]
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>三角関数の値表</h1>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>θ (度)</th>
+                <th>\\( \\cos(\\theta) \\)</th>
+                <th>\\( \\sin(\\theta) \\)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>30°</td>
+                <td>\\( \\frac{\\sqrt{3}}{2} \\)</td>
+                <td>\\( \\frac{1}{2} \\)</td>
+            </tr>
+            <tr>
+                <td>45°</td>
+                <td>\\( \\frac{\\sqrt{2}}{2} \\)</td>
+                <td>\\( \\frac{\\sqrt{2}}{2} \\)</td>
+            </tr>
+            <tr>
+                <td>60°</td>
+                <td>\\( \\frac{1}{2} \\)</td>
+                <td>\\( \\frac{\\sqrt{3}}{2} \\)</td>
+            </tr>
+            <tr>
+                <td>90°</td>
+                <td>\\( 0 \\)</td>
+                <td>\\( 1 \\)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
