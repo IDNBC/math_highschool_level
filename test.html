@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>長除法の説明</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+</head>
+<body>
+    <h1>長除法の説明</h1>
+
+    <p>多項式の長除法を用いて、以下のように計算します。</p>
+
+    <h2>例: \( \frac{x^2 - 3x + 4}{x + 1} \)</h2>
+
+    <ol>
+        <li><strong>最初の項を確認する</strong>: 割られる多項式 \(x^2 - 3x + 4\) の最高次の項 \(x^2\) を、割る多項式 \(x + 1\) の最高次の項 \(x\) で割ります。結果は \(x\) です。これが商の最初の項になります。</li>
+
+        <li><strong>掛け算して引き算する</strong>: 
+            \[
+            x \cdot (x + 1) = x^2 + x
+            \]
+            この結果を元の多項式 \(x^2 - 3x + 4\) から引きます：
+            \[
+            (x^2 - 3x + 4) - (x^2 + x) = -4x + 4
+            \]
+        </li>
+
+        <li><strong>次の項を確認する</strong>: 残った多項式 \(-4x\) を再び \(x\) で割ります。結果は \(-4\) です。これが商の次の項になります。</li>
+
+        <li><strong>再び掛け算して引き算する</strong>:
+            \[
+            -4 \cdot (x + 1) = -4x - 4
+            \]
+            この結果を残った多項式 \(-4x + 4\) から引きます：
+            \[
+            (-4x + 4) - (-4x - 4) = 8
+            \]
+        </li>
+
+        <li><strong>最終結果</strong>: 割り算が終了しました。商は \(x - 4\) で、余りは \(8\) です。したがって、次のように表せます：
+            \[
+            x^2 - 3x + 4 = (x + 1)(x - 4) + 8
+            \]
+        </li>
+    </ol>
+
+    <p>このようにして、元の積分を簡単な形に変形することができ、最終的に積分を計算する際に便利になります。</p>
+</body>
+</html>
