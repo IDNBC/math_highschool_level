@@ -16,66 +16,49 @@
         ニュートンの第二法則は、物体に作用する力とその加速度の関係を示す基本的な物理法則です。数学的には次のように定式化されます：
     </p>
     <p>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>F</mi> <mo>=</mo> <mi>m</mi> <mi>a</mi>
-        </math>
+        $$ F = ma $$
     </p>
     <p>
         ここで、
         <ul>
-            <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi></math> は力（ニュートン）</li>
-            <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math> は質量（キログラム）</li>
-            <li><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math> は加速度（メートル毎秒毎秒）</li>
+            <li> \( F \) は力（ニュートン）</li>
+            <li> \( m \) は質量（キログラム）</li>
+            <li> \( a \) は加速度（メートル毎秒毎秒）</li>
         </ul>
     </p>
     
     <h2>加速度と微分</h2>
     <p>
-        加速度 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math> は、速度 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math> の時間に関する微分として定義されます：
+        加速度 \( a \) は、速度 \( v \) の時間に関する微分として定義されます：
     </p>
     <p>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>a</mi> <mo>=</mo> <mfrac><mi>d</mi><mi>dt</mi></mfrac> <mi>v</mi>(<mi>t</mi>)
-        </math>
+        $$ a(t) = \frac{dv(t)}{dt} $$
     </p>
     <p>
-        さらに、速度 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math> は位置 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math> の時間微分であるため、加速度は位置の2階微分としても表せます：
+        さらに、速度 \( v \) は位置 \( x \) の時間微分であるため、加速度は位置の2階微分としても表せます：
     </p>
     <p>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>a</mi> <mo>=</mo> <mfrac><mi>d^2</mi><mi>dt^2</mi></mfrac> <mi>x</mi>(<mi>t</mi>)
-        </math>
+        $$ a(t) = \frac{d^2x(t)}{dt^2} $$
     </p>
     
     <h2>速度変換と加速度の不変性</h2>
     <p>
-        ここで、速度 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi>(<mi>t</mi>)</math> に対して、定数項 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math> を加える変換を考えます。これは次のように書けます：
+        ここで、速度 \( v(t) \) に対して、定数項 \( V \) を加える変換を考えます。これは次のように書けます：
     </p>
     <p>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>v'</mi>(<mi>t</mi>) <mo>=</mo> <mi>v</mi>(<mi>t</mi>) <mo>+</mo> <mi>V</mi>
-        </math>
+        $$ v'(t) = v(t) + V $$
     </p>
     <p>
-        この場合、速度の定数項 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math> は時間に依存しない定数です。加速度は速度の時間微分で定義されているため、この変換においても加速度は次のように変わらず不変です：
+        この場合、速度の定数項 \( V \) は時間に依存しない定数です。加速度は速度の時間微分で定義されているため、この変換においても加速度は次のように変わらず不変です：
     </p>
     <p>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mi>a'</mi>(<mi>t</mi>) <mo>=</mo> <mfrac><mi>d</mi><mi>dt</mi></mfrac> (<mi>v</mi>(<mi>t</mi>) <mo>+</mo> <mi>V</mi>) 
-        </math>
+        $$ a'(t) = \frac{d}{dt}(v(t) + V) $$
     </p>
     <p>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mo>=</mo> <mfrac><mi>d</mi><mi>dt</mi></mfrac> <mi>v</mi>(<mi>t</mi>) <mo>+</mo> <mfrac><mi>d</mi><mi>dt</mi></mfrac> <mi>V</mi>
-        </math>
+        $$ a'(t) = \frac{dv(t)}{dt} + \frac{dV}{dt} = a(t) + 0 $$
     </p>
     <p>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mo>=</mo> <mi>a</mi>(<mi>t</mi>) <mo>+</mo> <mn>0</mn> 
-        </math>
-    </p>
-    <p>
-        よって、加速度は <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a'</mi>(<mi>t</mi>) = <mi>a</mi>(<mi>t</mi>)</math> であり、速度に定数項を加えても加速度は変わりません。
+        よって、加速度は \( a'(t) = a(t) \) であり、速度に定数項を加えても加速度は変わりません。
     </p>
     
     <h2>結論</h2>
