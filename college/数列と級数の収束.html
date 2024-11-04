@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>数列と級数の収束</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <h1>数列と級数の収束</h1>
+
+  <h2>1. 数列の理解</h2>
+  <p><strong>数列</strong>は順序付けられた数のリストで、通常は各正の整数 \( n \) に数を割り当てる関数 \( a_n \) によって定義されます。数列 \( \{ a_n \} \) がある極限 \( L \) に<em>収束する</em>とは、\( n \) が大きくなるにつれて \( a_n \) が \( L \) に限りなく近づくことを意味します。これを次のように表します:</p>
+  <p style="text-align: center;">\( \lim_{n \to \infty} a_n = L \)</p>
+  <p>これは、任意の小さな正の数 \( \varepsilon \) に対して、ある正の整数 \( N \) が存在し、\( n \geq N \) のとき常に</p>
+  <p style="text-align: center;">\( |a_n - L| < \varepsilon \)</p>
+  <p>が成り立つことを意味します。</p>
+
+  <h3>収束する数列の例</h3>
+  <p>次の数列を考えます:</p>
+  <p style="text-align: center;">\( a_n = \frac{1}{n} \)</p>
+  <p>\( n \to \infty \) のとき、\( a_n \) は非常に小さくなり、0 に近づきます。したがって、</p>
+  <p style="text-align: center;">\( \lim_{n \to \infty} \frac{1}{n} = 0 \)</p>
+
+  <h3>発散する数列の例</h3>
+  <p>次に、次の数列を考えます:</p>
+  <p style="text-align: center;">\( b_n = n \)</p>
+  <p>\( n \to \infty \) のとき、\( b_n \) は無限に大きくなり、有限の極限に近づきません。この数列は<em>発散</em>します。</p>
+
+  <h2>2. 級数の理解</h2>
+  <p><strong>級数</strong>は数列の項を足し合わせたものです。級数は次のように表されます:</p>
+  <p style="text-align: center;">\( S = a_1 + a_2 + a_3 + \dots = \sum_{n=1}^{\infty} a_n \)</p>
+  <p>級数が<em>収束</em>するとは、その部分和 \( S_N \) が有限の極限に近づくことを意味します。ここで:</p>
+  <p style="text-align: center;">\( S_N = \sum_{n=1}^{N} a_n \)</p>
+  <p>部分和が有限の極限に近づかない場合、その級数は<em>発散</em>します。</p>
+
+  <h3>収束する級数の例</h3>
+  <p><strong>等比級数</strong>を考えます:</p>
+  <p style="text-align: center;">\( S = \sum_{n=0}^{\infty} \frac{1}{2^n} = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \dots \)</p>
+  <p>最初の \( N \) 項の部分和は:</p>
+  <p style="text-align: center;">\( S_N = 1 - \frac{1}{2^N} \)</p>
+  <p>\( N \to \infty \) のとき、\( S_N \) は 1 に近づくので、</p>
+  <p style="text-align: center;">\( \sum_{n=0}^{\infty} \frac{1}{2^n} = 1 \)</p>
+
+  <h3>発散する級数の例</h3>
+  <p><strong>調和級数</strong>を考えます:</p>
+  <p style="text-align: center;">\( H = \sum_{n=1}^{\infty} \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \dots \)</p>
+  <p>この級数の部分和は無限に大きくなることが示されており、したがって調和級数は発散します。</p>
+
+  <h2>3. 視覚的な直感</h2>
+  <p>収束は視覚的に捉えることができ、収束する数列は極限に向かって平坦になり、発散する数列は増大したり、振動したりして一定の値に収束しません。</p>
+
+  <h2>まとめ</h2>
+  <p>数列と級数の収束と発散を理解することは、微分積分学や解析学の基礎です。この違いは、収束判定法や関数の性質を学ぶ上で非常に重要です。</p>
+</body>
+</html>
