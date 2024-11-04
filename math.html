@@ -30,6 +30,15 @@
         header h1 {
             text-align: center;
         }
+
+        #search {
+            margin: 20px auto;
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            font-size: 16px;
+        }
     </style>
     </head>
     <body>
@@ -164,7 +173,26 @@
                 </ul>
             </div>
         </div>
+        
+        //ここから下が検索機能
+        <script>
+        function searchFunction() {
+            // 検索バーの値を取得
+            let input = document.getElementById('search').value.toLowerCase();
+            // 検索対象のすべてのリスト項目を取得
+            let items = document.querySelectorAll('.searchable li');
 
+            items.forEach(function(item) {
+                // リンクテキストを小文字に変換して検索
+                let text = item.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = "list-item"; // マッチする場合は表示
+                } else {
+                    item.style.display = "none"; // マッチしない場合は非表示
+                }
+            });
+        }
+    </script>
 
   
     </body>
