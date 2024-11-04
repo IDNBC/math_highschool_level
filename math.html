@@ -10,18 +10,27 @@
         <script async id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="shortcut icon" href="1766069200_1girl, solo, crossed legs, from above, purple hair, grey eyes, smile, overalls, slippers, lace trim, forest_0.png" type="image/vnd.microsoft.icon">
         <style>
-            .flex-container {
-                display: flex;
-                gap: 20px;
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .flex-container > div {
+            flex: 1 1 calc(33.33% - 20px); /* 3列の幅を計算 */
+        }
+        @media (max-width: 768px) {
+            .flex-container > div {
+                flex: 1 1 calc(50% - 20px); /* 2列の幅を計算 */
             }
-            .flex-container h2 {
-              text-align: center;
-            }
-            main {
-                margin: 90px auto;
-                maxwidth: 1000px;
-            }
-        </style>
+        }
+        main {
+            margin: 90px auto;
+            max-width: 1000px;
+        }
+        header h1 {
+            text-align: center;
+        }
+    </style>
     </head>
     <body>
         <header>
