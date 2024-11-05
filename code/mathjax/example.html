@@ -2,10 +2,21 @@
 <html>
 <head>
   <title>コード例 - MathJax 行列</title>
-  
+   <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
   <h2>MathJaxを使った行列表示のコード例</h2>
+  <p>行列の例:</p>
+  <p>$$
+  \begin{pmatrix}
+  a_{11} & a_{12} & \dots & a_{1n} \\
+  a_{21} & a_{22} & \dots & a_{2n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & \dots & a_{mn}
+  \end{pmatrix}
+  $$</p>
   <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -28,6 +39,10 @@
 
 
     <h2>MathJaxを使った積分記号のコード例</h2>
+  <p>積分の例:</p>
+  <p>$$
+  \int_a^b f(x) \, dx = F(b) - F(a)
+  $$</p>
   <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
