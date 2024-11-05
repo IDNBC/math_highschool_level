@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MathJax - 完全列と蛇の補題の表示</title>
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    pre {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      padding: 10px;
+      overflow: auto;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .output {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>完全列と蛇の補題の表示</h2>
+  <div class="container">
+    <!-- 完全列のコードと出力 -->
+    <div>
+      <h3>完全列のコード:</h3>
+      <pre id="exact-sequence-code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;完全列の例:&lt;/p&gt;
+  &lt;p&gt;$$
+  0 \to A \xrightarrow{f} B \xrightarrow{g} C \to 0
+  $$&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <button onclick="copyToClipboard('exact-sequence-code')">完全列コードをコピー</button>
+      <div class="output">
+        <h3>完全列のMathJax出力:</h3>
+        <p>$$
+        0 \to A \xrightarrow{f} B \xrightarrow{g} C \to 0
+        $$</p>
+      </div>
+    </div>
+
+    <!-- 蛇の補題のコードと出力 -->
+    <div>
+      <h3>蛇の補題のコード:</h3>
+      <pre id="snake-lemma-code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;蛇の補題の簡易図式:&lt;/p&gt;
+  &lt;p&gt;$$
+  \begin{array}{ccccccccc}
+  &amp; &amp; A_1 &amp; \xrightarrow{} &amp; A_2 &amp; \xrightarrow{} &amp; A_3 &amp; \to &amp; 0 \\
+  &amp; &amp; \downarrow &amp; &amp; \downarrow &amp; &amp; \downarrow &amp; &amp; \\
+  0 \to &amp; B_1 &amp; \xrightarrow{} &amp; B_2 &amp; \xrightarrow{} &amp; B_3 &amp; \xrightarrow{} &amp; C &amp; \to 0 \\
+  &amp; &amp; \downarrow &amp; &amp; \downarrow &amp; &amp; \downarrow &amp; &amp; \\
+  &amp; &amp; C_1 &amp; \xrightarrow{} &amp; C_2 &amp; \xrightarrow{} &amp; C_3 &amp; &amp;
+  \end{array}
+  $$&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <button onclick="copyToClipboard('snake-lemma-code')">蛇の補題コードをコピー</button>
+      <div class="output">
+        <h3>蛇の補題のMathJax出力:</h3>
+        <p>$$
+        \begin{array}{ccccccccc}
+        & & A_1 & \xrightarrow{} & A_2 & \xrightarrow{} & A_3 & \to & 0 \\
+        & & \downarrow & & \downarrow & & \downarrow & & \\
+        0 \to & B_1 & \xrightarrow{} & B_2 & \xrightarrow{} & B_3 & \xrightarrow{} & C & \to 0 \\
+        & & \downarrow & & \downarrow & & \downarrow & & \\
+        & & C_1 & \xrightarrow{} & C_2 & \xrightarrow{} & C_3 & &
+        \end{array}
+        $$</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copyToClipboard(elementId) {
+      const codeBlock = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        alert("コードがコピーされました！");
+      }, () => {
+        alert("コピーに失敗しました。");
+      });
+    }
+  </script>
+</body>
+</html>
