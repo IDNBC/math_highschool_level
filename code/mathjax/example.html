@@ -2,6 +2,17 @@
 <html>
 <head>
   <title>コード例 - MathJax 行列</title>
+  <style>
+    pre {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      padding: 10px;
+      overflow: auto;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <h2>MathJaxを使った行列表示のコード例</h2>
@@ -42,9 +53,50 @@
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
+
+  <h2>行列を表示するコード例（コピー機能付き）</h2>
+  <pre id="code-block">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;行列の例:&lt;/p&gt;
+  &lt;p&gt;$$
+  \begin{pmatrix}
+  a_{11} &amp; a_{12} &amp; \dots &amp; a_{1n} \\
+  a_{21} &amp; a_{22} &amp; \dots &amp; a_{2n} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{m1} &amp; a_{m2} &amp; \dots &amp; a_{mn}
+  \end{pmatrix}
+  $$&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+  <button onclick="copyToClipboard()">コードをコピー</button>
+
+  <script>
+    function copyToClipboard() {
+      // コードブロックを取得
+      const codeBlock = document.getElementById("code-block").innerText;
+      // コードをクリップボードにコピー
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        alert("コードがコピーされました！");
+      }, () => {
+        alert("コピーに失敗しました。");
+      });
+    }
+  </script>
+
 </body>
 </html>
 
+
+  
+
+
+  
 
 
 
