@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線形代数の問題</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h1>次の問いに答えよ。</h1>
+    
+    <h2>1. 線形写像 \( f: \mathbb{R}^4 \to \mathbb{R}^3 \) を</h2>
+    <p>
+        \[
+        x = \begin{pmatrix} x \\ y \\ z \\ w \end{pmatrix} \in \mathbb{R}^4
+        \]
+        に対して
+        \[
+        f(x) = \begin{pmatrix}
+        1 & -1 & 2 & -1 \\
+        2 &  1 & 0 &  1 \\
+        -1 & -5 & 6 & -5
+        \end{pmatrix}
+        \begin{pmatrix} x \\ y \\ z \\ w \end{pmatrix}
+        \]
+        と定める。このとき、\( f \) の像 \( \mathrm{Im}(f) \) の次元と1組の基底、および \( f \) の核 \( \ker(f) \) の次元と1組の基底を求めよ。
+    </p>
+
+    <h2>2. 以下のベクトル</h2>
+    <p>
+        \[
+        a_1 = \begin{pmatrix} 2 \\ 2 \\ 1 \\ 1 \end{pmatrix}, \quad
+        a_2 = \begin{pmatrix} 2 \\ 0 \\ 3 \\ 1 \end{pmatrix}
+        \]
+        によって生成される \( \mathbb{R}^4 \) の部分空間を \( W \) とする。線形写像
+        \[
+        g: \mathbb{R}^4 \to \mathbb{R}^2
+        \]
+        であって、\( \ker(g) = W \) となるものを1つ求めよ。
+    </p>
+</body>
+</html>
